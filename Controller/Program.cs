@@ -17,7 +17,9 @@ namespace WindowClassProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Login_Form log = new Login_Form();
-            Application.Run(new ManageForm());
+            
+            Application.Run(log);
+            
         }
     }
 }

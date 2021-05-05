@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowClassProject.Model;
+using WindowClassProject.View.ViewManageStudent;
+using WindowClassProject.DAO;
 
 namespace WindowClassProject.View.ViewLogin
 {
@@ -41,9 +44,15 @@ namespace WindowClassProject.View.ViewLogin
 
         }
 
-        private void loginBtn_Click(object sender, EventArgs e)
-        {
+        //check valid
 
+
+       public  void loginBtn_Click(object sender, EventArgs e)
+        {
+          
+            
+            
+           
         }
     }
 }

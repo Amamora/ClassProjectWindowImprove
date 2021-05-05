@@ -1,7 +1,7 @@
 ﻿
-namespace WindowClassProject.View
+namespace WindowClassProject.View.OtherForm
 {
-    partial class tool
+    partial class AddPerson
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,30 +29,31 @@ namespace WindowClassProject.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.addPersonPanelForm = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // addPersonPanelForm
             // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(884, 87);
-            this.panel1.TabIndex = 0;
+            this.addPersonPanelForm.BackColor = System.Drawing.Color.White;
+            this.addPersonPanelForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.addPersonPanelForm.Location = new System.Drawing.Point(0, 0);
+            this.addPersonPanelForm.Name = "addPersonPanelForm";
+            this.addPersonPanelForm.Size = new System.Drawing.Size(782, 564);
+            this.addPersonPanelForm.TabIndex = 0;
             // 
-            // tool
+            // AddPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Name = "tool";
-            this.Size = new System.Drawing.Size(884, 87);
+            this.Controls.Add(this.addPersonPanelForm);
+            this.Name = "AddPerson";
+            this.Size = new System.Drawing.Size(782, 564);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel addPersonPanelForm;
     }
 }

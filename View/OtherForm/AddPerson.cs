@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowClassProject.View
+namespace WindowClassProject.View.OtherForm
 {
-    public partial class tool : UserControl
+    public partial class AddPerson : UserControl
     {
-        public tool()
+        public AddPerson()
         {
             InitializeComponent();
         }

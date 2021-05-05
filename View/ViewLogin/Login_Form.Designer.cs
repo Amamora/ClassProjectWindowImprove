@@ -30,6 +30,8 @@ namespace WindowClassProject.View.ViewLogin
         private void InitializeComponent()
         {
             this.kGradientPanel1 = new WindowClassProject.KGradientPanel();
+            this.hidePictureBox = new System.Windows.Forms.PictureBox();
+            this.showPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.hrUser = new System.Windows.Forms.Panel();
             this.signUpLbl = new System.Windows.Forms.Label();
@@ -37,12 +39,10 @@ namespace WindowClassProject.View.ViewLogin
             this.loginBtn = new System.Windows.Forms.Button();
             this.rememberBox = new System.Windows.Forms.CheckBox();
             this.passTxt = new System.Windows.Forms.TextBox();
-            this.userTxt = new System.Windows.Forms.TextBox();
-            this.loginLbl = new System.Windows.Forms.Label();
-            this.hidePictureBox = new System.Windows.Forms.PictureBox();
-            this.showPictureBox = new System.Windows.Forms.PictureBox();
             this.passPicture = new System.Windows.Forms.PictureBox();
+            this.userTxt = new System.Windows.Forms.TextBox();
             this.userPicture = new System.Windows.Forms.PictureBox();
+            this.loginLbl = new System.Windows.Forms.Label();
             this.kGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hidePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPictureBox)).BeginInit();
@@ -73,6 +73,26 @@ namespace WindowClassProject.View.ViewLogin
             this.kGradientPanel1.Size = new System.Drawing.Size(682, 633);
             this.kGradientPanel1.TabIndex = 0;
             this.kGradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(113)))), ((int)(((byte)(254)))));
+            // 
+            // hidePictureBox
+            // 
+            this.hidePictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_hide_20px_1;
+            this.hidePictureBox.Location = new System.Drawing.Point(591, 342);
+            this.hidePictureBox.Name = "hidePictureBox";
+            this.hidePictureBox.Size = new System.Drawing.Size(30, 30);
+            this.hidePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.hidePictureBox.TabIndex = 22;
+            this.hidePictureBox.TabStop = false;
+            // 
+            // showPictureBox
+            // 
+            this.showPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_eye_20px;
+            this.showPictureBox.Location = new System.Drawing.Point(591, 342);
+            this.showPictureBox.Name = "showPictureBox";
+            this.showPictureBox.Size = new System.Drawing.Size(30, 30);
+            this.showPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.showPictureBox.TabIndex = 21;
+            this.showPictureBox.TabStop = false;
             // 
             // panel1
             // 
@@ -169,6 +189,17 @@ namespace WindowClassProject.View.ViewLogin
             this.passTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passTxt_KeyDown);
             // 
+            // passPicture
+            // 
+            this.passPicture.BackColor = System.Drawing.Color.Transparent;
+            this.passPicture.Image = global::WindowClassProject.Properties.Resources.icons8_password_50px_2;
+            this.passPicture.Location = new System.Drawing.Point(108, 289);
+            this.passPicture.Name = "passPicture";
+            this.passPicture.Size = new System.Drawing.Size(50, 50);
+            this.passPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.passPicture.TabIndex = 15;
+            this.passPicture.TabStop = false;
+            // 
             // userTxt
             // 
             this.userTxt.AcceptsReturn = true;
@@ -187,6 +218,17 @@ namespace WindowClassProject.View.ViewLogin
             this.userTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userTxt_KeyDown);
             // 
+            // userPicture
+            // 
+            this.userPicture.BackColor = System.Drawing.Color.Transparent;
+            this.userPicture.Image = global::WindowClassProject.Properties.Resources.icons8_user_male_50px;
+            this.userPicture.Location = new System.Drawing.Point(108, 177);
+            this.userPicture.Name = "userPicture";
+            this.userPicture.Size = new System.Drawing.Size(50, 50);
+            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPicture.TabIndex = 12;
+            this.userPicture.TabStop = false;
+            // 
             // loginLbl
             // 
             this.loginLbl.AutoSize = true;
@@ -198,46 +240,6 @@ namespace WindowClassProject.View.ViewLogin
             this.loginLbl.Size = new System.Drawing.Size(243, 51);
             this.loginLbl.TabIndex = 11;
             this.loginLbl.Text = "Account Login";
-            // 
-            // hidePictureBox
-            // 
-            this.hidePictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_hide_20px_1;
-            this.hidePictureBox.Location = new System.Drawing.Point(591, 342);
-            this.hidePictureBox.Name = "hidePictureBox";
-            this.hidePictureBox.Size = new System.Drawing.Size(20, 20);
-            this.hidePictureBox.TabIndex = 22;
-            this.hidePictureBox.TabStop = false;
-            // 
-            // showPictureBox
-            // 
-            this.showPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_eye_20px;
-            this.showPictureBox.Location = new System.Drawing.Point(591, 342);
-            this.showPictureBox.Name = "showPictureBox";
-            this.showPictureBox.Size = new System.Drawing.Size(20, 20);
-            this.showPictureBox.TabIndex = 21;
-            this.showPictureBox.TabStop = false;
-            // 
-            // passPicture
-            // 
-            this.passPicture.BackColor = System.Drawing.Color.Transparent;
-            this.passPicture.Image = global::WindowClassProject.Properties.Resources.icons8_password_50px_2;
-            this.passPicture.Location = new System.Drawing.Point(108, 289);
-            this.passPicture.Name = "passPicture";
-            this.passPicture.Size = new System.Drawing.Size(50, 50);
-            this.passPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.passPicture.TabIndex = 15;
-            this.passPicture.TabStop = false;
-            // 
-            // userPicture
-            // 
-            this.userPicture.BackColor = System.Drawing.Color.Transparent;
-            this.userPicture.Image = global::WindowClassProject.Properties.Resources.icons8_user_male_50px;
-            this.userPicture.Location = new System.Drawing.Point(108, 177);
-            this.userPicture.Name = "userPicture";
-            this.userPicture.Size = new System.Drawing.Size(50, 50);
-            this.userPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPicture.TabIndex = 12;
-            this.userPicture.TabStop = false;
             // 
             // Login_Form
             // 
@@ -265,7 +267,6 @@ namespace WindowClassProject.View.ViewLogin
         private System.Windows.Forms.Panel hrUser;
         private System.Windows.Forms.Label signUpLbl;
         private System.Windows.Forms.Label forgotLbl;
-        private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.CheckBox rememberBox;
         public System.Windows.Forms.TextBox passTxt;
         private System.Windows.Forms.PictureBox passPicture;
@@ -274,5 +275,6 @@ namespace WindowClassProject.View.ViewLogin
         private System.Windows.Forms.Label loginLbl;
         private System.Windows.Forms.PictureBox showPictureBox;
         private System.Windows.Forms.PictureBox hidePictureBox;
+        public System.Windows.Forms.Button loginBtn;
     }
 }

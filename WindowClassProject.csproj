@@ -47,12 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Program.cs" />
+    <Compile Include="DAO\UserAccountDAO.cs" />
     <Compile Include="Model\CircleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\CirclePictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\ClassModel.cs" />
     <Compile Include="Model\CourseModel.cs" />
     <Compile Include="Model\DepartmentModel.cs" />
+    <Compile Include="Model\GroupModel.cs" />
     <Compile Include="Model\KGradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -63,17 +68,29 @@
     <Compile Include="Model\TeacherModel.cs" />
     <Compile Include="Model\UserAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\OtherForm\tool.cs">
+    <Compile Include="View\OtherForm\AddPerson.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="View\OtherForm\tool.Designer.cs">
-      <DependentUpon>tool.cs</DependentUpon>
+    <Compile Include="View\OtherForm\AddPerson.Designer.cs">
+      <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="View\OtherForm\topTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\OtherForm\topTool.Designer.cs">
       <DependentUpon>topTool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCourse\CoursePanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewCourse\CoursePanelForm.Designer.cs">
+      <DependentUpon>CoursePanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewLogin\ForgotPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewLogin\ForgotPasswordForm.Designer.cs">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLogin\Login_Form.cs">
       <SubType>Form</SubType>
@@ -97,11 +114,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\OtherForm\tool.resx">
-      <DependentUpon>tool.cs</DependentUpon>
+    <EmbeddedResource Include="View\OtherForm\AddPerson.resx">
+      <DependentUpon>AddPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\OtherForm\topTool.resx">
       <DependentUpon>topTool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCourse\CoursePanelForm.resx">
+      <DependentUpon>CoursePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewLogin\ForgotPasswordForm.resx">
+      <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewLogin\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
@@ -123,7 +146,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\ViewCourse\" />
     <Folder Include="View\ViewGroupSubject\" />
     <Folder Include="View\ViewScore\" />
     <Folder Include="View\ViewTeacher\" />
@@ -184,6 +206,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_timetable_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shutdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pdf_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_database_view_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_file_excel_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_microsoft_word_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_printer_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_csv_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_refresh_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_mail_30px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_rewind_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
