@@ -77,22 +77,24 @@ namespace WindowClassProject.View.ViewLogin
             // hidePictureBox
             // 
             this.hidePictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_hide_20px_1;
-            this.hidePictureBox.Location = new System.Drawing.Point(591, 342);
+            this.hidePictureBox.Location = new System.Drawing.Point(591, 306);
             this.hidePictureBox.Name = "hidePictureBox";
             this.hidePictureBox.Size = new System.Drawing.Size(30, 30);
             this.hidePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.hidePictureBox.TabIndex = 22;
             this.hidePictureBox.TabStop = false;
+            this.hidePictureBox.Click += new System.EventHandler(this.hidePictureBox_Click);
             // 
             // showPictureBox
             // 
             this.showPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_eye_20px;
-            this.showPictureBox.Location = new System.Drawing.Point(591, 342);
+            this.showPictureBox.Location = new System.Drawing.Point(591, 306);
             this.showPictureBox.Name = "showPictureBox";
             this.showPictureBox.Size = new System.Drawing.Size(30, 30);
             this.showPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.showPictureBox.TabIndex = 21;
             this.showPictureBox.TabStop = false;
+            this.showPictureBox.Click += new System.EventHandler(this.showPictureBox_Click);
             // 
             // panel1
             // 

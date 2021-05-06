@@ -25,7 +25,12 @@ namespace WindowClassProject.Model
         {
 
         }
-
+        //what a student can do :
+        //check your score
+        ///register subject
+        ///cancel subject
+        ///check hoc phan cua department
+        ///
 
     }
 }

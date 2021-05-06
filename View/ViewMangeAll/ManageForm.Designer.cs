@@ -32,19 +32,21 @@ namespace WindowClassProject.View.ViewManageStudent
             this.menuPanel = new System.Windows.Forms.Panel();
             this.openManagePanel = new System.Windows.Forms.Panel();
             this.userPanel = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.topTool1 = new WindowClassProject.View.OtherForm.topTool();
             this.exitBtn = new System.Windows.Forms.Button();
             this.openMailBoxPanel = new System.Windows.Forms.Button();
             this.openTimeTablePanel = new System.Windows.Forms.Button();
             this.openChartPanel = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.openScorePanelChild = new System.Windows.Forms.Button();
             this.openTeacherPanelChild = new System.Windows.Forms.Button();
             this.openCoursePanelChild = new System.Windows.Forms.Button();
             this.openStudentPanelChild = new System.Windows.Forms.Button();
             this.openManageBtn = new System.Windows.Forms.Button();
             this.openDashBtn = new System.Windows.Forms.Button();
-            this.topTool1 = new WindowClassProject.View.OtherForm.topTool();
             this.menuPanel.SuspendLayout();
             this.openManagePanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -70,6 +72,8 @@ namespace WindowClassProject.View.ViewManageStudent
             // 
             // openManagePanel
             // 
+            this.openManagePanel.Controls.Add(this.button2);
+            this.openManagePanel.Controls.Add(this.button1);
             this.openManagePanel.Controls.Add(this.openScorePanelChild);
             this.openManagePanel.Controls.Add(this.openTeacherPanelChild);
             this.openManagePanel.Controls.Add(this.openCoursePanelChild);
@@ -77,7 +81,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openManagePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.openManagePanel.Location = new System.Drawing.Point(0, 240);
             this.openManagePanel.Name = "openManagePanel";
-            this.openManagePanel.Size = new System.Drawing.Size(246, 231);
+            this.openManagePanel.Size = new System.Drawing.Size(246, 349);
             this.openManagePanel.TabIndex = 3;
             // 
             // userPanel
@@ -88,15 +92,6 @@ namespace WindowClassProject.View.ViewManageStudent
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(246, 100);
             this.userPanel.TabIndex = 0;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.White;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelChildForm.Location = new System.Drawing.Point(246, 53);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1136, 834);
-            this.panelChildForm.TabIndex = 2;
             // 
             // label1
             // 
@@ -109,6 +104,23 @@ namespace WindowClassProject.View.ViewManageStudent
             this.label1.TabIndex = 1;
             this.label1.Text = ":";
             // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelChildForm.Location = new System.Drawing.Point(246, 53);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1136, 834);
+            this.panelChildForm.TabIndex = 2;
+            // 
+            // topTool1
+            // 
+            this.topTool1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topTool1.Location = new System.Drawing.Point(246, 0);
+            this.topTool1.Name = "topTool1";
+            this.topTool1.Size = new System.Drawing.Size(1136, 50);
+            this.topTool1.TabIndex = 3;
+            // 
             // exitBtn
             // 
             this.exitBtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -118,7 +130,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Image = global::WindowClassProject.Properties.Resources.shutdown;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitBtn.Location = new System.Drawing.Point(0, 681);
+            this.exitBtn.Location = new System.Drawing.Point(0, 799);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(246, 70);
@@ -136,7 +148,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openMailBoxPanel.ForeColor = System.Drawing.Color.Silver;
             this.openMailBoxPanel.Image = global::WindowClassProject.Properties.Resources.icons8_mail_30px;
             this.openMailBoxPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 611);
+            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 729);
             this.openMailBoxPanel.Name = "openMailBoxPanel";
             this.openMailBoxPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openMailBoxPanel.Size = new System.Drawing.Size(246, 70);
@@ -154,7 +166,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTimeTablePanel.ForeColor = System.Drawing.Color.Silver;
             this.openTimeTablePanel.Image = global::WindowClassProject.Properties.Resources.icons8_timetable_32px;
             this.openTimeTablePanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 541);
+            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 659);
             this.openTimeTablePanel.Name = "openTimeTablePanel";
             this.openTimeTablePanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openTimeTablePanel.Size = new System.Drawing.Size(246, 70);
@@ -172,7 +184,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openChartPanel.ForeColor = System.Drawing.Color.Silver;
             this.openChartPanel.Image = global::WindowClassProject.Properties.Resources.icons8_chart_30px;
             this.openChartPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openChartPanel.Location = new System.Drawing.Point(0, 471);
+            this.openChartPanel.Location = new System.Drawing.Point(0, 589);
             this.openChartPanel.Name = "openChartPanel";
             this.openChartPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openChartPanel.Size = new System.Drawing.Size(246, 70);
@@ -180,6 +192,40 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openChartPanel.Text = "Chart";
             this.openChartPanel.UseVisualStyleBackColor = true;
             this.openChartPanel.Click += new System.EventHandler(this.openChartPanel_Click);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Silver;
+            this.button2.Image = global::WindowClassProject.Properties.Resources.icons8_department_32px;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 270);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(246, 54);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Department";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Silver;
+            this.button1.Image = global::WindowClassProject.Properties.Resources.icons8_class_32px;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 216);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(246, 54);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Class";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // openScorePanelChild
             // 
@@ -231,6 +277,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openCoursePanelChild.TabIndex = 1;
             this.openCoursePanelChild.Text = "Course";
             this.openCoursePanelChild.UseVisualStyleBackColor = true;
+            this.openCoursePanelChild.Click += new System.EventHandler(this.openCoursePanelChild_Click);
             // 
             // openStudentPanelChild
             // 
@@ -286,14 +333,6 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openDashBtn.Click += new System.EventHandler(this.openDashBtn_Click);
             this.openDashBtn.MouseCaptureChanged += new System.EventHandler(this.openDashBtn_MouseCaptureChanged);
             // 
-            // topTool1
-            // 
-            this.topTool1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topTool1.Location = new System.Drawing.Point(246, 0);
-            this.topTool1.Name = "topTool1";
-            this.topTool1.Size = new System.Drawing.Size(1136, 50);
-            this.topTool1.TabIndex = 3;
-            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -333,5 +372,7 @@ namespace WindowClassProject.View.ViewManageStudent
         private System.Windows.Forms.Button exitBtn;
         private OtherForm.topTool topTool1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -30,8 +30,13 @@ namespace WindowClassProject.View.ViewCourse
         private void InitializeComponent()
         {
             this.topCoursePanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolCoursePanel = new System.Windows.Forms.Panel();
             this.dataShowCoursePanel = new System.Windows.Forms.Panel();
+            this.dataCourseGrid = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -40,10 +45,11 @@ namespace WindowClassProject.View.ViewCourse
             this.button3 = new System.Windows.Forms.Button();
             this.importExcelBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.topCoursePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.toolCoursePanel.SuspendLayout();
+            this.dataShowCoursePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataCourseGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // topCoursePanel
@@ -55,6 +61,52 @@ namespace WindowClassProject.View.ViewCourse
             this.topCoursePanel.Name = "topCoursePanel";
             this.topCoursePanel.Size = new System.Drawing.Size(1118, 152);
             this.topCoursePanel.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(505, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(613, 152);
+            this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(486, 35);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 48);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "search";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(27, 35);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(428, 48);
+            this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 32);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Total Course :";
             // 
             // toolCoursePanel
             // 
@@ -74,11 +126,25 @@ namespace WindowClassProject.View.ViewCourse
             // 
             // dataShowCoursePanel
             // 
+            this.dataShowCoursePanel.Controls.Add(this.dataCourseGrid);
             this.dataShowCoursePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataShowCoursePanel.Location = new System.Drawing.Point(0, 199);
             this.dataShowCoursePanel.Name = "dataShowCoursePanel";
             this.dataShowCoursePanel.Size = new System.Drawing.Size(1118, 592);
             this.dataShowCoursePanel.TabIndex = 2;
+            // 
+            // dataCourseGrid
+            // 
+            this.dataCourseGrid.AllowUserToAddRows = false;
+            this.dataCourseGrid.AllowUserToDeleteRows = false;
+            this.dataCourseGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCourseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataCourseGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataCourseGrid.Name = "dataCourseGrid";
+            this.dataCourseGrid.RowHeadersWidth = 51;
+            this.dataCourseGrid.RowTemplate.Height = 24;
+            this.dataCourseGrid.Size = new System.Drawing.Size(1118, 592);
+            this.dataCourseGrid.TabIndex = 0;
             // 
             // button8
             // 
@@ -168,24 +234,6 @@ namespace WindowClassProject.View.ViewCourse
             this.refreshBtn.TabIndex = 0;
             this.refreshBtn.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Total Course :";
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(505, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 152);
-            this.panel1.TabIndex = 1;
-            // 
             // CoursePanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,7 +247,10 @@ namespace WindowClassProject.View.ViewCourse
             this.Text = "CoursePanelForm";
             this.topCoursePanel.ResumeLayout(false);
             this.topCoursePanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.toolCoursePanel.ResumeLayout(false);
+            this.dataShowCoursePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataCourseGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,5 +270,8 @@ namespace WindowClassProject.View.ViewCourse
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView dataCourseGrid;
     }
 }

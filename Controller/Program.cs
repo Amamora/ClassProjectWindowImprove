@@ -20,6 +20,7 @@ namespace WindowClassProject
             
             Application.Run(log);
             
+            
         }
     }
 }

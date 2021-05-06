@@ -8,14 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowClassProject.Model;
+using WindowClassProject.View.ViewCourse;
 
 namespace WindowClassProject.View.ViewManageStudent
 {
     public partial class ManageForm : Form
     {
+        UserAccount nowUser = new UserAccount();
         public ManageForm()
         {
             InitializeComponent();
+        }
+        public ManageForm(int userAccountID,string userAccount,string password,int typeID)
+        {
+            InitializeComponent();
+            nowUser.userAccount = userAccount;
+            nowUser.userAccountID = userAccountID;
+            nowUser.password = password;
+            nowUser.typeID = typeID;
+            
+
+
         }
 
         private void ManageForm_Load(object sender, EventArgs e)
@@ -24,7 +37,7 @@ namespace WindowClassProject.View.ViewManageStudent
         }
     
 
-        #region action with menu panel in this form
+        #region open child  in this child  form
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
@@ -113,6 +126,13 @@ namespace WindowClassProject.View.ViewManageStudent
         private void openDashBtn_MouseCaptureChanged(object sender, EventArgs e)
         {
             restartColorButton(openDashBtn);
+        }
+
+        private void openCoursePanelChild_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new CoursePanelForm());
+
+
         }
     }
 }

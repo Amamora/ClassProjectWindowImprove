@@ -26,5 +26,12 @@ namespace WindowClassProject.Model
         {
 
         }
+
+        //what a teacher can do:
+        // add student vo group subject
+        //manage score
+        //chart rate fail and pass
+        //seem infor of student
+        //
     }
 }

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Program.cs" />
+    <Compile Include="DAO\CourseDAO.cs" />
+    <Compile Include="DAO\DepartmentDAO.cs" />
+    <Compile Include="DAO\GroupDAO.cs" />
+    <Compile Include="DAO\ScoreDAO.cs" />
+    <Compile Include="DAO\StudentDAO.cs" />
+    <Compile Include="DAO\TeacherDAO.cs" />
     <Compile Include="DAO\UserAccountDAO.cs" />
     <Compile Include="Model\CircleButton.cs">
       <SubType>Component</SubType>
@@ -74,17 +80,35 @@
     <Compile Include="View\OtherForm\AddPerson.Designer.cs">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\OtherForm\studentExtra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\OtherForm\studentExtra.Designer.cs">
+      <DependentUpon>studentExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\OtherForm\topTool.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="View\OtherForm\topTool.Designer.cs">
       <DependentUpon>topTool.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewCourse\AddCoursePanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewCourse\AddCoursePanelForm.Designer.cs">
+      <DependentUpon>AddCoursePanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewCourse\CoursePanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ViewCourse\CoursePanelForm.Designer.cs">
       <DependentUpon>CoursePanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewCourse\ManageCourseFast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewCourse\ManageCourseFast.Designer.cs">
+      <DependentUpon>ManageCourseFast.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewLogin\ForgotPasswordForm.cs">
       <SubType>Form</SubType>
@@ -98,11 +122,35 @@
     <Compile Include="View\ViewLogin\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewMange\ManageForm.cs">
+    <Compile Include="View\ViewManageOfStudent\StudentManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewMange\ManageForm.Designer.cs">
+    <Compile Include="View\ViewManageOfStudent\StudentManageForm.Designer.cs">
+      <DependentUpon>StudentManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewManageOfTeacher\ManageOfTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewManageOfTeacher\ManageOfTeacherForm.Designer.cs">
+      <DependentUpon>ManageOfTeacherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewMangeAll\ManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewMangeAll\ManageForm.Designer.cs">
       <DependentUpon>ManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStudent\AddStudentPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewStudent\AddStudentPanelForm.Designer.cs">
+      <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentPanelForm.Designer.cs">
+      <DependentUpon>StudentPanelForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,11 +165,20 @@
     <EmbeddedResource Include="View\OtherForm\AddPerson.resx">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\OtherForm\studentExtra.resx">
+      <DependentUpon>studentExtra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\OtherForm\topTool.resx">
       <DependentUpon>topTool.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCourse\AddCoursePanelForm.resx">
+      <DependentUpon>AddCoursePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewCourse\CoursePanelForm.resx">
       <DependentUpon>CoursePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCourse\ManageCourseFast.resx">
+      <DependentUpon>ManageCourseFast.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewLogin\ForgotPasswordForm.resx">
       <DependentUpon>ForgotPasswordForm.cs</DependentUpon>
@@ -129,8 +186,20 @@
     <EmbeddedResource Include="View\ViewLogin\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewMange\ManageForm.resx">
+    <EmbeddedResource Include="View\ViewManageOfStudent\StudentManageForm.resx">
+      <DependentUpon>StudentManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewManageOfTeacher\ManageOfTeacherForm.resx">
+      <DependentUpon>ManageOfTeacherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewMangeAll\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewStudent\AddStudentPanelForm.resx">
+      <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewStudent\StudentPanelForm.resx">
+      <DependentUpon>StudentPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -239,6 +308,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_rewind_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_class_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_department_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
