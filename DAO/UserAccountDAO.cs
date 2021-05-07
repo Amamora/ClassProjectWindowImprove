@@ -18,7 +18,7 @@ namespace WindowClassProject.DAO
         public UserAccount loginUserAccount(string userTxt, string passTxt)
         {
 
-            int typeUser = -1;
+            
             MyDataBase myData = new MyDataBase();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -48,7 +48,7 @@ namespace WindowClassProject.DAO
             else
             {
                 MessageBox.Show("Invalid username or password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                user.typeID = -1;
+              
                 return null;
 
             }

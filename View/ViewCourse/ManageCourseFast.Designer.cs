@@ -30,7 +30,7 @@ namespace WindowClassProject.View.ViewCourse
         private void InitializeComponent()
         {
             this.listShowCourse = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelSLideRight = new System.Windows.Forms.Panel();
             this.totalCourseLbl = new System.Windows.Forms.Label();
             this.lastLoadListbox = new System.Windows.Forms.Button();
             this.removeBtn = new System.Windows.Forms.Button();
@@ -39,7 +39,7 @@ namespace WindowClassProject.View.ViewCourse
             this.previousLoadListbox = new System.Windows.Forms.Button();
             this.nextLoadListbox = new System.Windows.Forms.Button();
             this.firstLoadListbox = new System.Windows.Forms.Button();
-            this.numHourNumeric = new System.Windows.Forms.NumericUpDown();
+            this.creditShowNumeric = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.descriptionShowText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,32 +49,38 @@ namespace WindowClassProject.View.ViewCourse
             this.label1 = new System.Windows.Forms.Label();
             this.departLbl = new System.Windows.Forms.Label();
             this.departmentBox = new System.Windows.Forms.ComboBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numHourNumeric)).BeginInit();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelSLideRight.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.creditShowNumeric)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listShowCourse
             // 
-            this.listShowCourse.Dock = System.Windows.Forms.DockStyle.Top;
+            this.listShowCourse.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listShowCourse.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listShowCourse.FormattingEnabled = true;
             this.listShowCourse.ItemHeight = 31;
             this.listShowCourse.Items.AddRange(new object[] {
             ""});
-            this.listShowCourse.Location = new System.Drawing.Point(0, 0);
+            this.listShowCourse.Location = new System.Drawing.Point(0, 116);
             this.listShowCourse.Name = "listShowCourse";
-            this.listShowCourse.Size = new System.Drawing.Size(454, 593);
+            this.listShowCourse.Size = new System.Drawing.Size(495, 531);
             this.listShowCourse.TabIndex = 55;
             // 
-            // panel1
+            // panelSLideRight
             // 
-            this.panel1.Controls.Add(this.totalCourseLbl);
-            this.panel1.Controls.Add(this.listShowCourse);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(691, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(454, 647);
-            this.panel1.TabIndex = 31;
+            this.panelSLideRight.Controls.Add(this.panel2);
+            this.panelSLideRight.Controls.Add(this.totalCourseLbl);
+            this.panelSLideRight.Controls.Add(this.listShowCourse);
+            this.panelSLideRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelSLideRight.Location = new System.Drawing.Point(650, 0);
+            this.panelSLideRight.Name = "panelSLideRight";
+            this.panelSLideRight.Size = new System.Drawing.Size(495, 647);
+            this.panelSLideRight.TabIndex = 31;
             // 
             // totalCourseLbl
             // 
@@ -82,7 +88,7 @@ namespace WindowClassProject.View.ViewCourse
             this.totalCourseLbl.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.totalCourseLbl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.totalCourseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalCourseLbl.Location = new System.Drawing.Point(0, 593);
+            this.totalCourseLbl.Location = new System.Drawing.Point(0, 0);
             this.totalCourseLbl.Name = "totalCourseLbl";
             this.totalCourseLbl.Size = new System.Drawing.Size(158, 29);
             this.totalCourseLbl.TabIndex = 1;
@@ -164,25 +170,26 @@ namespace WindowClassProject.View.ViewCourse
             this.firstLoadListbox.TabIndex = 24;
             this.firstLoadListbox.Text = "First";
             this.firstLoadListbox.UseVisualStyleBackColor = true;
+            this.firstLoadListbox.Click += new System.EventHandler(this.firstLoadListbox_Click);
             // 
-            // numHourNumeric
+            // creditShowNumeric
             // 
-            this.numHourNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numHourNumeric.Location = new System.Drawing.Point(177, 250);
-            this.numHourNumeric.Maximum = new decimal(new int[] {
+            this.creditShowNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.creditShowNumeric.Location = new System.Drawing.Point(180, 221);
+            this.creditShowNumeric.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numHourNumeric.Name = "numHourNumeric";
-            this.numHourNumeric.Size = new System.Drawing.Size(374, 30);
-            this.numHourNumeric.TabIndex = 23;
+            this.creditShowNumeric.Name = "creditShowNumeric";
+            this.creditShowNumeric.Size = new System.Drawing.Size(374, 30);
+            this.creditShowNumeric.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 250);
+            this.label4.Location = new System.Drawing.Point(44, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 29);
             this.label4.TabIndex = 22;
@@ -229,7 +236,7 @@ namespace WindowClassProject.View.ViewCourse
             // idShowText
             // 
             this.idShowText.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idShowText.Location = new System.Drawing.Point(177, 50);
+            this.idShowText.Location = new System.Drawing.Point(177, 88);
             this.idShowText.Multiline = true;
             this.idShowText.Name = "idShowText";
             this.idShowText.Size = new System.Drawing.Size(377, 45);
@@ -239,7 +246,7 @@ namespace WindowClassProject.View.ViewCourse
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(74, 50);
+            this.label1.Location = new System.Drawing.Point(74, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 29);
             this.label1.TabIndex = 16;
@@ -249,7 +256,7 @@ namespace WindowClassProject.View.ViewCourse
             // 
             this.departLbl.AutoSize = true;
             this.departLbl.Font = new System.Drawing.Font("Mistral", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departLbl.Location = new System.Drawing.Point(40, 307);
+            this.departLbl.Location = new System.Drawing.Point(44, 278);
             this.departLbl.Name = "departLbl";
             this.departLbl.Size = new System.Drawing.Size(100, 29);
             this.departLbl.TabIndex = 32;
@@ -257,21 +264,66 @@ namespace WindowClassProject.View.ViewCourse
             // 
             // departmentBox
             // 
+            this.departmentBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.departmentBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.departmentBox.DropDownHeight = 110;
             this.departmentBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.departmentBox.FormattingEnabled = true;
-            this.departmentBox.Location = new System.Drawing.Point(174, 307);
+            this.departmentBox.IntegralHeight = false;
+            this.departmentBox.Location = new System.Drawing.Point(177, 279);
             this.departmentBox.Name = "departmentBox";
             this.departmentBox.Size = new System.Drawing.Size(380, 28);
             this.departmentBox.TabIndex = 33;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(495, 56);
+            this.panel2.TabIndex = 56;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 56);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Detail";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.Location = new System.Drawing.Point(285, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(210, 56);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Short";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(243, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(187, 29);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Choose Course ";
             // 
             // ManageCourseFast
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1145, 647);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.departmentBox);
             this.Controls.Add(this.departLbl);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelSLideRight);
             this.Controls.Add(this.lastLoadListbox);
             this.Controls.Add(this.removeBtn);
             this.Controls.Add(this.editBtn);
@@ -279,7 +331,7 @@ namespace WindowClassProject.View.ViewCourse
             this.Controls.Add(this.previousLoadListbox);
             this.Controls.Add(this.nextLoadListbox);
             this.Controls.Add(this.firstLoadListbox);
-            this.Controls.Add(this.numHourNumeric);
+            this.Controls.Add(this.creditShowNumeric);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.descriptionShowText);
             this.Controls.Add(this.label3);
@@ -287,11 +339,14 @@ namespace WindowClassProject.View.ViewCourse
             this.Controls.Add(this.label2);
             this.Controls.Add(this.idShowText);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(1163, 694);
             this.Name = "ManageCourseFast";
             this.Text = "ManageCourseFast";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numHourNumeric)).EndInit();
+            this.Load += new System.EventHandler(this.ManageCourseFast_Load);
+            this.panelSLideRight.ResumeLayout(false);
+            this.panelSLideRight.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.creditShowNumeric)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +355,7 @@ namespace WindowClassProject.View.ViewCourse
         #endregion
 
         private System.Windows.Forms.ListBox listShowCourse;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelSLideRight;
         private System.Windows.Forms.Label totalCourseLbl;
         private System.Windows.Forms.Button lastLoadListbox;
         private System.Windows.Forms.Button removeBtn;
@@ -309,7 +364,7 @@ namespace WindowClassProject.View.ViewCourse
         private System.Windows.Forms.Button previousLoadListbox;
         private System.Windows.Forms.Button nextLoadListbox;
         private System.Windows.Forms.Button firstLoadListbox;
-        private System.Windows.Forms.NumericUpDown numHourNumeric;
+        private System.Windows.Forms.NumericUpDown creditShowNumeric;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox descriptionShowText;
         private System.Windows.Forms.Label label3;
@@ -319,5 +374,9 @@ namespace WindowClassProject.View.ViewCourse
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label departLbl;
         private System.Windows.Forms.ComboBox departmentBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

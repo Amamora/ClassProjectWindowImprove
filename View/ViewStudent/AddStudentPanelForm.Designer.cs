@@ -59,6 +59,7 @@ namespace WindowClassProject.View.ViewStudent
             this.Controls.Add(this.addPerson1);
             this.Name = "AddStudentPanelForm";
             this.Text = "AddStudentPanelForm";
+            this.Load += new System.EventHandler(this.AddStudentPanelForm_Load);
             this.ResumeLayout(false);
 
         }

@@ -42,7 +42,12 @@ namespace WindowClassProject.View.ViewLogin
 
                 loginBtn_Click(sender, e);
             }
-
+            if (e.KeyCode == Keys.Up)
+            {
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+                userTxt.Focus();
+            }
         }
 
         //check valid
@@ -65,17 +70,12 @@ namespace WindowClassProject.View.ViewLogin
                 {
                     return;
                 }
-                if (user.typeID == 3)
-                {
+               
                     ManageForm mana = new ManageForm(user.userAccountID, user.userAccount, user.password, user.typeID);
+                this.Hide();
                     mana.FormClosed += (s, args) => this.Close();
                     mana.Show();
-                }
-                if (user.typeID == 1)
-                {
-
-                }
-
+               
                 
 
             }

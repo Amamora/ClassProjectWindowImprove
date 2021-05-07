@@ -13,6 +13,11 @@ namespace WindowClassProject.DAO
     class CourseDAO
     { 
         MyDataBase myDataBase = new MyDataBase();
+
+        /**Keep open and close connection to avoid error
+         * 
+         * /
+         */
         public void connectionDataBase(DataGridView dataGridView1)
         {
            
@@ -20,7 +25,7 @@ namespace WindowClassProject.DAO
             myDataBase.openConnection();
 
 
-            SqlCommand command = new SqlCommand("SELECT courseID, courseName as 'Course Name', departmentID ,credit, descriptionCourse FROM  [WINDOWCLASS].[dbo].[COURSE] ", myDataBase.getConnection);
+            SqlCommand command = new SqlCommand("SELECT courseID, courseName , departmentID ,credit, descriptionCourse FROM  [WINDOWCLASS].[dbo].[COURSE] ", myDataBase.getConnection);
             DataSet dataSet = new DataSet();
 
             dataGridView1.RowTemplate.Height = 80;
@@ -41,7 +46,7 @@ namespace WindowClassProject.DAO
 
         }
 
-        #region get all course
+        #region get all course for manage Fast course
 
         public DataTable getAllCourse()
         {
@@ -50,7 +55,7 @@ namespace WindowClassProject.DAO
             myDataBase.openConnection();
 
 
-            SqlCommand command = new SqlCommand("SELECT courseID, courseName as 'Course Name', departmentID, credit, descriptionCourse FROM[WINDOWCLASS].[dbo].[COURSE] ", myDataBase.getConnection);
+            SqlCommand command = new SqlCommand("SELECT courseID, courseName, departmentID, credit, descriptionCourse FROM [WINDOWCLASS].[dbo].[COURSE] ", myDataBase.getConnection);
             DataSet dataSet = new DataSet();
 
             command.CommandType = CommandType.Text;
@@ -109,7 +114,7 @@ namespace WindowClassProject.DAO
         public bool checkAlreadyCourse(string courseid)
         {
             bool check = true;
-           
+            myDataBase.openConnection();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
 
@@ -132,6 +137,7 @@ namespace WindowClassProject.DAO
 
 
             }
+            myDataBase.closeConnection();
             return check;
 
 
@@ -264,7 +270,7 @@ namespace WindowClassProject.DAO
 
 
 
-            return false;
+           
         }
 
         #endregion

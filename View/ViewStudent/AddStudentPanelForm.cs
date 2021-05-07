@@ -15,6 +15,12 @@ namespace WindowClassProject.View.ViewStudent
         public AddStudentPanelForm()
         {
             InitializeComponent();
+            
+        }
+
+        private void AddStudentPanelForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -33,6 +33,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>E:\E_PART2\HKII__2021\Windown_Program\Day1\ex1\Day01\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -128,12 +134,6 @@
     <Compile Include="View\ViewManageOfStudent\StudentManageForm.Designer.cs">
       <DependentUpon>StudentManageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewManageOfTeacher\ManageOfTeacherForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ViewManageOfTeacher\ManageOfTeacherForm.Designer.cs">
-      <DependentUpon>ManageOfTeacherForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewMangeAll\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +151,12 @@
     </Compile>
     <Compile Include="View\ViewStudent\StudentPanelForm.Designer.cs">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentPanelOfTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentPanelOfTeacher.Designer.cs">
+      <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -189,9 +195,6 @@
     <EmbeddedResource Include="View\ViewManageOfStudent\StudentManageForm.resx">
       <DependentUpon>StudentManageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewManageOfTeacher\ManageOfTeacherForm.resx">
-      <DependentUpon>ManageOfTeacherForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewMangeAll\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +204,10 @@
     <EmbeddedResource Include="View\ViewStudent\StudentPanelForm.resx">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewStudent\StudentPanelOfTeacher.resx">
+      <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -317,6 +324,44 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_department_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

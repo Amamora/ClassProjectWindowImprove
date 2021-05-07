@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowClassProject.View.ViewManageOfTeacher
+namespace WindowClassProject.View.ViewStudent
 {
-    public partial class ManageOfTeacherForm : Form
+    public partial class StudentPanelOfTeacher : Form
     {
-        public ManageOfTeacherForm()
+        public StudentPanelOfTeacher()
         {
             InitializeComponent();
         }

@@ -17,5 +17,14 @@ namespace WindowClassProject.Model
         {
 
         }
+        public CourseModel(string courseID,string courseName,string departmentID,int credit,string descriptionCourse)
+        {
+            this.courseID = courseID;
+            this.courseName = courseName;
+            this.departmentID = departmentID;
+            this.credit = credit;
+            this.descriptionCourse = descriptionCourse;
+
+        }
     }
 }

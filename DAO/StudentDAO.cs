@@ -14,17 +14,11 @@ namespace WindowClassProject.DAO
     class StudentDAO
     {
         MyDataBase mydata = new MyDataBase();
-        public bool insertNewStudent(string studentID, string firstName, string lastName, DateTime date, string gender, string phone,string email,string cmnd, MemoryStream picture)
+        public bool insertNewStudent(string studentID, string  studentFName, string lastName, DateTime date, string gender, string phone,string email,string cmnd, MemoryStream picture)
         {
             mydata.openConnection();
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO [viduDB].[dbo].[user_infor](Id, fname, lname, bdate, gender, phone, picture) VALUES (@id, @fn, @ln, @bd, @gen, @ph, @pic)", mydata.getConnection);
-            sqlCommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = studentID;
-            sqlCommand.Parameters.Add("@fn", SqlDbType.NVarChar).Value = firstName;
-            sqlCommand.Parameters.Add("@ln", SqlDbType.NVarChar).Value = lastName;
-            sqlCommand.Parameters.Add("@bd", SqlDbType.DateTime).Value = date;
-            sqlCommand.Parameters.Add("@gen", SqlDbType.NVarChar).Value = gender;
-            sqlCommand.Parameters.Add("@ph", SqlDbType.NVarChar).Value = phone;
-            sqlCommand.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
+            SqlCommand sqlCommand = new SqlCommand(" ", mydata.getConnection);
+     
 
 
             if ((sqlCommand.ExecuteNonQuery() == 1))

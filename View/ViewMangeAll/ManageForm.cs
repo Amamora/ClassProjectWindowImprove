@@ -26,6 +26,15 @@ namespace WindowClassProject.View.ViewManageStudent
             nowUser.userAccountID = userAccountID;
             nowUser.password = password;
             nowUser.typeID = typeID;
+
+
+            if (nowUser.typeID == 3)
+            {
+                openCoursePanelChild.Visible = false;
+                openDepartmentBtn.Visible = false;
+                openTeacherPanelChild.Visible = false;
+                openManagePanel.Height=150;
+            }
             
 
 

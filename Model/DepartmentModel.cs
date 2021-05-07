@@ -16,5 +16,11 @@ namespace WindowClassProject.Model
         {
 
         }
+        public DepartmentModel(string departID,string departName,string teachID)
+        {
+            this.departmentID = departID;
+            this.departmentName = departName;
+            this.teacherID = teachID;
+        }
     }
 }
