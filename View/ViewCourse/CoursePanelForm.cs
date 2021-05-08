@@ -26,7 +26,10 @@ namespace WindowClassProject.View.ViewCourse
         private void CoursePanelForm_Load(object sender, EventArgs e)
         {
             CourseDAO course = new CourseDAO();
-            course.connectionDataBase(dataCourseGrid);
+            //course.connectionDataBase(dataCourseGrid);
+            DataTable tb = course.LoadCourse();
+            dataCourseGrid.DataSource = tb;
+            dataCourseGrid.RowTemplate.Height = 80;
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)

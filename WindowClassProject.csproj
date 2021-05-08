@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Program.cs" />
+    <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\CourseDAO.cs" />
     <Compile Include="DAO\DepartmentDAO.cs" />
     <Compile Include="DAO\GroupDAO.cs" />
@@ -140,6 +141,12 @@
     <Compile Include="View\ViewMangeAll\ManageForm.Designer.cs">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewScore\Score_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewScore\Score_Form.Designer.cs">
+      <DependentUpon>Score_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewStudent\AddStudentPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,7 +230,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\ViewGroupSubject\" />
-    <Folder Include="View\ViewScore\" />
     <Folder Include="View\ViewTeacher\" />
   </ItemGroup>
   <ItemGroup>

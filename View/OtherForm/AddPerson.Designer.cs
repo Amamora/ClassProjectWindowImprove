@@ -76,6 +76,7 @@ namespace WindowClassProject.View.OtherForm
             this.fullAddPanel.Name = "fullAddPanel";
             this.fullAddPanel.Size = new System.Drawing.Size(1136, 838);
             this.fullAddPanel.TabIndex = 0;
+            this.fullAddPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.fullAddPanel_Paint);
             // 
             // footerChoosePanel
             // 
@@ -84,6 +85,7 @@ namespace WindowClassProject.View.OtherForm
             this.footerChoosePanel.Name = "footerChoosePanel";
             this.footerChoosePanel.Size = new System.Drawing.Size(1136, 166);
             this.footerChoosePanel.TabIndex = 2;
+            this.footerChoosePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.footerChoosePanel_Paint);
             // 
             // contentAddPersonPanel
             // 
@@ -114,23 +116,28 @@ namespace WindowClassProject.View.OtherForm
             this.contentAddPersonPanel.Name = "contentAddPersonPanel";
             this.contentAddPersonPanel.Size = new System.Drawing.Size(1136, 572);
             this.contentAddPersonPanel.TabIndex = 1;
+            this.contentAddPersonPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.contentAddPersonPanel_Paint);
             // 
             // upImageBtn
             // 
+            this.upImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upImageBtn.Location = new System.Drawing.Point(189, 488);
             this.upImageBtn.Name = "upImageBtn";
             this.upImageBtn.Size = new System.Drawing.Size(116, 55);
             this.upImageBtn.TabIndex = 27;
             this.upImageBtn.Text = "Upload Image";
             this.upImageBtn.UseVisualStyleBackColor = true;
+            this.upImageBtn.Click += new System.EventHandler(this.upImageBtn_Click);
             // 
             // pictureAccount
             // 
             this.pictureAccount.Location = new System.Drawing.Point(29, 488);
             this.pictureAccount.Name = "pictureAccount";
             this.pictureAccount.Size = new System.Drawing.Size(120, 68);
+            this.pictureAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureAccount.TabIndex = 26;
             this.pictureAccount.TabStop = false;
+            this.pictureAccount.Click += new System.EventHandler(this.pictureAccount_Click);
             // 
             // FeMaleRadio
             // 
@@ -168,6 +175,7 @@ namespace WindowClassProject.View.OtherForm
             this.birthDatePicker.Name = "birthDatePicker";
             this.birthDatePicker.Size = new System.Drawing.Size(200, 34);
             this.birthDatePicker.TabIndex = 22;
+            this.birthDatePicker.ValueChanged += new System.EventHandler(this.birthDatePicker_ValueChanged);
             // 
             // genderLbl
             // 
@@ -178,6 +186,7 @@ namespace WindowClassProject.View.OtherForm
             this.genderLbl.Size = new System.Drawing.Size(83, 25);
             this.genderLbl.TabIndex = 20;
             this.genderLbl.Text = "Gender:";
+            this.genderLbl.Click += new System.EventHandler(this.genderLbl_Click);
             // 
             // cmndTxt
             // 
@@ -187,6 +196,7 @@ namespace WindowClassProject.View.OtherForm
             this.cmndTxt.Name = "cmndTxt";
             this.cmndTxt.Size = new System.Drawing.Size(327, 34);
             this.cmndTxt.TabIndex = 19;
+            this.cmndTxt.TextChanged += new System.EventHandler(this.cmndTxt_TextChanged);
             // 
             // cmndLbl
             // 
@@ -197,6 +207,7 @@ namespace WindowClassProject.View.OtherForm
             this.cmndLbl.Size = new System.Drawing.Size(72, 25);
             this.cmndLbl.TabIndex = 18;
             this.cmndLbl.Text = "CMND";
+            this.cmndLbl.Click += new System.EventHandler(this.cmndLbl_Click);
             // 
             // pictureLbl
             // 
@@ -207,6 +218,7 @@ namespace WindowClassProject.View.OtherForm
             this.pictureLbl.Size = new System.Drawing.Size(72, 25);
             this.pictureLbl.TabIndex = 14;
             this.pictureLbl.Text = "Picture";
+            this.pictureLbl.Click += new System.EventHandler(this.pictureLbl_Click);
             // 
             // emailTxt
             // 
@@ -216,6 +228,7 @@ namespace WindowClassProject.View.OtherForm
             this.emailTxt.Name = "emailTxt";
             this.emailTxt.Size = new System.Drawing.Size(345, 34);
             this.emailTxt.TabIndex = 13;
+            this.emailTxt.TextChanged += new System.EventHandler(this.emailTxt_TextChanged);
             // 
             // emailLbl
             // 
@@ -226,6 +239,7 @@ namespace WindowClassProject.View.OtherForm
             this.emailLbl.Size = new System.Drawing.Size(60, 25);
             this.emailLbl.TabIndex = 12;
             this.emailLbl.Text = "Email";
+            this.emailLbl.Click += new System.EventHandler(this.emailLbl_Click);
             // 
             // phoneTxt
             // 
@@ -235,6 +249,7 @@ namespace WindowClassProject.View.OtherForm
             this.phoneTxt.Name = "phoneTxt";
             this.phoneTxt.Size = new System.Drawing.Size(345, 34);
             this.phoneTxt.TabIndex = 11;
+            this.phoneTxt.TextChanged += new System.EventHandler(this.phoneTxt_TextChanged);
             // 
             // phoneLbl
             // 
@@ -245,6 +260,7 @@ namespace WindowClassProject.View.OtherForm
             this.phoneLbl.Size = new System.Drawing.Size(69, 25);
             this.phoneLbl.TabIndex = 10;
             this.phoneLbl.Text = "Phone";
+            this.phoneLbl.Click += new System.EventHandler(this.phoneLbl_Click);
             // 
             // addressTxt
             // 
@@ -254,6 +270,7 @@ namespace WindowClassProject.View.OtherForm
             this.addressTxt.Name = "addressTxt";
             this.addressTxt.Size = new System.Drawing.Size(345, 34);
             this.addressTxt.TabIndex = 9;
+            this.addressTxt.TextChanged += new System.EventHandler(this.addressTxt_TextChanged);
             // 
             // addressLbl
             // 
@@ -264,6 +281,7 @@ namespace WindowClassProject.View.OtherForm
             this.addressLbl.Size = new System.Drawing.Size(85, 25);
             this.addressLbl.TabIndex = 8;
             this.addressLbl.Text = "Address";
+            this.addressLbl.Click += new System.EventHandler(this.addressLbl_Click);
             // 
             // birthLbl
             // 
@@ -274,6 +292,7 @@ namespace WindowClassProject.View.OtherForm
             this.birthLbl.Size = new System.Drawing.Size(97, 25);
             this.birthLbl.TabIndex = 6;
             this.birthLbl.Text = "Birth Date";
+            this.birthLbl.Click += new System.EventHandler(this.birthLbl_Click);
             // 
             // lNameTxt
             // 
@@ -283,6 +302,7 @@ namespace WindowClassProject.View.OtherForm
             this.lNameTxt.Name = "lNameTxt";
             this.lNameTxt.Size = new System.Drawing.Size(345, 34);
             this.lNameTxt.TabIndex = 5;
+            this.lNameTxt.TextChanged += new System.EventHandler(this.lNameTxt_TextChanged);
             // 
             // lNameLbl
             // 
@@ -306,6 +326,7 @@ namespace WindowClassProject.View.OtherForm
             this.fNameTxt.Name = "fNameTxt";
             this.fNameTxt.Size = new System.Drawing.Size(345, 34);
             this.fNameTxt.TabIndex = 3;
+            this.fNameTxt.TextChanged += new System.EventHandler(this.fNameTxt_TextChanged);
             // 
             // firstNameLbl
             // 
@@ -319,6 +340,7 @@ namespace WindowClassProject.View.OtherForm
             this.firstNameLbl.Size = new System.Drawing.Size(106, 25);
             this.firstNameLbl.TabIndex = 2;
             this.firstNameLbl.Text = "First Name";
+            this.firstNameLbl.Click += new System.EventHandler(this.firstNameLbl_Click);
             // 
             // IDTxt
             // 
@@ -328,6 +350,7 @@ namespace WindowClassProject.View.OtherForm
             this.IDTxt.Name = "IDTxt";
             this.IDTxt.Size = new System.Drawing.Size(345, 34);
             this.IDTxt.TabIndex = 1;
+            this.IDTxt.TextChanged += new System.EventHandler(this.IDTxt_TextChanged);
             // 
             // IDLbl
             // 
@@ -352,6 +375,7 @@ namespace WindowClassProject.View.OtherForm
             this.topAddPersonPanel.Name = "topAddPersonPanel";
             this.topAddPersonPanel.Size = new System.Drawing.Size(1136, 100);
             this.topAddPersonPanel.TabIndex = 0;
+            this.topAddPersonPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topAddPersonPanel_Paint);
             // 
             // backPageBtn
             // 
@@ -364,6 +388,7 @@ namespace WindowClassProject.View.OtherForm
             this.backPageBtn.TabIndex = 1;
             this.backPageBtn.Text = "Back";
             this.backPageBtn.UseVisualStyleBackColor = true;
+            this.backPageBtn.Click += new System.EventHandler(this.backPageBtn_Click);
             // 
             // backPagePanel
             // 
@@ -385,6 +410,7 @@ namespace WindowClassProject.View.OtherForm
             this.titleLbl.Size = new System.Drawing.Size(92, 33);
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "label1";
+            this.titleLbl.Click += new System.EventHandler(this.titleLbl_Click);
             // 
             // AddPerson
             // 
@@ -408,34 +434,34 @@ namespace WindowClassProject.View.OtherForm
 
         #endregion
 
-        private System.Windows.Forms.Panel fullAddPanel;
-        private System.Windows.Forms.Panel contentAddPersonPanel;
-        private System.Windows.Forms.Panel topAddPersonPanel;
-        private System.Windows.Forms.Button backPageBtn;
-        private System.Windows.Forms.Panel backPagePanel;
-        private System.Windows.Forms.Label titleLbl;
-        private System.Windows.Forms.TextBox IDTxt;
-        private System.Windows.Forms.Label IDLbl;
-        private System.Windows.Forms.Label genderLbl;
-        private System.Windows.Forms.TextBox cmndTxt;
-        private System.Windows.Forms.Label cmndLbl;
-        private System.Windows.Forms.Label pictureLbl;
-        private System.Windows.Forms.TextBox emailTxt;
-        private System.Windows.Forms.Label emailLbl;
-        private System.Windows.Forms.TextBox phoneTxt;
-        private System.Windows.Forms.Label phoneLbl;
-        private System.Windows.Forms.TextBox addressTxt;
-        private System.Windows.Forms.Label addressLbl;
-        private System.Windows.Forms.Label birthLbl;
-        private System.Windows.Forms.TextBox lNameTxt;
-        private System.Windows.Forms.Label lNameLbl;
-        private System.Windows.Forms.TextBox fNameTxt;
-        private System.Windows.Forms.Label firstNameLbl;
-        private System.Windows.Forms.RadioButton FeMaleRadio;
-        private System.Windows.Forms.RadioButton male;
-        private System.Windows.Forms.DateTimePicker birthDatePicker;
-        private System.Windows.Forms.Button upImageBtn;
-        private System.Windows.Forms.PictureBox pictureAccount;
-        private System.Windows.Forms.Panel footerChoosePanel;
+        public System.Windows.Forms.Panel fullAddPanel;
+        public System.Windows.Forms.Panel contentAddPersonPanel;
+        public System.Windows.Forms.Panel topAddPersonPanel;
+        public System.Windows.Forms.Button backPageBtn;
+        public System.Windows.Forms.Panel backPagePanel;
+        public System.Windows.Forms.Label titleLbl;
+        public System.Windows.Forms.TextBox IDTxt;
+        public System.Windows.Forms.Label IDLbl;
+        public System.Windows.Forms.Label genderLbl;
+        public System.Windows.Forms.TextBox cmndTxt;
+        public System.Windows.Forms.Label cmndLbl;
+        public System.Windows.Forms.Label pictureLbl;
+        public System.Windows.Forms.TextBox emailTxt;
+        public System.Windows.Forms.Label emailLbl;
+        public System.Windows.Forms.TextBox phoneTxt;
+        public System.Windows.Forms.Label phoneLbl;
+        public System.Windows.Forms.TextBox addressTxt;
+        public System.Windows.Forms.Label addressLbl;
+        public System.Windows.Forms.Label birthLbl;
+        public System.Windows.Forms.TextBox lNameTxt;
+        public System.Windows.Forms.Label lNameLbl;
+        public System.Windows.Forms.TextBox fNameTxt;
+        public System.Windows.Forms.Label firstNameLbl;
+        public System.Windows.Forms.RadioButton FeMaleRadio;
+        public System.Windows.Forms.RadioButton male;
+        public System.Windows.Forms.DateTimePicker birthDatePicker;
+        public System.Windows.Forms.Button upImageBtn;
+        public System.Windows.Forms.PictureBox pictureAccount;
+        public System.Windows.Forms.Panel footerChoosePanel;
     }
 }

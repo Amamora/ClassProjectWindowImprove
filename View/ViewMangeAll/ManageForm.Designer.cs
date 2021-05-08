@@ -35,7 +35,6 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTimeTablePanel = new System.Windows.Forms.Button();
             this.openChartPanel = new System.Windows.Forms.Button();
             this.openManagePanel = new System.Windows.Forms.Panel();
-            this.openDepartmentBtn = new System.Windows.Forms.Button();
             this.openClassPanelBtn = new System.Windows.Forms.Button();
             this.openScorePanelChild = new System.Windows.Forms.Button();
             this.openTeacherPanelChild = new System.Windows.Forms.Button();
@@ -44,12 +43,14 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openManageBtn = new System.Windows.Forms.Button();
             this.openDashBtn = new System.Windows.Forms.Button();
             this.userPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.topTool1 = new WindowClassProject.View.OtherForm.topTool();
             this.menuPanel.SuspendLayout();
             this.openManagePanel.SuspendLayout();
             this.userPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -79,7 +80,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Image = global::WindowClassProject.Properties.Resources.shutdown;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitBtn.Location = new System.Drawing.Point(0, 799);
+            this.exitBtn.Location = new System.Drawing.Point(0, 752);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(246, 70);
@@ -97,7 +98,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openMailBoxPanel.ForeColor = System.Drawing.Color.Silver;
             this.openMailBoxPanel.Image = global::WindowClassProject.Properties.Resources.icons8_mail_30px;
             this.openMailBoxPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 729);
+            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 682);
             this.openMailBoxPanel.Name = "openMailBoxPanel";
             this.openMailBoxPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openMailBoxPanel.Size = new System.Drawing.Size(246, 70);
@@ -115,7 +116,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTimeTablePanel.ForeColor = System.Drawing.Color.Silver;
             this.openTimeTablePanel.Image = global::WindowClassProject.Properties.Resources.icons8_timetable_32px;
             this.openTimeTablePanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 659);
+            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 612);
             this.openTimeTablePanel.Name = "openTimeTablePanel";
             this.openTimeTablePanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openTimeTablePanel.Size = new System.Drawing.Size(246, 70);
@@ -133,7 +134,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openChartPanel.ForeColor = System.Drawing.Color.Silver;
             this.openChartPanel.Image = global::WindowClassProject.Properties.Resources.icons8_chart_30px;
             this.openChartPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openChartPanel.Location = new System.Drawing.Point(0, 589);
+            this.openChartPanel.Location = new System.Drawing.Point(0, 542);
             this.openChartPanel.Name = "openChartPanel";
             this.openChartPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openChartPanel.Size = new System.Drawing.Size(246, 70);
@@ -144,7 +145,6 @@ namespace WindowClassProject.View.ViewManageStudent
             // 
             // openManagePanel
             // 
-            this.openManagePanel.Controls.Add(this.openDepartmentBtn);
             this.openManagePanel.Controls.Add(this.openClassPanelBtn);
             this.openManagePanel.Controls.Add(this.openScorePanelChild);
             this.openManagePanel.Controls.Add(this.openTeacherPanelChild);
@@ -153,25 +153,8 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openManagePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.openManagePanel.Location = new System.Drawing.Point(0, 240);
             this.openManagePanel.Name = "openManagePanel";
-            this.openManagePanel.Size = new System.Drawing.Size(246, 349);
+            this.openManagePanel.Size = new System.Drawing.Size(246, 302);
             this.openManagePanel.TabIndex = 3;
-            // 
-            // openDepartmentBtn
-            // 
-            this.openDepartmentBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.openDepartmentBtn.FlatAppearance.BorderSize = 0;
-            this.openDepartmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openDepartmentBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openDepartmentBtn.ForeColor = System.Drawing.Color.Silver;
-            this.openDepartmentBtn.Image = global::WindowClassProject.Properties.Resources.icons8_department_32px;
-            this.openDepartmentBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openDepartmentBtn.Location = new System.Drawing.Point(0, 270);
-            this.openDepartmentBtn.Name = "openDepartmentBtn";
-            this.openDepartmentBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.openDepartmentBtn.Size = new System.Drawing.Size(246, 54);
-            this.openDepartmentBtn.TabIndex = 5;
-            this.openDepartmentBtn.Text = "Department";
-            this.openDepartmentBtn.UseVisualStyleBackColor = true;
             // 
             // openClassPanelBtn
             // 
@@ -298,6 +281,7 @@ namespace WindowClassProject.View.ViewManageStudent
             // 
             // userPanel
             // 
+            this.userPanel.Controls.Add(this.pictureBox1);
             this.userPanel.Controls.Add(this.label1);
             this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.userPanel.Location = new System.Drawing.Point(0, 0);
@@ -305,16 +289,25 @@ namespace WindowClassProject.View.ViewManageStudent
             this.userPanel.Size = new System.Drawing.Size(246, 100);
             this.userPanel.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 100);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(112, 53);
+            this.label1.Location = new System.Drawing.Point(137, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 20);
+            this.label1.Size = new System.Drawing.Size(103, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = ":";
+            this.label1.Text = "Edit Profile";
             // 
             // panelChildForm
             // 
@@ -350,6 +343,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openManagePanel.ResumeLayout(false);
             this.userPanel.ResumeLayout(false);
             this.userPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,7 +367,7 @@ namespace WindowClassProject.View.ViewManageStudent
         private System.Windows.Forms.Button exitBtn;
         private OtherForm.topTool topTool1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button openDepartmentBtn;
         private System.Windows.Forms.Button openClassPanelBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

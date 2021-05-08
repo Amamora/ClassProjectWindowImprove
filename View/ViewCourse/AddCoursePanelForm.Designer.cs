@@ -77,6 +77,7 @@ namespace WindowClassProject.View.ViewCourse
             this.addCourseBtn.TabIndex = 19;
             this.addCourseBtn.Text = "Add";
             this.addCourseBtn.UseVisualStyleBackColor = true;
+            this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
             // 
             // descriptionTxt
             // 

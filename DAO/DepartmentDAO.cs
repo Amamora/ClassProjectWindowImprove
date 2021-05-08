@@ -50,8 +50,13 @@ namespace WindowClassProject.DAO
 
         }
         #endregion
-
-        #region 
+        /// <summary>
+        /// we can group 2 function into 1 function ~~~
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        #region  get infor of department id
+       
         #endregion
 
     }

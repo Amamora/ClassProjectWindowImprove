@@ -11,16 +11,16 @@ using WindowClassProject.Model;
 namespace WindowClassProject.DAO
 {
     class CourseDAO
-    { 
+    {
         MyDataBase myDataBase = new MyDataBase();
 
         /**Keep open and close connection to avoid error
          * 
-         * /
+         * /hmm DATABASE nay co van de roi chiu thoi
          */
         public void connectionDataBase(DataGridView dataGridView1)
         {
-           
+
 
             myDataBase.openConnection();
 
@@ -50,7 +50,7 @@ namespace WindowClassProject.DAO
 
         public DataTable getAllCourse()
         {
-           
+
 
             myDataBase.openConnection();
 
@@ -74,7 +74,7 @@ namespace WindowClassProject.DAO
 
 
         #region addNew Course into database
-        public bool insertNewCourse(int id, string name,string departID ,int credit ,string description)
+        public bool insertNewCourse(string id, string name, string departID, int credit, string description)
         {
 
             myDataBase.openConnection();
@@ -82,11 +82,13 @@ namespace WindowClassProject.DAO
 
             SqlCommand sqlcommand = new SqlCommand("INSERT INTO [WINDOWCLASS].[dbo].[COURSE](courseID,courseName,departmentID,credit,descriptionCourse) VALUES(@id,@name,@did,@cre,@des)", myDataBase.getConnection);
 
-            sqlcommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
+            sqlcommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
             sqlcommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
             sqlcommand.Parameters.Add("@did", SqlDbType.NVarChar).Value = departID;
             sqlcommand.Parameters.Add("@cre", SqlDbType.Int).Value = credit;
-            sqlcommand.Parameters.Add("@des", SqlDbType.Text).Value = description;
+            sqlcommand.Parameters.Add("@des", SqlDbType.NText).Value = description;
+
+
 
 
             if ((sqlcommand.ExecuteNonQuery() == 1))
@@ -96,6 +98,7 @@ namespace WindowClassProject.DAO
             }
             else
             {
+                MessageBox.Show("Insert Failed ");
                 myDataBase.closeConnection();
                 return false;
             }
@@ -183,9 +186,7 @@ namespace WindowClassProject.DAO
         }
         public DataTable LoadCourse()
         {
-            string query = "SELECT ROW_NUMBER() OVER (ORDER BY courseID ASC) AS N'Order'," +
-            " courseID, courseName AS N'Course Name'," +
-            " credit,descriptionCourse FROM [WINDOWCLASS].[dbo].[COURSE]";
+            string query = "SELECT ROW_NUMBER() OVER (ORDER BY courseID ASC) AS N'Order',courseID, courseName, departmentID, credit, descriptionCourse FROM[WINDOWCLASS].[dbo].[COURSE]";
 
             //object[] parameters = new object[] { <List parameters> };
             return this.ExecuteQuery(query);
@@ -193,7 +194,7 @@ namespace WindowClassProject.DAO
         public DataTable ExecuteQuery(string query, object[] parameters = null)
         {
             DataTable table = new DataTable();
-           
+
 
             try
             {
@@ -237,40 +238,38 @@ namespace WindowClassProject.DAO
 
         #region edit Infor Course
 
-        public bool updateCourse(string newID, string courseNameTxt, int periodNumber, string descriptionTxt, string previousID)
+        public bool updateCourse(string newID, string courseNameTxt, string deparmentID, int credit, string descriptionTxt, string previousID)
         {
+            myDataBase.openConnection();//create connection to connect with databse
+            SqlCommand sqlcommand = new SqlCommand("UPDATE [WINDOWCLASS].[dbo].[COURSE] SET courseID=@id,courseName=@name,departmentID=@did,credit=@cre,descriptionCourse=@des WHERE courseID=@previousID", myDataBase.getConnection);
 
-            MyDataBase mydata = new MyDataBase();
-            mydata.openConnection();
+            sqlcommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = newID;
+            sqlcommand.Parameters.Add("@name", SqlDbType.NVarChar).Value = courseNameTxt;
+            sqlcommand.Parameters.Add("@did", SqlDbType.NVarChar).Value = deparmentID;
+            sqlcommand.Parameters.Add("@cre", SqlDbType.Int).Value = credit;
+            sqlcommand.Parameters.Add("@des", SqlDbType.NText).Value = descriptionTxt;
+            sqlcommand.Parameters.Add("@previousID", SqlDbType.NVarChar).Value = previousID;
 
-            SqlCommand sqlcommand = new SqlCommand("UPDATE [WINDOWCLASS].[dbo].[COURSE] SET courseID =@newid, courseName=@label,credit=@period, descriptionCourse=@des WHERE courseID=@id ", mydata.getConnection);
 
-            //  sqlcommand.Parameters.Add("@newid", SqlDbType.Int).Value = Int32.Parse(edit.courseIDtxt.Text.ToString());
-            //sqlcommand.Parameters.Add("@newid", SqlDbType.Int).Value = Int32.Parse(edit.courseIDCombox.SelectedItem.ToString()); 
-            sqlcommand.Parameters.Add("@newid", SqlDbType.NVarChar).Value = newID;
-            sqlcommand.Parameters.Add("@label", SqlDbType.NVarChar).Value = courseNameTxt;
-            sqlcommand.Parameters.Add("@period", SqlDbType.Int).Value = periodNumber;
-            sqlcommand.Parameters.Add("@des", SqlDbType.Text).Value = descriptionTxt;
-            sqlcommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = previousID;
 
 
 
 
             if ((sqlcommand.ExecuteNonQuery() == 1))
             {
-                mydata.closeConnection();
+                myDataBase.closeConnection();
                 return true;
             }
             else
             {
-                mydata.closeConnection();
+                myDataBase.closeConnection();
                 MessageBox.Show("ERROR!!1");
                 return false;
             }
 
 
 
-           
+
         }
 
         #endregion
@@ -325,7 +324,13 @@ namespace WindowClassProject.DAO
             //DataRow dtRow = dt.Rows[0];
 
         }
-
+        #region get number of student this course
+       /* public int getNumberCourse()
+        {
+            myDataBase.openConnection();
+           
+        }*/
+        #endregion
         #region delete
         public bool deleteCourse(string id)
         {

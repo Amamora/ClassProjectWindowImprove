@@ -23,15 +23,23 @@ namespace WindowClassProject.View.ViewCourse
         {
             reloadListBox();
             loadDataForDepartment(departmentBox);
+            resertAll();
         }
         public void resertAll()
         {
             //resert default value of form =)))) :I don't know why I can create some method realy stupid hmm
 
+            idShowText.Text = "";
+            courseShowText.Text = "";
+            creditShowNumeric.Value = 0;
+            departmentBox.SelectedIndex = 0;
+            descriptionShowText.Text = "";
+
+
 
         }
-        //position inside listbox 
-        private int position = 0;
+       
+       
 
         /*
          Okay we have some control here:
@@ -47,6 +55,7 @@ namespace WindowClassProject.View.ViewCourse
          */
         public void reloadListBox()
         {
+            listShowCourse.Items.Clear();
             CourseDAO courseDAO = new CourseDAO();
             DataTable table = courseDAO.getAllCourse();
 
@@ -61,6 +70,7 @@ namespace WindowClassProject.View.ViewCourse
             }
 
             listShowCourse.DisplayMember = "courseName";
+            totalCourseLbl.Text = "Total Course : " + table.Rows.Count;
 
             //display list view
 
@@ -89,7 +99,7 @@ namespace WindowClassProject.View.ViewCourse
 
         private void firstLoadListbox_Click(object sender, EventArgs e)
         {
-
+            listShowCourse.SelectedIndex = 0;
         }
         public bool checkAddCourseValidatel()
         {
@@ -98,7 +108,7 @@ namespace WindowClassProject.View.ViewCourse
                 MessageBox.Show("NEED TO confirm all value");
                 return false;
             }
-            if (Int32.Parse(creditShowNumeric.Value.ToString()) > 10 || Int32.Parse(creditShowNumeric.Value.ToString()) < -1)
+            if (Int32.Parse(creditShowNumeric.Value.ToString()) > 10 || Int32.Parse(creditShowNumeric.Value.ToString()) < 0)
             {
                 MessageBox.Show("Please FILL period value between 0 and 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -115,5 +125,134 @@ namespace WindowClassProject.View.ViewCourse
             return true;
         }
         #endregion
+
+        private void addCourseBtn_Click(object sender, EventArgs e)
+        {
+            CourseDAO course = new CourseDAO();
+            if (course.checkAlreadyCourse(idShowText.Text))
+            {
+                return;
+            }
+            if (checkAddCourseValidatel() == true)
+            {
+                
+
+                DepartmentModel cou = new DepartmentModel();
+                cou = departmentBox.SelectedItem as DepartmentModel;
+                course.insertNewCourse(idShowText.Text, courseShowText.Text, cou.departmentID, int.Parse(creditShowNumeric.Value.ToString()), descriptionShowText.Text);
+
+                ManageCourseFast_Load(sender, e);
+
+
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+        #region action do with manage fast
+        private void listShowCourse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /**
+             the ideal : base on listview ~~~
+             */
+            CourseModel course = new CourseModel();
+            course=listShowCourse.SelectedItem as CourseModel;
+            //load for data this sit will use for the document 
+            idShowText.Text = course.courseID;
+            courseShowText.Text = course.courseName;
+            creditShowNumeric.Value = course.credit;
+            string idDep = course.departmentID;
+            DepartmentModel cou = new DepartmentModel();
+            descriptionShowText.Text = course.descriptionCourse;
+           for (int i = 0; i < departmentBox.Items.Count; i++)
+            {
+               
+                    departmentBox.SelectedIndex = i;
+                 cou = departmentBox.SelectedItem as DepartmentModel;
+                if (cou.departmentID == idDep)
+                {
+                    break;
+                }
+            }
+
+        }
+
+
+        private void nextLoadListbox_Click(object sender, EventArgs e)
+        {
+            int position = listShowCourse.SelectedIndex;
+            position++;
+            if ( position> (listShowCourse.Items.Count - 1)){
+                listShowCourse.SelectedIndex = 0;
+                return;
+            }
+            listShowCourse.SelectedIndex = position;
+            
+        }
+
+        private void previousLoadListbox_Click(object sender, EventArgs e)
+        {
+
+            int position = listShowCourse.SelectedIndex;
+            position--;
+            if (position<0)
+            {
+                listShowCourse.SelectedIndex = listShowCourse.Items.Count - 1;
+                return;
+            }
+            listShowCourse.SelectedIndex = position;
+
+        }
+
+        private void lastLoadListbox_Click(object sender, EventArgs e)
+        {
+            listShowCourse.SelectedIndex = listShowCourse.Items.Count - 1;
+
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            CourseDAO course = new CourseDAO();
+            DepartmentModel cou = new DepartmentModel();
+            cou = departmentBox.SelectedItem as DepartmentModel;
+            // some condition check =))) or more advance you can use express regular bieu thuc chinh quy ~~~
+            if (idShowText.Text.Trim() == "" || courseShowText.Text.Trim() == "")
+            {
+                MessageBox.Show("Insert some information need !!!!");
+                return;
+            }
+            if (Int32.Parse(creditShowNumeric.Value.ToString()) > 10 || Int32.Parse(creditShowNumeric.Value.ToString()) < 0)
+            {
+                MessageBox.Show("Please FILL period value between 0 and 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            CourseModel model = listShowCourse.SelectedItem as CourseModel;
+
+            if(course.updateCourse(idShowText.Text, courseShowText.Text,cou.departmentID, Int32.Parse(creditShowNumeric.Value.ToString()), descriptionShowText.Text, model.courseID) == true)
+            {
+                MessageBox.Show("Edit sucess !!!!");
+                ManageCourseFast_Load(sender, e);
+            }
+
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            CourseDAO course= new CourseDAO();
+            course.deleteCourse(idShowText.Text);
+            ManageCourseFast_Load(sender, e);
+
+        }
+        #endregion
+
+        private void newBtn_Click(object sender, EventArgs e)
+        {
+            resertAll();
+
+        }
     }
 }

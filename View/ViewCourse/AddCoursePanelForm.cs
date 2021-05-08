@@ -31,5 +31,10 @@ namespace WindowClassProject.View.ViewCourse
             departmentCombox.SelectedIndex = 0;
             
         }
+
+        private void addCourseBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace WindowClassProject.View.ViewManageStudent
             if (nowUser.typeID == 3)
             {
                 openCoursePanelChild.Visible = false;
-                openDepartmentBtn.Visible = false;
+               
                 openTeacherPanelChild.Visible = false;
                 openManagePanel.Height=150;
             }

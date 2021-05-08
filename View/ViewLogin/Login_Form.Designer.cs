@@ -187,7 +187,7 @@ namespace WindowClassProject.View.ViewLogin
             this.passTxt.Name = "passTxt";
             this.passTxt.PasswordChar = '*';
             this.passTxt.Size = new System.Drawing.Size(399, 50);
-            this.passTxt.TabIndex = 13;
+            this.passTxt.TabIndex = 15;
             this.passTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passTxt_KeyDown);
             // 
