@@ -33,7 +33,7 @@ namespace WindowClassProject.View.ViewCourse
             this.panel1 = new System.Windows.Forms.Panel();
             this.searchTxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.totalCourseLbl = new System.Windows.Forms.Label();
             this.toolCoursePanel = new System.Windows.Forms.Panel();
             this.fastManageBtn = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -56,7 +56,7 @@ namespace WindowClassProject.View.ViewCourse
             // topCoursePanel
             // 
             this.topCoursePanel.Controls.Add(this.panel1);
-            this.topCoursePanel.Controls.Add(this.label1);
+            this.topCoursePanel.Controls.Add(this.totalCourseLbl);
             this.topCoursePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.topCoursePanel.Location = new System.Drawing.Point(0, 0);
             this.topCoursePanel.Name = "topCoursePanel";
@@ -98,15 +98,15 @@ namespace WindowClassProject.View.ViewCourse
             this.button1.Text = "search";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // totalCourseLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(206, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Total Course :";
+            this.totalCourseLbl.AutoSize = true;
+            this.totalCourseLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalCourseLbl.Location = new System.Drawing.Point(21, 52);
+            this.totalCourseLbl.Name = "totalCourseLbl";
+            this.totalCourseLbl.Size = new System.Drawing.Size(206, 32);
+            this.totalCourseLbl.TabIndex = 0;
+            this.totalCourseLbl.Text = "Total Course :";
             // 
             // toolCoursePanel
             // 
@@ -292,7 +292,7 @@ namespace WindowClassProject.View.ViewCourse
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button addCourseBtn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label totalCourseLbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataCourseGrid;
         private System.Windows.Forms.TextBox searchTxt;

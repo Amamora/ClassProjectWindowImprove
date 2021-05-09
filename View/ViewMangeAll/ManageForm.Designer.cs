@@ -45,12 +45,27 @@ namespace WindowClassProject.View.ViewManageStudent
             this.userPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.notificationPictureBox = new System.Windows.Forms.PictureBox();
+            this.mailPictureBox = new System.Windows.Forms.PictureBox();
+            this.expandPictureBox = new System.Windows.Forms.PictureBox();
+            this.advanceToolPictureBox = new System.Windows.Forms.PictureBox();
+            this.contactBtn = new System.Windows.Forms.Button();
+            this.homeBtn = new System.Windows.Forms.Button();
+            this.actionMenuPictureBox = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.topTool1 = new WindowClassProject.View.OtherForm.topTool();
             this.menuPanel.SuspendLayout();
             this.openManagePanel.SuspendLayout();
             this.userPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.topPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.notificationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expandPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advanceToolPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actionMenuPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -65,6 +80,8 @@ namespace WindowClassProject.View.ViewManageStudent
             this.menuPanel.Controls.Add(this.openDashBtn);
             this.menuPanel.Controls.Add(this.userPanel);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuPanel.ForeColor = System.Drawing.Color.White;
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -169,9 +186,10 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openClassPanelBtn.Name = "openClassPanelBtn";
             this.openClassPanelBtn.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.openClassPanelBtn.Size = new System.Drawing.Size(246, 54);
-            this.openClassPanelBtn.TabIndex = 4;
+            this.openClassPanelBtn.TabIndex = 7;
             this.openClassPanelBtn.Text = "Class";
             this.openClassPanelBtn.UseVisualStyleBackColor = true;
+            this.openClassPanelBtn.Click += new System.EventHandler(this.openClassPanelBtn_Click);
             // 
             // openScorePanelChild
             // 
@@ -186,9 +204,10 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openScorePanelChild.Name = "openScorePanelChild";
             this.openScorePanelChild.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.openScorePanelChild.Size = new System.Drawing.Size(246, 54);
-            this.openScorePanelChild.TabIndex = 3;
+            this.openScorePanelChild.TabIndex = 6;
             this.openScorePanelChild.Text = "Score";
             this.openScorePanelChild.UseVisualStyleBackColor = true;
+            this.openScorePanelChild.Click += new System.EventHandler(this.openScorePanelChild_Click);
             // 
             // openTeacherPanelChild
             // 
@@ -203,9 +222,10 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTeacherPanelChild.Name = "openTeacherPanelChild";
             this.openTeacherPanelChild.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.openTeacherPanelChild.Size = new System.Drawing.Size(246, 54);
-            this.openTeacherPanelChild.TabIndex = 2;
+            this.openTeacherPanelChild.TabIndex = 5;
             this.openTeacherPanelChild.Text = "Teacher";
             this.openTeacherPanelChild.UseVisualStyleBackColor = true;
+            this.openTeacherPanelChild.Click += new System.EventHandler(this.openTeacherPanelChild_Click);
             // 
             // openCoursePanelChild
             // 
@@ -220,7 +240,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openCoursePanelChild.Name = "openCoursePanelChild";
             this.openCoursePanelChild.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.openCoursePanelChild.Size = new System.Drawing.Size(246, 54);
-            this.openCoursePanelChild.TabIndex = 1;
+            this.openCoursePanelChild.TabIndex = 4;
             this.openCoursePanelChild.Text = "Course";
             this.openCoursePanelChild.UseVisualStyleBackColor = true;
             this.openCoursePanelChild.Click += new System.EventHandler(this.openCoursePanelChild_Click);
@@ -238,9 +258,10 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openStudentPanelChild.Name = "openStudentPanelChild";
             this.openStudentPanelChild.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.openStudentPanelChild.Size = new System.Drawing.Size(246, 54);
-            this.openStudentPanelChild.TabIndex = 0;
+            this.openStudentPanelChild.TabIndex = 3;
             this.openStudentPanelChild.Text = "Student";
             this.openStudentPanelChild.UseVisualStyleBackColor = true;
+            this.openStudentPanelChild.Click += new System.EventHandler(this.openStudentPanelChild_Click);
             // 
             // openManageBtn
             // 
@@ -309,22 +330,133 @@ namespace WindowClassProject.View.ViewManageStudent
             this.label1.TabIndex = 1;
             this.label1.Text = "Edit Profile";
             // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.panel1);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(246, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1136, 61);
+            this.topPanel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.notificationPictureBox);
+            this.panel1.Controls.Add(this.mailPictureBox);
+            this.panel1.Controls.Add(this.expandPictureBox);
+            this.panel1.Controls.Add(this.advanceToolPictureBox);
+            this.panel1.Controls.Add(this.contactBtn);
+            this.panel1.Controls.Add(this.homeBtn);
+            this.panel1.Controls.Add(this.actionMenuPictureBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1136, 61);
+            this.panel1.TabIndex = 1;
+            // 
+            // notificationPictureBox
+            // 
+            this.notificationPictureBox.Cursor = System.Windows.Forms.Cursors.AppStarting;
+            this.notificationPictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.notificationPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_notification_32px;
+            this.notificationPictureBox.Location = new System.Drawing.Point(816, 0);
+            this.notificationPictureBox.Name = "notificationPictureBox";
+            this.notificationPictureBox.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.notificationPictureBox.Size = new System.Drawing.Size(80, 61);
+            this.notificationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.notificationPictureBox.TabIndex = 6;
+            this.notificationPictureBox.TabStop = false;
+            // 
+            // mailPictureBox
+            // 
+            this.mailPictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.mailPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_mail_bulk_32px;
+            this.mailPictureBox.Location = new System.Drawing.Point(896, 0);
+            this.mailPictureBox.Name = "mailPictureBox";
+            this.mailPictureBox.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.mailPictureBox.Size = new System.Drawing.Size(80, 61);
+            this.mailPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.mailPictureBox.TabIndex = 5;
+            this.mailPictureBox.TabStop = false;
+            // 
+            // expandPictureBox
+            // 
+            this.expandPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.expandPictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.expandPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_expand_32px;
+            this.expandPictureBox.Location = new System.Drawing.Point(976, 0);
+            this.expandPictureBox.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.expandPictureBox.Name = "expandPictureBox";
+            this.expandPictureBox.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.expandPictureBox.Size = new System.Drawing.Size(80, 61);
+            this.expandPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.expandPictureBox.TabIndex = 4;
+            this.expandPictureBox.TabStop = false;
+            this.expandPictureBox.Click += new System.EventHandler(this.expandPictureBox_Click);
+            // 
+            // advanceToolPictureBox
+            // 
+            this.advanceToolPictureBox.Dock = System.Windows.Forms.DockStyle.Right;
+            this.advanceToolPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_four_squares_32px;
+            this.advanceToolPictureBox.Location = new System.Drawing.Point(1056, 0);
+            this.advanceToolPictureBox.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.advanceToolPictureBox.Name = "advanceToolPictureBox";
+            this.advanceToolPictureBox.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.advanceToolPictureBox.Size = new System.Drawing.Size(80, 61);
+            this.advanceToolPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.advanceToolPictureBox.TabIndex = 3;
+            this.advanceToolPictureBox.TabStop = false;
+            // 
+            // contactBtn
+            // 
+            this.contactBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.contactBtn.FlatAppearance.BorderSize = 0;
+            this.contactBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.contactBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactBtn.ForeColor = System.Drawing.Color.White;
+            this.contactBtn.Location = new System.Drawing.Point(160, 0);
+            this.contactBtn.Name = "contactBtn";
+            this.contactBtn.Size = new System.Drawing.Size(92, 61);
+            this.contactBtn.TabIndex = 2;
+            this.contactBtn.Text = "Contact";
+            this.contactBtn.UseVisualStyleBackColor = true;
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.homeBtn.FlatAppearance.BorderSize = 0;
+            this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.White;
+            this.homeBtn.Location = new System.Drawing.Point(68, 0);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(92, 61);
+            this.homeBtn.TabIndex = 1;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = true;
+            // 
+            // actionMenuPictureBox
+            // 
+            this.actionMenuPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.actionMenuPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.actionMenuPictureBox.Image = global::WindowClassProject.Properties.Resources.menu;
+            this.actionMenuPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.actionMenuPictureBox.Name = "actionMenuPictureBox";
+            this.actionMenuPictureBox.Size = new System.Drawing.Size(68, 61);
+            this.actionMenuPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.actionMenuPictureBox.TabIndex = 0;
+            this.actionMenuPictureBox.TabStop = false;
+            this.actionMenuPictureBox.Click += new System.EventHandler(this.actionMenuPictureBox_Click);
+            // 
             // panelChildForm
             // 
-            this.panelChildForm.BackColor = System.Drawing.Color.White;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelChildForm.Location = new System.Drawing.Point(246, 53);
+            this.panelChildForm.BackColor = System.Drawing.Color.DimGray;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(246, 61);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1136, 834);
+            this.panelChildForm.Size = new System.Drawing.Size(1136, 826);
             this.panelChildForm.TabIndex = 2;
-            // 
-            // topTool1
-            // 
-            this.topTool1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topTool1.Location = new System.Drawing.Point(246, 0);
-            this.topTool1.Name = "topTool1";
-            this.topTool1.Size = new System.Drawing.Size(1136, 50);
-            this.topTool1.TabIndex = 3;
             // 
             // ManageForm
             // 
@@ -332,11 +464,13 @@ namespace WindowClassProject.View.ViewManageStudent
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1382, 887);
-            this.Controls.Add(this.topTool1);
             this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.topPanel);
             this.Controls.Add(this.menuPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MinimumSize = new System.Drawing.Size(1400, 934);
             this.Name = "ManageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageForm";
             this.Load += new System.EventHandler(this.ManageForm_Load);
             this.menuPanel.ResumeLayout(false);
@@ -344,6 +478,13 @@ namespace WindowClassProject.View.ViewManageStudent
             this.userPanel.ResumeLayout(false);
             this.userPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.topPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.notificationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mailPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expandPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advanceToolPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.actionMenuPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,8 +492,6 @@ namespace WindowClassProject.View.ViewManageStudent
         #endregion
 
         private System.Windows.Forms.Panel menuPanel;
-      
-        private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Button openTimeTablePanel;
         private System.Windows.Forms.Button openChartPanel;
         private System.Windows.Forms.Panel openManagePanel;
@@ -365,9 +504,18 @@ namespace WindowClassProject.View.ViewManageStudent
         private System.Windows.Forms.Panel userPanel;
         private System.Windows.Forms.Button openMailBoxPanel;
         private System.Windows.Forms.Button exitBtn;
-        private OtherForm.topTool topTool1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button openClassPanelBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel topPanel;
+        private System.Windows.Forms.Panel panelChildForm;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox notificationPictureBox;
+        private System.Windows.Forms.PictureBox mailPictureBox;
+        private System.Windows.Forms.PictureBox expandPictureBox;
+        private System.Windows.Forms.PictureBox advanceToolPictureBox;
+        private System.Windows.Forms.Button contactBtn;
+        private System.Windows.Forms.Button homeBtn;
+        private System.Windows.Forms.PictureBox actionMenuPictureBox;
     }
 }

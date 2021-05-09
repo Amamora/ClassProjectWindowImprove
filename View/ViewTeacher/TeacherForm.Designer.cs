@@ -1,7 +1,7 @@
 ﻿
-namespace WindowClassProject.View.ViewStudent
+namespace WindowClassProject.View.ViewTeacher
 {
-    partial class StudentPanelForm
+    partial class TeacherForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,11 @@ namespace WindowClassProject.View.ViewStudent
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.titlePaneTeacher = new System.Windows.Forms.Panel();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.searchButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolPanel = new System.Windows.Forms.Panel();
             this.removeBtn = new System.Windows.Forms.Button();
             this.importFileExcelButton = new System.Windows.Forms.Button();
@@ -39,18 +44,74 @@ namespace WindowClassProject.View.ViewStudent
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.importDatabaseBtn = new System.Windows.Forms.Button();
             this.exportPDFButton = new System.Windows.Forms.Button();
-            this.dataStudentGridView = new System.Windows.Forms.DataGridView();
-            this.searchBox = new System.Windows.Forms.TextBox();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.totalStudentLbl = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataTeacherGridView = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.totalTeacherLbl = new System.Windows.Forms.Label();
+            this.titlePaneTeacher.SuspendLayout();
             this.toolPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataStudentGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTeacherGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // titlePaneTeacher
+            // 
+            this.titlePaneTeacher.BackColor = System.Drawing.Color.White;
+            this.titlePaneTeacher.Controls.Add(this.panel2);
+            this.titlePaneTeacher.Controls.Add(this.searchBox);
+            this.titlePaneTeacher.Controls.Add(this.searchButton);
+            this.titlePaneTeacher.Controls.Add(this.panel1);
+            this.titlePaneTeacher.Dock = System.Windows.Forms.DockStyle.Top;
+            this.titlePaneTeacher.Location = new System.Drawing.Point(0, 0);
+            this.titlePaneTeacher.Name = "titlePaneTeacher";
+            this.titlePaneTeacher.Size = new System.Drawing.Size(1118, 113);
+            this.titlePaneTeacher.TabIndex = 0;
+            // 
+            // searchBox
+            // 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchBox.Location = new System.Drawing.Point(369, 37);
+            this.searchBox.MaximumSize = new System.Drawing.Size(263, 38);
+            this.searchBox.MaxLength = 500;
+            this.searchBox.MinimumSize = new System.Drawing.Size(263, 38);
+            this.searchBox.Multiline = true;
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(263, 38);
+            this.searchBox.TabIndex = 17;
+            this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // searchButton
+            // 
+            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchButton.Location = new System.Drawing.Point(638, 37);
+            this.searchButton.MaximumSize = new System.Drawing.Size(111, 38);
+            this.searchButton.MinimumSize = new System.Drawing.Size(111, 38);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(111, 38);
+            this.searchButton.TabIndex = 16;
+            this.searchButton.Text = "Search";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(305, 113);
+            this.panel1.TabIndex = 0;
             // 
             // toolPanel
             // 
-            this.toolPanel.Controls.Add(this.button1);
+            this.toolPanel.BackColor = System.Drawing.Color.White;
             this.toolPanel.Controls.Add(this.removeBtn);
             this.toolPanel.Controls.Add(this.importFileExcelButton);
             this.toolPanel.Controls.Add(this.saveButton);
@@ -60,11 +121,11 @@ namespace WindowClassProject.View.ViewStudent
             this.toolPanel.Controls.Add(this.btnAddStudent);
             this.toolPanel.Controls.Add(this.importDatabaseBtn);
             this.toolPanel.Controls.Add(this.exportPDFButton);
-            this.toolPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolPanel.Location = new System.Drawing.Point(0, 151);
+            this.toolPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.toolPanel.Location = new System.Drawing.Point(0, 113);
             this.toolPanel.Name = "toolPanel";
             this.toolPanel.Size = new System.Drawing.Size(1118, 47);
-            this.toolPanel.TabIndex = 16;
+            this.toolPanel.TabIndex = 17;
             // 
             // removeBtn
             // 
@@ -76,16 +137,17 @@ namespace WindowClassProject.View.ViewStudent
             this.removeBtn.TabIndex = 7;
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // importFileExcelButton
             // 
             this.importFileExcelButton.Dock = System.Windows.Forms.DockStyle.Left;
             this.importFileExcelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.importFileExcelButton.Image = global::WindowClassProject.Properties.Resources.icons8_csv_30px;
             this.importFileExcelButton.Location = new System.Drawing.Point(202, 0);
             this.importFileExcelButton.Name = "importFileExcelButton";
             this.importFileExcelButton.Size = new System.Drawing.Size(64, 47);
             this.importFileExcelButton.TabIndex = 5;
+            this.importFileExcelButton.Text = "Save Edit";
             this.importFileExcelButton.UseVisualStyleBackColor = true;
             // 
             // saveButton
@@ -109,7 +171,6 @@ namespace WindowClassProject.View.ViewStudent
             this.workButton.Size = new System.Drawing.Size(63, 47);
             this.workButton.TabIndex = 3;
             this.workButton.UseVisualStyleBackColor = true;
-            this.workButton.Click += new System.EventHandler(this.workButton_Click);
             // 
             // exportExcelButton
             // 
@@ -121,7 +182,6 @@ namespace WindowClassProject.View.ViewStudent
             this.exportExcelButton.Size = new System.Drawing.Size(63, 47);
             this.exportExcelButton.TabIndex = 2;
             this.exportExcelButton.UseVisualStyleBackColor = true;
-            this.exportExcelButton.Click += new System.EventHandler(this.exportExcelButton_Click);
             // 
             // refreshBtn
             // 
@@ -133,7 +193,6 @@ namespace WindowClassProject.View.ViewStudent
             this.refreshBtn.Size = new System.Drawing.Size(80, 47);
             this.refreshBtn.TabIndex = 2;
             this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // btnAddStudent
             // 
@@ -144,7 +203,7 @@ namespace WindowClassProject.View.ViewStudent
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(122, 47);
             this.btnAddStudent.TabIndex = 6;
-            this.btnAddStudent.Text = "Add Student";
+            this.btnAddStudent.Text = "Teacher";
             this.btnAddStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
@@ -170,103 +229,80 @@ namespace WindowClassProject.View.ViewStudent
             this.exportPDFButton.Size = new System.Drawing.Size(63, 47);
             this.exportPDFButton.TabIndex = 0;
             this.exportPDFButton.UseVisualStyleBackColor = true;
-            this.exportPDFButton.Click += new System.EventHandler(this.exportPDFButton_Click);
             // 
-            // dataStudentGridView
+            // dataTeacherGridView
             // 
-            this.dataStudentGridView.AllowUserToAddRows = false;
-            this.dataStudentGridView.AllowUserToOrderColumns = true;
-            this.dataStudentGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataStudentGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataStudentGridView.ColumnHeadersHeight = 29;
-            this.dataStudentGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataStudentGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataStudentGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataStudentGridView.Location = new System.Drawing.Point(0, 198);
-            this.dataStudentGridView.Name = "dataStudentGridView";
-            this.dataStudentGridView.RowHeadersWidth = 51;
-            this.dataStudentGridView.RowTemplate.Height = 24;
-            this.dataStudentGridView.Size = new System.Drawing.Size(1118, 593);
-            this.dataStudentGridView.TabIndex = 13;
+            this.dataTeacherGridView.AllowUserToAddRows = false;
+            this.dataTeacherGridView.AllowUserToOrderColumns = true;
+            this.dataTeacherGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataTeacherGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataTeacherGridView.ColumnHeadersHeight = 29;
+            this.dataTeacherGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataTeacherGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataTeacherGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataTeacherGridView.Location = new System.Drawing.Point(0, 160);
+            this.dataTeacherGridView.Name = "dataTeacherGridView";
+            this.dataTeacherGridView.RowHeadersWidth = 51;
+            this.dataTeacherGridView.RowTemplate.Height = 24;
+            this.dataTeacherGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataTeacherGridView.Size = new System.Drawing.Size(1118, 631);
+            this.dataTeacherGridView.TabIndex = 18;
+            this.dataTeacherGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataTeacherGridView_UserDeletedRow);
             // 
-            // searchBox
+            // toolTip1
             // 
-            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Seach by ID avoid Error";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.totalTeacherLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(866, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(252, 113);
+            this.panel2.TabIndex = 18;
+            // 
+            // totalTeacherLbl
+            // 
+            this.totalTeacherLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBox.Location = new System.Drawing.Point(233, 61);
-            this.searchBox.MaximumSize = new System.Drawing.Size(263, 38);
-            this.searchBox.MaxLength = 500;
-            this.searchBox.MinimumSize = new System.Drawing.Size(263, 38);
-            this.searchBox.Multiline = true;
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(263, 38);
-            this.searchBox.TabIndex = 15;
-            this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.totalTeacherLbl.AutoSize = true;
+            this.totalTeacherLbl.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTeacherLbl.Location = new System.Drawing.Point(17, 39);
+            this.totalTeacherLbl.Name = "totalTeacherLbl";
+            this.totalTeacherLbl.Size = new System.Drawing.Size(110, 32);
+            this.totalTeacherLbl.TabIndex = 18;
+            this.totalTeacherLbl.Text = "Total Teacher:";
             // 
-            // searchButton
-            // 
-            this.searchButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(502, 61);
-            this.searchButton.MaximumSize = new System.Drawing.Size(111, 38);
-            this.searchButton.MinimumSize = new System.Drawing.Size(111, 38);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(111, 38);
-            this.searchButton.TabIndex = 14;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            // 
-            // totalStudentLbl
-            // 
-            this.totalStudentLbl.AutoSize = true;
-            this.totalStudentLbl.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalStudentLbl.Location = new System.Drawing.Point(726, 67);
-            this.totalStudentLbl.Name = "totalStudentLbl";
-            this.totalStudentLbl.Size = new System.Drawing.Size(109, 32);
-            this.totalStudentLbl.TabIndex = 17;
-            this.totalStudentLbl.Text = "Total Student:";
-            this.totalStudentLbl.Click += new System.EventHandler(this.totalStudentLbl_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(341, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 47);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Add Student Join Group";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // StudentPanelForm
+            // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1118, 791);
+            this.Controls.Add(this.dataTeacherGridView);
             this.Controls.Add(this.toolPanel);
-            this.Controls.Add(this.dataStudentGridView);
-            this.Controls.Add(this.searchBox);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.totalStudentLbl);
-            this.Name = "StudentPanelForm";
-            this.Text = "StudentPanelForm";
-            this.Load += new System.EventHandler(this.StudentPanelForm_Load);
+            this.Controls.Add(this.titlePaneTeacher);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "TeacherForm";
+            this.Text = "TeacherForm";
+            this.Load += new System.EventHandler(this.TeacherForm_Load);
+            this.titlePaneTeacher.ResumeLayout(false);
+            this.titlePaneTeacher.PerformLayout();
             this.toolPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataStudentGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataTeacherGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Panel titlePaneTeacher;
         private System.Windows.Forms.Panel toolPanel;
+        private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button importFileExcelButton;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button workButton;
@@ -275,11 +311,12 @@ namespace WindowClassProject.View.ViewStudent
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.Button importDatabaseBtn;
         private System.Windows.Forms.Button exportPDFButton;
-        private System.Windows.Forms.DataGridView dataStudentGridView;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataTeacherGridView;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Label totalStudentLbl;
-        private System.Windows.Forms.Button removeBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label totalTeacherLbl;
     }
 }

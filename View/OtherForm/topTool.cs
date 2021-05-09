@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace WindowClassProject.View.OtherForm
 {
     public partial class topTool : UserControl
@@ -17,31 +19,17 @@ namespace WindowClassProject.View.OtherForm
             InitializeComponent();
         }
 
-
+        public System.Windows.Forms.FormWindowState WindowState { get; set; }
         #region action expand and minimum size of your window FORM
 
-        int lX, lY;
-        int sw, sh;
-        bool mini = false;
 
         private void expandPictureBox_Click(object sender, EventArgs e)
         {
-            lX = this.Location.X;
-            lY = this.Location.Y;
-            sw = this.Size.Width;
-            sh = this.Size.Height;
-            if (mini == false)
-            {
-                mini = true;
 
-
-            }
+            if(WindowState == FormWindowState.Normal)
+                this.WindowState = FormWindowState.Maximized;
             else
-            {
-                mini = false;
-            }
-            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                this.WindowState = FormWindowState.Normal;
 
         }
         #endregion

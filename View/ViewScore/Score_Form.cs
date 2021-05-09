@@ -16,5 +16,14 @@ namespace WindowClassProject.View.ViewScore
         {
             InitializeComponent();
         }
+
+        private void Score_Form_Load(object sender, EventArgs e)
+        {
+            using(MyLinQDataContext db=new MyLinQDataContext())
+            {
+                var source = from SCORE sc in db.SCOREs 
+                             select sc;
+            }
+        }
     }
 }

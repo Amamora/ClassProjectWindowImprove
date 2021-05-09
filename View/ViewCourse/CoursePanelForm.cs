@@ -30,6 +30,12 @@ namespace WindowClassProject.View.ViewCourse
             DataTable tb = course.LoadCourse();
             dataCourseGrid.DataSource = tb;
             dataCourseGrid.RowTemplate.Height = 80;
+            using (MyLinQDataContext mydata = new MyLinQDataContext())
+            {
+                var counts = mydata.COURSEs.GroupBy(x => x.courseID).Select(g => g.Count());
+
+                totalCourseLbl.Text = "Total Student: " + counts.Count();
+            }
         }
 
         private void refreshBtn_Click(object sender, EventArgs e)

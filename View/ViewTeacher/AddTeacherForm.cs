@@ -9,41 +9,66 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowClassProject.DAO;
-using WindowClassProject.Model;
 
-namespace WindowClassProject.View.ViewStudent
+namespace WindowClassProject.View.ViewTeacher
 {
-    public partial class AddStudentPanelForm : Form
+    public partial class AddTeacherForm : Form
     {
-        public AddStudentPanelForm()
+        public AddTeacherForm()
         {
             InitializeComponent();
-
+            birthDatePicker.Format = DateTimePickerFormat.Custom;
+            birthDatePicker.CustomFormat = "dd/MM/yyyy";
         }
-
-        private void AddStudentPanelForm_Load(object sender, EventArgs e)
+        int genderValue = 0;
+        private void FeMaleRadio_CheckedChanged(object sender, EventArgs e)
         {
-            loadClassBox();
+            genderValue = 1;
         }
-
-        private void addPerson1_Load(object sender, EventArgs e)
+        string imagesLocation = "";
+        private void addInforStudentBtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        public void loadClassBox()
-        {
-            ClassDAO cla = new ClassDAO();
-            DataTable dt = cla.getDataClassIntoDataTable();
-        
-            for(int i = 0; i < dt.Rows.Count; i++)
+            if (checkValid())
             {
-                ClassModel mo = new ClassModel(dt.Rows[i]["classID"].ToString(), Int32.Parse(dt.Rows[i]["schoolyear"].ToString()));
-                classCombox.Items.Add(mo);
+                using (MyLinQDataContext db = new MyLinQDataContext())
+                {
+                    TEACHER insert = new TEACHER();
+                    insert.teacherID = IDTxt.Text;
+                    insert.teacherFName = fNameTxt.Text;
+                    insert.teacherLName = lNameTxt.Text;
+                    insert.teacherPhone = phoneTxt.Text;
+                    insert.teacherEmail = emailTxt.Text;
+                    insert.teacherBDate = birthDatePicker.Value;
+
+                    byte[] images = null;
+                    FileStream stream = new FileStream(imagesLocation, FileMode.Open, FileAccess.Read);
+                    BinaryReader bin = new BinaryReader(stream);
+                    images = bin.ReadBytes((int)stream.Length);
+                    MemoryStream myStream = new MemoryStream();
+                    pictureAccount.Image.Save(myStream, System.Drawing.Imaging.ImageFormat.Png);
+                    insert.picture = myStream.ToArray();
+                    insert.teacherCMND = cmndTxt.Text;
+                    db.TEACHERs.InsertOnSubmit(insert);
+
+                    db.SubmitChanges();
+                    MessageBox.Show("insert Sucess!!");
+                    resertAll();
+
+                }
             }
-            classCombox.DisplayMember = "classID";
+        }
+        byte[] convertImageToBinary(Image img)
+        {
+            using (MemoryStream mm = new MemoryStream())
+            {
+                img.Save(mm, System.Drawing.Imaging.ImageFormat.Png);
+                return mm.ToArray();
+            }
+
+        }
+        private void AddTeacherForm_Load(object sender, EventArgs e)
+        {
+
         }
         public bool checkValid()
         {
@@ -103,37 +128,20 @@ namespace WindowClassProject.View.ViewStudent
                 MessageBox.Show("Please enter a valid phone number");
                 return false;
             }
-
-
-            return true;
-
-        }
-        byte[] convertImageToBinary(Image img)
-        {
-            using (MemoryStream mm = new MemoryStream())
+            using (MyLinQDataContext db = new MyLinQDataContext())
             {
-                img.Save(mm, System.Drawing.Imaging.ImageFormat.Png);
-                return mm.ToArray();
+
             }
 
-        }
-        public void resertAll()
-        {
-            IDTxt.Text = "";
-            fNameTxt.Text = "";
-            lNameTxt.Text = "";
-            cmndTxt.Text = "";
-            addressTxt.Text = "";
-            emailTxt.Text = "";
-            phoneTxt.Text = "";
-            pictureAccount.Image = null;
+                return true;
+
         }
 
-        private void clearBtn_Click(object sender, EventArgs e)
+        private void maleRadio_CheckedChanged(object sender, EventArgs e)
         {
-            resertAll();
+            genderValue = 0;
         }
-        string imagesLocation = "";
+
         private void upImageBtn_Click(object sender, EventArgs e)
         {
 
@@ -154,41 +162,17 @@ namespace WindowClassProject.View.ViewStudent
             }
         }
 
-        //
-        int genderValue = 0;
-        //male =0, female=1
-        private void maleRadio_CheckedChanged(object sender, EventArgs e)
+
+        public void resertAll()
         {
-            genderValue = 0;
-        }
-
-        private void FeMaleRadio_CheckedChanged(object sender, EventArgs e)
-        {
-            genderValue = 1;
-        }
-
-        private void addInforStudentBtn_Click(object sender, EventArgs e)
-        {
-            StudentDAO stu = new StudentDAO();
-            if (checkValid()==true && stu.checkExistStudent(IDTxt.Text) == false)
-            {
-
-                byte[] images = null;
-                FileStream stream = new FileStream(imagesLocation, FileMode.Open, FileAccess.Read);
-                BinaryReader bin = new BinaryReader(stream);
-                images = bin.ReadBytes((int)stream.Length);
-                MemoryStream myStream = new MemoryStream();
-               pictureAccount.Image.Save(myStream, System.Drawing.Imaging.ImageFormat.Png);
-                ClassModel co = classCombox.SelectedItem as ClassModel;
-
-              bool check=  stu.insertNewStudent(IDTxt.Text,fNameTxt.Text,lNameTxt.Text,birthDatePicker.Value,addressTxt.Text,genderValue,phoneTxt.Text,emailTxt.Text,cmndTxt.Text,myStream,co.classID);
-                if (check == true)
-                {
-                    MessageBox.Show("Add sucess", "Information");
-                    
-                }
-            }
-
+            IDTxt.Text = "";
+            fNameTxt.Text = "";
+            lNameTxt.Text = "";
+            cmndTxt.Text = "";
+           
+            emailTxt.Text = "";
+            phoneTxt.Text = "";
+            pictureAccount.Image = null;
         }
     }
 }

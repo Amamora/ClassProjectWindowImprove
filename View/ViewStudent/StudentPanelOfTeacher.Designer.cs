@@ -45,6 +45,7 @@ namespace WindowClassProject.View.ViewStudent
             this.exportPDFButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolPanel.SuspendLayout();
@@ -99,7 +100,7 @@ namespace WindowClassProject.View.ViewStudent
             "StudentName",
             "Gender",
             "ClassID"});
-            this.comboBox1.Location = new System.Drawing.Point(405, 33);
+            this.comboBox1.Location = new System.Drawing.Point(398, 34);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(231, 33);
             this.comboBox1.TabIndex = 0;
@@ -221,6 +222,7 @@ namespace WindowClassProject.View.ViewStudent
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.dataGridView1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 194);
@@ -237,7 +239,15 @@ namespace WindowClassProject.View.ViewStudent
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 597);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 522);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1118, 75);
+            this.panel4.TabIndex = 1;
             // 
             // StudentPanelOfTeacher
             // 
@@ -277,5 +287,6 @@ namespace WindowClassProject.View.ViewStudent
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox searchBox;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Panel panel4;
     }
 }

@@ -153,6 +153,16 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_edit_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_edit_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_expand_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_expand_32px", resourceCulture);
@@ -323,9 +333,39 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_remove_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_remove_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_reset_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_reset_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_rewind_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_rewind_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_show_sidepanel_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_show_sidepanel_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

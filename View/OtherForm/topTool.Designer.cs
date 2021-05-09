@@ -118,6 +118,7 @@ namespace WindowClassProject.View.OtherForm
             this.contactBtn.FlatAppearance.BorderSize = 0;
             this.contactBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.contactBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactBtn.ForeColor = System.Drawing.Color.White;
             this.contactBtn.Location = new System.Drawing.Point(160, 0);
             this.contactBtn.Name = "contactBtn";
             this.contactBtn.Size = new System.Drawing.Size(92, 50);
@@ -131,6 +132,7 @@ namespace WindowClassProject.View.OtherForm
             this.homeBtn.FlatAppearance.BorderSize = 0;
             this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.homeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.White;
             this.homeBtn.Location = new System.Drawing.Point(68, 0);
             this.homeBtn.Name = "homeBtn";
             this.homeBtn.Size = new System.Drawing.Size(92, 50);

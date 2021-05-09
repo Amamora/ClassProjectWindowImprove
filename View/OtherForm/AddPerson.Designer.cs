@@ -194,7 +194,7 @@ namespace WindowClassProject.View.OtherForm
             this.cmndTxt.Location = new System.Drawing.Point(793, 401);
             this.cmndTxt.Multiline = true;
             this.cmndTxt.Name = "cmndTxt";
-            this.cmndTxt.Size = new System.Drawing.Size(327, 34);
+            this.cmndTxt.Size = new System.Drawing.Size(290, 34);
             this.cmndTxt.TabIndex = 19;
             this.cmndTxt.TextChanged += new System.EventHandler(this.cmndTxt_TextChanged);
             // 

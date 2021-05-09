@@ -97,6 +97,11 @@ namespace WindowClassProject.View.ViewLogin
             showPictureBox.Visible = true;
             hidePictureBox.Visible = false;
         }
+
+        private void passTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         //
 
     }

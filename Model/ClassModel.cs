@@ -16,5 +16,12 @@ namespace WindowClassProject.Model
         {
 
         }
+        public ClassModel(string classID,int schoolYear)
+        {
+            this.classID = classID;
+            
+            this.schoolYear = schoolYear;
+
+        }
     }
 }
