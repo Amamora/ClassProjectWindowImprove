@@ -31,6 +31,8 @@ namespace WindowClassProject.View.ViewTeacher
         {
             this.components = new System.ComponentModel.Container();
             this.titlePaneTeacher = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.totalTeacherLbl = new System.Windows.Forms.Label();
             this.searchBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,12 +48,10 @@ namespace WindowClassProject.View.ViewTeacher
             this.exportPDFButton = new System.Windows.Forms.Button();
             this.dataTeacherGridView = new System.Windows.Forms.DataGridView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.totalTeacherLbl = new System.Windows.Forms.Label();
             this.titlePaneTeacher.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.toolPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataTeacherGridView)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // titlePaneTeacher
@@ -65,7 +65,29 @@ namespace WindowClassProject.View.ViewTeacher
             this.titlePaneTeacher.Location = new System.Drawing.Point(0, 0);
             this.titlePaneTeacher.Name = "titlePaneTeacher";
             this.titlePaneTeacher.Size = new System.Drawing.Size(1118, 113);
-            this.titlePaneTeacher.TabIndex = 0;
+            this.titlePaneTeacher.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.totalTeacherLbl);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(866, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(252, 113);
+            this.panel2.TabIndex = 18;
+            // 
+            // totalTeacherLbl
+            // 
+            this.totalTeacherLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalTeacherLbl.AutoSize = true;
+            this.totalTeacherLbl.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTeacherLbl.Location = new System.Drawing.Point(17, 39);
+            this.totalTeacherLbl.Name = "totalTeacherLbl";
+            this.totalTeacherLbl.Size = new System.Drawing.Size(110, 32);
+            this.totalTeacherLbl.TabIndex = 18;
+            this.totalTeacherLbl.Text = "Total Teacher:";
             // 
             // searchBox
             // 
@@ -107,7 +129,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(305, 113);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 2;
             // 
             // toolPanel
             // 
@@ -227,7 +249,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.exportPDFButton.Location = new System.Drawing.Point(1055, 0);
             this.exportPDFButton.Name = "exportPDFButton";
             this.exportPDFButton.Size = new System.Drawing.Size(63, 47);
-            this.exportPDFButton.TabIndex = 0;
+            this.exportPDFButton.TabIndex = 2;
             this.exportPDFButton.UseVisualStyleBackColor = true;
             // 
             // dataTeacherGridView
@@ -246,35 +268,13 @@ namespace WindowClassProject.View.ViewTeacher
             this.dataTeacherGridView.RowTemplate.Height = 24;
             this.dataTeacherGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataTeacherGridView.Size = new System.Drawing.Size(1118, 631);
-            this.dataTeacherGridView.TabIndex = 18;
+            this.dataTeacherGridView.TabIndex = 19;
             this.dataTeacherGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataTeacherGridView_UserDeletedRow);
             // 
             // toolTip1
             // 
             this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip1.ToolTipTitle = "Seach by ID avoid Error";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.totalTeacherLbl);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(866, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(252, 113);
-            this.panel2.TabIndex = 18;
-            // 
-            // totalTeacherLbl
-            // 
-            this.totalTeacherLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.totalTeacherLbl.AutoSize = true;
-            this.totalTeacherLbl.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTeacherLbl.Location = new System.Drawing.Point(17, 39);
-            this.totalTeacherLbl.Name = "totalTeacherLbl";
-            this.totalTeacherLbl.Size = new System.Drawing.Size(110, 32);
-            this.totalTeacherLbl.TabIndex = 18;
-            this.totalTeacherLbl.Text = "Total Teacher:";
             // 
             // TeacherForm
             // 
@@ -290,10 +290,10 @@ namespace WindowClassProject.View.ViewTeacher
             this.Load += new System.EventHandler(this.TeacherForm_Load);
             this.titlePaneTeacher.ResumeLayout(false);
             this.titlePaneTeacher.PerformLayout();
-            this.toolPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataTeacherGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.toolPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataTeacherGridView)).EndInit();
             this.ResumeLayout(false);
 
         }

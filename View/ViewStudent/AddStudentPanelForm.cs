@@ -21,7 +21,7 @@ namespace WindowClassProject.View.ViewStudent
             InitializeComponent();
 
         }
-
+    
         private void AddStudentPanelForm_Load(object sender, EventArgs e)
         {
             loadClassBox();
@@ -103,6 +103,8 @@ namespace WindowClassProject.View.ViewStudent
                 MessageBox.Show("Please enter a valid phone number");
                 return false;
             }
+            //regex for only a sequence number \b\d+\b
+            //
 
 
             return true;
@@ -189,6 +191,14 @@ namespace WindowClassProject.View.ViewStudent
                 }
             }
 
+        }
+
+        private void cmndTxt_TextChanged(object sender, EventArgs e)
+        {
+            if (!Regex.IsMatch(cmndTxt.Text, @"\b\d+\b"))
+            {
+                MessageBox.Show("only Number");
+            }
         }
     }
 }

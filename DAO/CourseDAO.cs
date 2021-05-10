@@ -116,7 +116,7 @@ namespace WindowClassProject.DAO
         #region check course id have already in database or not
         public bool checkAlreadyCourse(string courseid)
         {
-            bool check = true;
+            bool check = false;
             myDataBase.openConnection();
 
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -135,7 +135,7 @@ namespace WindowClassProject.DAO
             {
 
                 MessageBox.Show("Already ID COURSE IN Database");
-                check = false;///false is wrong
+                check = true;///false is wrong
 
 
 

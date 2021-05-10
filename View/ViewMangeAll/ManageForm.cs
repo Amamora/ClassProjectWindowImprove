@@ -194,8 +194,7 @@ namespace WindowClassProject.View.ViewManageStudent
 
         private void openStudentPanelChild_Click(object sender, EventArgs e)
         {
-            
-
+      
             openChildFormInPanel(new StudentPanelForm());
         }
 
@@ -243,6 +242,7 @@ namespace WindowClassProject.View.ViewManageStudent
                 openTeacherPanelChild.Text = "";
                 openScorePanelChild.Text = "";
                 openClassPanelBtn.Text = "";
+                openGroupSubjectPanel.Text = "";
             }
             else
             {
@@ -260,6 +260,7 @@ namespace WindowClassProject.View.ViewManageStudent
                 openTeacherPanelChild.Text = "Teacher";
                 openScorePanelChild.Text = "Score";
                 openClassPanelBtn.Text = "Class";
+                openGroupSubjectPanel.Text = "Group Subject";
             }
            
 
@@ -268,6 +269,11 @@ namespace WindowClassProject.View.ViewManageStudent
         private void openClassPanelBtn_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new ClassPanelForm());
+        }
+
+        private void openGroupSubjectPanel_Click(object sender, EventArgs e)
+        {
+            openChildFormInPanel(new AddGroupSubjectForm());
         }
     }
 }

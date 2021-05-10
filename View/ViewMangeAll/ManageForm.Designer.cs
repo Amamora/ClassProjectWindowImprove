@@ -55,6 +55,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.homeBtn = new System.Windows.Forms.Button();
             this.actionMenuPictureBox = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.openGroupSubjectPanel = new System.Windows.Forms.Button();
             this.menuPanel.SuspendLayout();
             this.openManagePanel.SuspendLayout();
             this.userPanel.SuspendLayout();
@@ -97,7 +98,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.exitBtn.ForeColor = System.Drawing.Color.White;
             this.exitBtn.Image = global::WindowClassProject.Properties.Resources.shutdown;
             this.exitBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exitBtn.Location = new System.Drawing.Point(0, 752);
+            this.exitBtn.Location = new System.Drawing.Point(0, 783);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.exitBtn.Size = new System.Drawing.Size(246, 70);
@@ -115,7 +116,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openMailBoxPanel.ForeColor = System.Drawing.Color.Silver;
             this.openMailBoxPanel.Image = global::WindowClassProject.Properties.Resources.icons8_mail_30px;
             this.openMailBoxPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 682);
+            this.openMailBoxPanel.Location = new System.Drawing.Point(0, 713);
             this.openMailBoxPanel.Name = "openMailBoxPanel";
             this.openMailBoxPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openMailBoxPanel.Size = new System.Drawing.Size(246, 70);
@@ -133,7 +134,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTimeTablePanel.ForeColor = System.Drawing.Color.Silver;
             this.openTimeTablePanel.Image = global::WindowClassProject.Properties.Resources.icons8_timetable_32px;
             this.openTimeTablePanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 612);
+            this.openTimeTablePanel.Location = new System.Drawing.Point(0, 643);
             this.openTimeTablePanel.Name = "openTimeTablePanel";
             this.openTimeTablePanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openTimeTablePanel.Size = new System.Drawing.Size(246, 70);
@@ -151,7 +152,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openChartPanel.ForeColor = System.Drawing.Color.Silver;
             this.openChartPanel.Image = global::WindowClassProject.Properties.Resources.icons8_chart_30px;
             this.openChartPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.openChartPanel.Location = new System.Drawing.Point(0, 542);
+            this.openChartPanel.Location = new System.Drawing.Point(0, 573);
             this.openChartPanel.Name = "openChartPanel";
             this.openChartPanel.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.openChartPanel.Size = new System.Drawing.Size(246, 70);
@@ -162,6 +163,7 @@ namespace WindowClassProject.View.ViewManageStudent
             // 
             // openManagePanel
             // 
+            this.openManagePanel.Controls.Add(this.openGroupSubjectPanel);
             this.openManagePanel.Controls.Add(this.openClassPanelBtn);
             this.openManagePanel.Controls.Add(this.openScorePanelChild);
             this.openManagePanel.Controls.Add(this.openTeacherPanelChild);
@@ -170,7 +172,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openManagePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.openManagePanel.Location = new System.Drawing.Point(0, 240);
             this.openManagePanel.Name = "openManagePanel";
-            this.openManagePanel.Size = new System.Drawing.Size(246, 302);
+            this.openManagePanel.Size = new System.Drawing.Size(246, 333);
             this.openManagePanel.TabIndex = 3;
             // 
             // openClassPanelBtn
@@ -458,6 +460,24 @@ namespace WindowClassProject.View.ViewManageStudent
             this.panelChildForm.Size = new System.Drawing.Size(1136, 826);
             this.panelChildForm.TabIndex = 2;
             // 
+            // openGroupSubjectPanel
+            // 
+            this.openGroupSubjectPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.openGroupSubjectPanel.FlatAppearance.BorderSize = 0;
+            this.openGroupSubjectPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openGroupSubjectPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openGroupSubjectPanel.ForeColor = System.Drawing.Color.Silver;
+            this.openGroupSubjectPanel.Image = global::WindowClassProject.Properties.Resources.icons8_show_sidepanel_30px;
+            this.openGroupSubjectPanel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.openGroupSubjectPanel.Location = new System.Drawing.Point(0, 270);
+            this.openGroupSubjectPanel.Name = "openGroupSubjectPanel";
+            this.openGroupSubjectPanel.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.openGroupSubjectPanel.Size = new System.Drawing.Size(246, 54);
+            this.openGroupSubjectPanel.TabIndex = 8;
+            this.openGroupSubjectPanel.Text = "Group Subject";
+            this.openGroupSubjectPanel.UseVisualStyleBackColor = true;
+            this.openGroupSubjectPanel.Click += new System.EventHandler(this.openGroupSubjectPanel_Click);
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -517,5 +537,6 @@ namespace WindowClassProject.View.ViewManageStudent
         private System.Windows.Forms.Button contactBtn;
         private System.Windows.Forms.Button homeBtn;
         private System.Windows.Forms.PictureBox actionMenuPictureBox;
+        private System.Windows.Forms.Button openGroupSubjectPanel;
     }
 }

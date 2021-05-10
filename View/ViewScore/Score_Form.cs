@@ -25,5 +25,11 @@ namespace WindowClassProject.View.ViewScore
                              select sc;
             }
         }
+
+        private void addScoreBtn_Click(object sender, EventArgs e)
+        {
+            AddScorePanelForm add = new AddScorePanelForm();
+            add.Show();
+        }
     }
 }

@@ -389,6 +389,11 @@ namespace WindowClassProject.View.ViewCourse
             ManageCourseFast fast = new ManageCourseFast();
             fast.Show();
         }
-     
+
+        private void addCourseBtn_Click(object sender, EventArgs e)
+        {
+            AddCoursePanelForm add = new AddCoursePanelForm();
+            add.Show();
+        }
     }
 }

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Linq;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowClassProject.DAO;
 
 namespace WindowClassProject.View.ViewTeacher
 {
@@ -25,24 +27,32 @@ namespace WindowClassProject.View.ViewTeacher
          */
         private void TeacherForm_Load(object sender, EventArgs e)
         {
+            TeacherDAO teach = new TeacherDAO();
+            teach.connectGetAllTeacher(dataTeacherGridView);
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
-
-                dataTeacherGridView.DataSource = from u in db.TEACHERs
-                                                 select new
-                                                 {
-
-                                                     teacherID = u.teacherID,
-                                                     TeacherFName = u.teacherFName,
-                                                     TeacherLName = u.teacherLName,
-                                                     teacherEmail = u.teacherEmail,
-                                                     teacherPicture = u.picture 
-                                                 };
+              
+               
 
                 var count = db.TEACHERs.GroupBy(x => x.teacherID).Select(x => x.Count());
                 totalTeacherLbl.Text = "Total Teacher:" + count.Count();
+               /* var scourse = from TEACHER te in db.TEACHERs
+                              select new
+                              {
+                                  TeacherID = te.teacherID,
+                                  teacherImag = (te.picture).ToArray()
+                              };
+
+                dataTeacherGridView.DataSource = scourse;
+                DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+               dataTeacherGridView.RowTemplate.Height = 80;
+                picCol = (DataGridViewImageColumn)dataTeacherGridView.Columns[1];
+                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+
 
                 //try to retrive binary to image~~
+
+
 
             }
     }

@@ -186,12 +186,6 @@
     <Compile Include="View\ViewScore\AverageByCourse.Designer.cs">
       <DependentUpon>AverageByCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewScore\EditScorePanelForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ViewScore\EditScorePanelForm.Designer.cs">
-      <DependentUpon>EditScorePanelForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewScore\LiveChartScore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +204,12 @@
     <Compile Include="View\ViewStudent\AddStudentPanelForm.Designer.cs">
       <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewStudent\EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewStudent\EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewStudent\StudentPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,12 +221,6 @@
     </Compile>
     <Compile Include="View\ViewStudent\StudentPanelOfTeacher.Designer.cs">
       <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ViewTeacher\AddClassForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ViewTeacher\AddClassForm.Designer.cs">
-      <DependentUpon>AddClassForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewTeacher\AddGroupSubjectForm.cs">
       <SubType>Form</SubType>
@@ -292,20 +286,23 @@
     <EmbeddedResource Include="View\ViewMangeAll\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewScore\AddScorePanelForm.resx">
+      <DependentUpon>AddScorePanelForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewScore\Score_Form.resx">
       <DependentUpon>Score_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewStudent\AddStudentPanelForm.resx">
       <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewStudent\EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewStudent\StudentPanelForm.resx">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewStudent\StudentPanelOfTeacher.resx">
       <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewTeacher\AddClassForm.resx">
-      <DependentUpon>AddClassForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewTeacher\AddGroupSubjectForm.resx">
       <DependentUpon>AddGroupSubjectForm.cs</DependentUpon>
@@ -492,6 +489,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_show_sidepanel_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_search_32px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

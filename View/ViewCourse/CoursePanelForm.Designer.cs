@@ -36,6 +36,8 @@ namespace WindowClassProject.View.ViewCourse
             this.totalCourseLbl = new System.Windows.Forms.Label();
             this.toolCoursePanel = new System.Windows.Forms.Panel();
             this.fastManageBtn = new System.Windows.Forms.Button();
+            this.dataShowCoursePanel = new System.Windows.Forms.Panel();
+            this.dataCourseGrid = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.exportWordFileBtn = new System.Windows.Forms.Button();
             this.exportExcelFileBtn = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@ namespace WindowClassProject.View.ViewCourse
             this.button3 = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
-            this.dataShowCoursePanel = new System.Windows.Forms.Panel();
-            this.dataCourseGrid = new System.Windows.Forms.DataGridView();
             this.topCoursePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolCoursePanel.SuspendLayout();
@@ -138,6 +138,31 @@ namespace WindowClassProject.View.ViewCourse
             this.fastManageBtn.UseVisualStyleBackColor = true;
             this.fastManageBtn.Click += new System.EventHandler(this.fastManageBtn_Click);
             // 
+            // dataShowCoursePanel
+            // 
+            this.dataShowCoursePanel.Controls.Add(this.dataCourseGrid);
+            this.dataShowCoursePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataShowCoursePanel.Location = new System.Drawing.Point(0, 199);
+            this.dataShowCoursePanel.Name = "dataShowCoursePanel";
+            this.dataShowCoursePanel.Size = new System.Drawing.Size(1118, 592);
+            this.dataShowCoursePanel.TabIndex = 2;
+            // 
+            // dataCourseGrid
+            // 
+            this.dataCourseGrid.AllowUserToAddRows = false;
+            this.dataCourseGrid.AllowUserToDeleteRows = false;
+            this.dataCourseGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCourseGrid.BackgroundColor = System.Drawing.Color.White;
+            this.dataCourseGrid.ColumnHeadersHeight = 28;
+            this.dataCourseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataCourseGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataCourseGrid.Name = "dataCourseGrid";
+            this.dataCourseGrid.RowHeadersWidth = 51;
+            this.dataCourseGrid.RowTemplate.Height = 24;
+            this.dataCourseGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataCourseGrid.Size = new System.Drawing.Size(1118, 592);
+            this.dataCourseGrid.TabIndex = 0;
+            // 
             // button8
             // 
             this.button8.Dock = System.Windows.Forms.DockStyle.Right;
@@ -229,31 +254,7 @@ namespace WindowClassProject.View.ViewCourse
             this.addCourseBtn.Size = new System.Drawing.Size(64, 47);
             this.addCourseBtn.TabIndex = 0;
             this.addCourseBtn.UseVisualStyleBackColor = true;
-            // 
-            // dataShowCoursePanel
-            // 
-            this.dataShowCoursePanel.Controls.Add(this.dataCourseGrid);
-            this.dataShowCoursePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataShowCoursePanel.Location = new System.Drawing.Point(0, 199);
-            this.dataShowCoursePanel.Name = "dataShowCoursePanel";
-            this.dataShowCoursePanel.Size = new System.Drawing.Size(1118, 592);
-            this.dataShowCoursePanel.TabIndex = 2;
-            // 
-            // dataCourseGrid
-            // 
-            this.dataCourseGrid.AllowUserToAddRows = false;
-            this.dataCourseGrid.AllowUserToDeleteRows = false;
-            this.dataCourseGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataCourseGrid.BackgroundColor = System.Drawing.Color.White;
-            this.dataCourseGrid.ColumnHeadersHeight = 28;
-            this.dataCourseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataCourseGrid.Location = new System.Drawing.Point(0, 0);
-            this.dataCourseGrid.Name = "dataCourseGrid";
-            this.dataCourseGrid.RowHeadersWidth = 51;
-            this.dataCourseGrid.RowTemplate.Height = 24;
-            this.dataCourseGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataCourseGrid.Size = new System.Drawing.Size(1118, 592);
-            this.dataCourseGrid.TabIndex = 0;
+            this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
             // 
             // CoursePanelForm
             // 

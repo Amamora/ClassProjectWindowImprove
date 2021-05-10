@@ -35,13 +35,14 @@ namespace WindowClassProject.View.ViewStudent
 
         private void StudentPanelForm_Load(object sender, EventArgs e)
         {
-            loadDataForDataGrid(dataStudentGridView);
             using (MyLinQDataContext mydata = new MyLinQDataContext())
             {
                 var counts = mydata.STUDENTs.GroupBy(x => x.studentID).Select(g => g.Count());
 
                 totalStudentLbl.Text = "Total Student: " + counts.Count();
             }
+            loadDataForDataGrid(dataStudentGridView);
+            
         }
         private void loadDataForDataGrid(DataGridView dataGridView)
         {
@@ -67,7 +68,7 @@ namespace WindowClassProject.View.ViewStudent
                     catch (IOException ex)
                     {
                         fileError = true;
-                        MessageBox.Show("It wasn't possible to write data to word");
+                        MessageBox.Show("It wasn't possible to write data to word",ex.Message);
                     }
                 }
 
@@ -159,7 +160,7 @@ namespace WindowClassProject.View.ViewStudent
                     catch (IOException ex)
                     {
                         fileError = true;
-                        MessageBox.Show("It wasn't possible to write data to pdf");
+                        MessageBox.Show("It wasn't possible to write data to pdf",ex.Message);
                     }
                 }
 

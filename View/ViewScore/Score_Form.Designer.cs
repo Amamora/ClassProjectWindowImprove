@@ -36,8 +36,6 @@ namespace WindowClassProject.View.ViewScore
             this.panel2 = new System.Windows.Forms.Panel();
             this.liveChartBtn = new System.Windows.Forms.Button();
             this.averageBtn = new System.Windows.Forms.Button();
-            this.editBtn = new System.Windows.Forms.Button();
-            this.removeScoreBtn = new System.Windows.Forms.Button();
             this.addScoreBtn = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.exportPdfBtn = new System.Windows.Forms.Button();
@@ -117,8 +115,6 @@ namespace WindowClassProject.View.ViewScore
             // 
             this.panel2.Controls.Add(this.liveChartBtn);
             this.panel2.Controls.Add(this.averageBtn);
-            this.panel2.Controls.Add(this.editBtn);
-            this.panel2.Controls.Add(this.removeScoreBtn);
             this.panel2.Controls.Add(this.addScoreBtn);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 100);
@@ -129,7 +125,7 @@ namespace WindowClassProject.View.ViewScore
             // liveChartBtn
             // 
             this.liveChartBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.liveChartBtn.Location = new System.Drawing.Point(0, 435);
+            this.liveChartBtn.Location = new System.Drawing.Point(0, 231);
             this.liveChartBtn.Name = "liveChartBtn";
             this.liveChartBtn.Size = new System.Drawing.Size(200, 102);
             this.liveChartBtn.TabIndex = 4;
@@ -139,32 +135,12 @@ namespace WindowClassProject.View.ViewScore
             // averageBtn
             // 
             this.averageBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.averageBtn.Location = new System.Drawing.Point(0, 306);
+            this.averageBtn.Location = new System.Drawing.Point(0, 102);
             this.averageBtn.Name = "averageBtn";
             this.averageBtn.Size = new System.Drawing.Size(200, 129);
             this.averageBtn.TabIndex = 3;
             this.averageBtn.Text = "Average Score Each Group and Course";
             this.averageBtn.UseVisualStyleBackColor = true;
-            // 
-            // editBtn
-            // 
-            this.editBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.editBtn.Location = new System.Drawing.Point(0, 204);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(200, 102);
-            this.editBtn.TabIndex = 2;
-            this.editBtn.Text = "Edit";
-            this.editBtn.UseVisualStyleBackColor = true;
-            // 
-            // removeScoreBtn
-            // 
-            this.removeScoreBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.removeScoreBtn.Location = new System.Drawing.Point(0, 102);
-            this.removeScoreBtn.Name = "removeScoreBtn";
-            this.removeScoreBtn.Size = new System.Drawing.Size(200, 102);
-            this.removeScoreBtn.TabIndex = 1;
-            this.removeScoreBtn.Text = "Remove Score";
-            this.removeScoreBtn.UseVisualStyleBackColor = true;
             // 
             // addScoreBtn
             // 
@@ -173,8 +149,9 @@ namespace WindowClassProject.View.ViewScore
             this.addScoreBtn.Name = "addScoreBtn";
             this.addScoreBtn.Size = new System.Drawing.Size(200, 102);
             this.addScoreBtn.TabIndex = 0;
-            this.addScoreBtn.Text = "Add Score";
+            this.addScoreBtn.Text = "Manage Score";
             this.addScoreBtn.UseVisualStyleBackColor = true;
+            this.addScoreBtn.Click += new System.EventHandler(this.addScoreBtn_Click);
             // 
             // panel3
             // 
@@ -272,8 +249,6 @@ namespace WindowClassProject.View.ViewScore
         private System.Windows.Forms.ComboBox comboBoxSearch;
         private System.Windows.Forms.Button liveChartBtn;
         private System.Windows.Forms.Button averageBtn;
-        private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Button removeScoreBtn;
         private System.Windows.Forms.Button exportPdfBtn;
         private System.Windows.Forms.Button exportExcelBtn;
         private System.Windows.Forms.Button exportWordBtn;

@@ -86,6 +86,7 @@ namespace WindowClassProject.View.ViewCourse
             this.descriptionTxt.Name = "descriptionTxt";
             this.descriptionTxt.Size = new System.Drawing.Size(466, 76);
             this.descriptionTxt.TabIndex = 18;
+            this.descriptionTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.descriptionTxt_KeyDown);
             // 
             // descriptionLbl
             // 
@@ -105,6 +106,7 @@ namespace WindowClassProject.View.ViewCourse
             this.creditTxt.Name = "creditTxt";
             this.creditTxt.Size = new System.Drawing.Size(466, 42);
             this.creditTxt.TabIndex = 16;
+            this.creditTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.creditTxt_KeyDown);
             // 
             // periodLbl
             // 
@@ -123,6 +125,7 @@ namespace WindowClassProject.View.ViewCourse
             this.courseNameTxt.Name = "courseNameTxt";
             this.courseNameTxt.Size = new System.Drawing.Size(466, 42);
             this.courseNameTxt.TabIndex = 14;
+            this.courseNameTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.courseNameTxt_KeyDown);
             // 
             // labelCourseLbl
             // 
@@ -141,6 +144,7 @@ namespace WindowClassProject.View.ViewCourse
             this.idCourseTxt.Name = "idCourseTxt";
             this.idCourseTxt.Size = new System.Drawing.Size(466, 42);
             this.idCourseTxt.TabIndex = 12;
+            this.idCourseTxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.idCourseTxt_KeyDown);
             // 
             // idCourseLbl
             // 
@@ -170,6 +174,8 @@ namespace WindowClassProject.View.ViewCourse
             this.departmentCombox.Name = "departmentCombox";
             this.departmentCombox.Size = new System.Drawing.Size(469, 33);
             this.departmentCombox.TabIndex = 23;
+            this.departmentCombox.SelectedIndexChanged += new System.EventHandler(this.departmentCombox_SelectedIndexChanged);
+            this.departmentCombox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.departmentCombox_KeyDown);
             // 
             // AddCoursePanelForm
             // 
@@ -191,6 +197,7 @@ namespace WindowClassProject.View.ViewCourse
             this.Controls.Add(this.idCourseLbl);
             this.Name = "AddCoursePanelForm";
             this.Text = "AddCoursePanelForm";
+            this.Load += new System.EventHandler(this.AddCoursePanelForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
