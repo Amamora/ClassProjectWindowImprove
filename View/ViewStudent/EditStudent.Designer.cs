@@ -30,10 +30,9 @@ namespace WindowClassProject.View.ViewStudent
         private void InitializeComponent()
         {
             this.panelCenter = new System.Windows.Forms.Panel();
-            this.titleLbl = new System.Windows.Forms.Label();
-            this.topAddPersonPanel = new System.Windows.Forms.Panel();
-            this.backPageBtn = new System.Windows.Forms.Button();
-            this.backPagePanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.fullAddPanel = new System.Windows.Forms.Panel();
+            this.contentAddPersonPanel = new System.Windows.Forms.Panel();
             this.clearBtn = new System.Windows.Forms.Button();
             this.classLabel = new System.Windows.Forms.Label();
             this.classCombox = new System.Windows.Forms.ComboBox();
@@ -54,22 +53,23 @@ namespace WindowClassProject.View.ViewStudent
             this.addressTxt = new System.Windows.Forms.TextBox();
             this.addressLbl = new System.Windows.Forms.Label();
             this.birthLbl = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.fullAddPanel = new System.Windows.Forms.Panel();
-            this.contentAddPersonPanel = new System.Windows.Forms.Panel();
             this.lNameTxt = new System.Windows.Forms.TextBox();
             this.lNameLbl = new System.Windows.Forms.Label();
             this.fNameTxt = new System.Windows.Forms.TextBox();
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.IDTxt = new System.Windows.Forms.TextBox();
             this.IDLbl = new System.Windows.Forms.Label();
+            this.topAddPersonPanel = new System.Windows.Forms.Panel();
+            this.backPageBtn = new System.Windows.Forms.Button();
+            this.backPagePanel = new System.Windows.Forms.Panel();
+            this.titleLbl = new System.Windows.Forms.Label();
             this.panelCenter.SuspendLayout();
-            this.topAddPersonPanel.SuspendLayout();
-            this.backPagePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).BeginInit();
             this.panel1.SuspendLayout();
             this.fullAddPanel.SuspendLayout();
             this.contentAddPersonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).BeginInit();
+            this.topAddPersonPanel.SuspendLayout();
+            this.backPagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCenter
@@ -81,47 +81,60 @@ namespace WindowClassProject.View.ViewStudent
             this.panelCenter.Size = new System.Drawing.Size(1118, 791);
             this.panelCenter.TabIndex = 0;
             // 
-            // titleLbl
+            // panel1
             // 
-            this.titleLbl.AutoSize = true;
-            this.titleLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.titleLbl.Font = new System.Drawing.Font("Microsoft Yi Baiti", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLbl.Location = new System.Drawing.Point(0, 67);
-            this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(326, 33);
-            this.titleLbl.TabIndex = 0;
-            this.titleLbl.Text = "Edit Information Student";
+            this.panel1.Controls.Add(this.fullAddPanel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1118, 791);
+            this.panel1.TabIndex = 1;
             // 
-            // topAddPersonPanel
+            // fullAddPanel
             // 
-            this.topAddPersonPanel.Controls.Add(this.backPageBtn);
-            this.topAddPersonPanel.Controls.Add(this.backPagePanel);
-            this.topAddPersonPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topAddPersonPanel.Location = new System.Drawing.Point(0, 0);
-            this.topAddPersonPanel.Name = "topAddPersonPanel";
-            this.topAddPersonPanel.Size = new System.Drawing.Size(1118, 100);
-            this.topAddPersonPanel.TabIndex = 0;
+            this.fullAddPanel.BackColor = System.Drawing.Color.White;
+            this.fullAddPanel.Controls.Add(this.contentAddPersonPanel);
+            this.fullAddPanel.Controls.Add(this.topAddPersonPanel);
+            this.fullAddPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fullAddPanel.Location = new System.Drawing.Point(0, 0);
+            this.fullAddPanel.Name = "fullAddPanel";
+            this.fullAddPanel.Size = new System.Drawing.Size(1118, 791);
+            this.fullAddPanel.TabIndex = 1;
             // 
-            // backPageBtn
+            // contentAddPersonPanel
             // 
-            this.backPageBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.backPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backPageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backPageBtn.Location = new System.Drawing.Point(0, 0);
-            this.backPageBtn.Name = "backPageBtn";
-            this.backPageBtn.Size = new System.Drawing.Size(184, 100);
-            this.backPageBtn.TabIndex = 1;
-            this.backPageBtn.Text = "Back";
-            this.backPageBtn.UseVisualStyleBackColor = true;
-            // 
-            // backPagePanel
-            // 
-            this.backPagePanel.Controls.Add(this.titleLbl);
-            this.backPagePanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.backPagePanel.Location = new System.Drawing.Point(405, 0);
-            this.backPagePanel.Name = "backPagePanel";
-            this.backPagePanel.Size = new System.Drawing.Size(713, 100);
-            this.backPagePanel.TabIndex = 0;
+            this.contentAddPersonPanel.BackColor = System.Drawing.Color.White;
+            this.contentAddPersonPanel.Controls.Add(this.clearBtn);
+            this.contentAddPersonPanel.Controls.Add(this.classLabel);
+            this.contentAddPersonPanel.Controls.Add(this.classCombox);
+            this.contentAddPersonPanel.Controls.Add(this.addInforStudentBtn);
+            this.contentAddPersonPanel.Controls.Add(this.upImageBtn);
+            this.contentAddPersonPanel.Controls.Add(this.pictureAccount);
+            this.contentAddPersonPanel.Controls.Add(this.FeMaleRadio);
+            this.contentAddPersonPanel.Controls.Add(this.maleRadio);
+            this.contentAddPersonPanel.Controls.Add(this.birthDatePicker);
+            this.contentAddPersonPanel.Controls.Add(this.genderLbl);
+            this.contentAddPersonPanel.Controls.Add(this.cmndTxt);
+            this.contentAddPersonPanel.Controls.Add(this.cmndLbl);
+            this.contentAddPersonPanel.Controls.Add(this.pictureLbl);
+            this.contentAddPersonPanel.Controls.Add(this.emailTxt);
+            this.contentAddPersonPanel.Controls.Add(this.emailLbl);
+            this.contentAddPersonPanel.Controls.Add(this.phoneTxt);
+            this.contentAddPersonPanel.Controls.Add(this.phoneLbl);
+            this.contentAddPersonPanel.Controls.Add(this.addressTxt);
+            this.contentAddPersonPanel.Controls.Add(this.addressLbl);
+            this.contentAddPersonPanel.Controls.Add(this.birthLbl);
+            this.contentAddPersonPanel.Controls.Add(this.lNameTxt);
+            this.contentAddPersonPanel.Controls.Add(this.lNameLbl);
+            this.contentAddPersonPanel.Controls.Add(this.fNameTxt);
+            this.contentAddPersonPanel.Controls.Add(this.firstNameLbl);
+            this.contentAddPersonPanel.Controls.Add(this.IDTxt);
+            this.contentAddPersonPanel.Controls.Add(this.IDLbl);
+            this.contentAddPersonPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.contentAddPersonPanel.Location = new System.Drawing.Point(0, 100);
+            this.contentAddPersonPanel.Name = "contentAddPersonPanel";
+            this.contentAddPersonPanel.Size = new System.Drawing.Size(1118, 688);
+            this.contentAddPersonPanel.TabIndex = 1;
             // 
             // clearBtn
             // 
@@ -334,61 +347,6 @@ namespace WindowClassProject.View.ViewStudent
             this.birthLbl.TabIndex = 6;
             this.birthLbl.Text = "Birth Date";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.fullAddPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1118, 791);
-            this.panel1.TabIndex = 1;
-            // 
-            // fullAddPanel
-            // 
-            this.fullAddPanel.BackColor = System.Drawing.Color.White;
-            this.fullAddPanel.Controls.Add(this.contentAddPersonPanel);
-            this.fullAddPanel.Controls.Add(this.topAddPersonPanel);
-            this.fullAddPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fullAddPanel.Location = new System.Drawing.Point(0, 0);
-            this.fullAddPanel.Name = "fullAddPanel";
-            this.fullAddPanel.Size = new System.Drawing.Size(1118, 791);
-            this.fullAddPanel.TabIndex = 1;
-            // 
-            // contentAddPersonPanel
-            // 
-            this.contentAddPersonPanel.BackColor = System.Drawing.Color.White;
-            this.contentAddPersonPanel.Controls.Add(this.clearBtn);
-            this.contentAddPersonPanel.Controls.Add(this.classLabel);
-            this.contentAddPersonPanel.Controls.Add(this.classCombox);
-            this.contentAddPersonPanel.Controls.Add(this.addInforStudentBtn);
-            this.contentAddPersonPanel.Controls.Add(this.upImageBtn);
-            this.contentAddPersonPanel.Controls.Add(this.pictureAccount);
-            this.contentAddPersonPanel.Controls.Add(this.FeMaleRadio);
-            this.contentAddPersonPanel.Controls.Add(this.maleRadio);
-            this.contentAddPersonPanel.Controls.Add(this.birthDatePicker);
-            this.contentAddPersonPanel.Controls.Add(this.genderLbl);
-            this.contentAddPersonPanel.Controls.Add(this.cmndTxt);
-            this.contentAddPersonPanel.Controls.Add(this.cmndLbl);
-            this.contentAddPersonPanel.Controls.Add(this.pictureLbl);
-            this.contentAddPersonPanel.Controls.Add(this.emailTxt);
-            this.contentAddPersonPanel.Controls.Add(this.emailLbl);
-            this.contentAddPersonPanel.Controls.Add(this.phoneTxt);
-            this.contentAddPersonPanel.Controls.Add(this.phoneLbl);
-            this.contentAddPersonPanel.Controls.Add(this.addressTxt);
-            this.contentAddPersonPanel.Controls.Add(this.addressLbl);
-            this.contentAddPersonPanel.Controls.Add(this.birthLbl);
-            this.contentAddPersonPanel.Controls.Add(this.lNameTxt);
-            this.contentAddPersonPanel.Controls.Add(this.lNameLbl);
-            this.contentAddPersonPanel.Controls.Add(this.fNameTxt);
-            this.contentAddPersonPanel.Controls.Add(this.firstNameLbl);
-            this.contentAddPersonPanel.Controls.Add(this.IDTxt);
-            this.contentAddPersonPanel.Controls.Add(this.IDLbl);
-            this.contentAddPersonPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.contentAddPersonPanel.Location = new System.Drawing.Point(0, 100);
-            this.contentAddPersonPanel.Name = "contentAddPersonPanel";
-            this.contentAddPersonPanel.Size = new System.Drawing.Size(1118, 688);
-            this.contentAddPersonPanel.TabIndex = 1;
-            // 
             // lNameTxt
             // 
             this.lNameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -455,6 +413,48 @@ namespace WindowClassProject.View.ViewStudent
             this.IDLbl.TabIndex = 0;
             this.IDLbl.Text = "Student ID:";
             // 
+            // topAddPersonPanel
+            // 
+            this.topAddPersonPanel.Controls.Add(this.backPageBtn);
+            this.topAddPersonPanel.Controls.Add(this.backPagePanel);
+            this.topAddPersonPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topAddPersonPanel.Location = new System.Drawing.Point(0, 0);
+            this.topAddPersonPanel.Name = "topAddPersonPanel";
+            this.topAddPersonPanel.Size = new System.Drawing.Size(1118, 100);
+            this.topAddPersonPanel.TabIndex = 0;
+            // 
+            // backPageBtn
+            // 
+            this.backPageBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.backPageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backPageBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backPageBtn.Location = new System.Drawing.Point(0, 0);
+            this.backPageBtn.Name = "backPageBtn";
+            this.backPageBtn.Size = new System.Drawing.Size(184, 100);
+            this.backPageBtn.TabIndex = 1;
+            this.backPageBtn.Text = "Back";
+            this.backPageBtn.UseVisualStyleBackColor = true;
+            // 
+            // backPagePanel
+            // 
+            this.backPagePanel.Controls.Add(this.titleLbl);
+            this.backPagePanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.backPagePanel.Location = new System.Drawing.Point(405, 0);
+            this.backPagePanel.Name = "backPagePanel";
+            this.backPagePanel.Size = new System.Drawing.Size(713, 100);
+            this.backPagePanel.TabIndex = 0;
+            // 
+            // titleLbl
+            // 
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.titleLbl.Font = new System.Drawing.Font("Microsoft Yi Baiti", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.Location = new System.Drawing.Point(0, 67);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(326, 33);
+            this.titleLbl.TabIndex = 0;
+            this.titleLbl.Text = "Edit Information Student";
+            // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -465,14 +465,14 @@ namespace WindowClassProject.View.ViewStudent
             this.Text = "EditStudent";
             this.Load += new System.EventHandler(this.EditStudent_Load);
             this.panelCenter.ResumeLayout(false);
-            this.topAddPersonPanel.ResumeLayout(false);
-            this.backPagePanel.ResumeLayout(false);
-            this.backPagePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
             this.panel1.ResumeLayout(false);
             this.fullAddPanel.ResumeLayout(false);
             this.contentAddPersonPanel.ResumeLayout(false);
             this.contentAddPersonPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
+            this.topAddPersonPanel.ResumeLayout(false);
+            this.backPagePanel.ResumeLayout(false);
+            this.backPagePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

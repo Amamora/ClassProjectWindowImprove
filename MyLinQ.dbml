@@ -7,7 +7,8 @@
       <Column Name="schoolyear" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="departmentID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="CLASS_STUDENT" Member="STUDENTs" ThisKey="classID" OtherKey="classID" Type="STUDENT" />
-      <Association Name="TEACHER_CLASS" Member="TEACHER" ThisKey="teacherID" OtherKey="teacherID" Type="TEACHER" IsForeignKey="true" />
+      <Association Name="DEPARTMENT_CLASS" Member="DEPARTMENT" ThisKey="departmentID" OtherKey="departmentID" Type="DEPARTMENT" IsForeignKey="true" />
+      <Association Name="TEACHER_CLASS" Member="TEACHER" ThisKey="teacherID" OtherKey="teacherID" Type="TEACHER" IsForeignKey="true" DeleteRule="SET NULL" />
     </Type>
   </Table>
   <Table Name="dbo.USERACCOUNT" Member="USERACCOUNTs">
@@ -28,7 +29,7 @@
       <Column Name="credit" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="descriptionCourse" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
       <Association Name="COURSE_GROUPSUBJECT" Member="GROUPSUBJECTs" ThisKey="courseID" OtherKey="courseID" Type="GROUPSUBJECT" />
-      <Association Name="DEPARTMENT_COURSE" Member="DEPARTMENT" ThisKey="departmentID" OtherKey="departmentID" Type="DEPARTMENT" IsForeignKey="true" />
+      <Association Name="DEPARTMENT_COURSE" Member="DEPARTMENT" ThisKey="departmentID" OtherKey="departmentID" Type="DEPARTMENT" IsForeignKey="true" DeleteRule="SET NULL" />
     </Type>
   </Table>
   <Table Name="dbo.DEPARTMENT" Member="DEPARTMENTs">
@@ -36,19 +37,20 @@
       <Column Name="departmentID" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="departmentName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="teacherID" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Association Name="DEPARTMENT_CLASS" Member="CLASSes" ThisKey="departmentID" OtherKey="departmentID" Type="CLASS" />
       <Association Name="DEPARTMENT_COURSE" Member="COURSEs" ThisKey="departmentID" OtherKey="departmentID" Type="COURSE" />
-      <Association Name="TEACHER_DEPARTMENT" Member="TEACHER" ThisKey="teacherID" OtherKey="teacherID" Type="TEACHER" IsForeignKey="true" />
+      <Association Name="TEACHER_DEPARTMENT" Member="TEACHER" ThisKey="teacherID" OtherKey="teacherID" Type="TEACHER" IsForeignKey="true" DeleteRule="SET NULL" />
     </Type>
   </Table>
   <Table Name="dbo.GROUPSUBJECT" Member="GROUPSUBJECTs">
     <Type Name="GROUPSUBJECT">
-      <Column Name="groupID" Type="System.String" DbType="NVarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="groupOrder" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="groupID" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Column Name="groupName" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Column Name="teacherID" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Column Name="studentID" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
       <Column Name="semesterID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="courseID" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="GROUPSUBJECT_SCORE" Member="SCOREs" ThisKey="groupID" OtherKey="groupID" Type="SCORE" />
       <Association Name="COURSE_GROUPSUBJECT" Member="COURSE" ThisKey="courseID" OtherKey="courseID" Type="COURSE" IsForeignKey="true" />
       <Association Name="SEMESTER_GROUPSUBJECT" Member="SEMESTER" ThisKey="semesterID" OtherKey="semesterID" Type="SEMESTER" IsForeignKey="true" />
       <Association Name="STUDENT_GROUPSUBJECT" Member="STUDENT" ThisKey="studentID" OtherKey="studentID" Type="STUDENT" IsForeignKey="true" />
@@ -57,10 +59,11 @@
   </Table>
   <Table Name="dbo.SCORE" Member="SCOREs">
     <Type Name="SCORE">
-      <Column Name="groupID" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="studentID" Type="System.String" DbType="NVarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="groupID" Type="System.String" DbType="NVarChar(256) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="score" Member="score1" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Column Name="evalute" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
-      <Association Name="GROUPSUBJECT_SCORE" Member="GROUPSUBJECT" ThisKey="groupID" OtherKey="groupID" Type="GROUPSUBJECT" IsForeignKey="true" />
+      <Association Name="STUDENT_SCORE" Member="STUDENT" ThisKey="studentID" OtherKey="studentID" Type="STUDENT" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SEMESTER" Member="SEMESTERs">
@@ -85,6 +88,7 @@
       <Column Name="classID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Column Name="userAccountID" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="STUDENT_GROUPSUBJECT" Member="GROUPSUBJECTs" ThisKey="studentID" OtherKey="studentID" Type="GROUPSUBJECT" />
+      <Association Name="STUDENT_SCORE" Member="SCOREs" ThisKey="studentID" OtherKey="studentID" Type="SCORE" />
       <Association Name="CLASS_STUDENT" Member="CLASS" ThisKey="classID" OtherKey="classID" Type="CLASS" IsForeignKey="true" />
       <Association Name="USERACCOUNT_STUDENT" Member="USERACCOUNT" ThisKey="userAccountID" OtherKey="userAccountID" Type="USERACCOUNT" IsForeignKey="true" />
     </Type>
@@ -104,7 +108,7 @@
       <Association Name="TEACHER_CLASS" Member="CLASSes" ThisKey="teacherID" OtherKey="teacherID" Type="CLASS" />
       <Association Name="TEACHER_DEPARTMENT" Member="DEPARTMENTs" ThisKey="teacherID" OtherKey="teacherID" Type="DEPARTMENT" />
       <Association Name="TEACHER_GROUPSUBJECT" Member="GROUPSUBJECTs" ThisKey="teacherID" OtherKey="teacherID" Type="GROUPSUBJECT" />
-      <Association Name="USERACCOUNT_TEACHER" Member="USERACCOUNT" ThisKey="userAccountID" OtherKey="userAccountID" Type="USERACCOUNT" IsForeignKey="true" />
+      <Association Name="USERACCOUNT_TEACHER" Member="USERACCOUNT" ThisKey="userAccountID" OtherKey="userAccountID" Type="USERACCOUNT" IsForeignKey="true" DeleteRule="SET NULL" />
     </Type>
   </Table>
 </Database>

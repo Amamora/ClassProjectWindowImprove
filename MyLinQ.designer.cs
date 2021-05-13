@@ -45,6 +45,9 @@ namespace WindowClassProject
     partial void InsertGROUPSUBJECT(GROUPSUBJECT instance);
     partial void UpdateGROUPSUBJECT(GROUPSUBJECT instance);
     partial void DeleteGROUPSUBJECT(GROUPSUBJECT instance);
+    partial void InsertSCORE(SCORE instance);
+    partial void UpdateSCORE(SCORE instance);
+    partial void DeleteSCORE(SCORE instance);
     partial void InsertSEMESTER(SEMESTER instance);
     partial void UpdateSEMESTER(SEMESTER instance);
     partial void DeleteSEMESTER(SEMESTER instance);
@@ -175,6 +178,8 @@ namespace WindowClassProject
 		
 		private EntitySet<STUDENT> _STUDENTs;
 		
+		private EntityRef<DEPARTMENT> _DEPARTMENT;
+		
 		private EntityRef<TEACHER> _TEACHER;
 		
     #region Extensibility Method Definitions
@@ -194,6 +199,7 @@ namespace WindowClassProject
 		public CLASS()
 		{
 			this._STUDENTs = new EntitySet<STUDENT>(new Action<STUDENT>(this.attach_STUDENTs), new Action<STUDENT>(this.detach_STUDENTs));
+			this._DEPARTMENT = default(EntityRef<DEPARTMENT>);
 			this._TEACHER = default(EntityRef<TEACHER>);
 			OnCreated();
 		}
@@ -273,6 +279,10 @@ namespace WindowClassProject
 			{
 				if ((this._departmentID != value))
 				{
+					if (this._DEPARTMENT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OndepartmentIDChanging(value);
 					this.SendPropertyChanging();
 					this._departmentID = value;
@@ -295,7 +305,41 @@ namespace WindowClassProject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEACHER_CLASS", Storage="_TEACHER", ThisKey="teacherID", OtherKey="teacherID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEPARTMENT_CLASS", Storage="_DEPARTMENT", ThisKey="departmentID", OtherKey="departmentID", IsForeignKey=true)]
+		public DEPARTMENT DEPARTMENT
+		{
+			get
+			{
+				return this._DEPARTMENT.Entity;
+			}
+			set
+			{
+				DEPARTMENT previousValue = this._DEPARTMENT.Entity;
+				if (((previousValue != value) 
+							|| (this._DEPARTMENT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._DEPARTMENT.Entity = null;
+						previousValue.CLASSes.Remove(this);
+					}
+					this._DEPARTMENT.Entity = value;
+					if ((value != null))
+					{
+						value.CLASSes.Add(this);
+						this._departmentID = value.departmentID;
+					}
+					else
+					{
+						this._departmentID = default(string);
+					}
+					this.SendPropertyChanged("DEPARTMENT");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEACHER_CLASS", Storage="_TEACHER", ThisKey="teacherID", OtherKey="teacherID", IsForeignKey=true, DeleteRule="SET NULL")]
 		public TEACHER TEACHER
 		{
 			get
@@ -712,7 +756,7 @@ namespace WindowClassProject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEPARTMENT_COURSE", Storage="_DEPARTMENT", ThisKey="departmentID", OtherKey="departmentID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEPARTMENT_COURSE", Storage="_DEPARTMENT", ThisKey="departmentID", OtherKey="departmentID", IsForeignKey=true, DeleteRule="SET NULL")]
 		public DEPARTMENT DEPARTMENT
 		{
 			get
@@ -791,6 +835,8 @@ namespace WindowClassProject
 		
 		private string _teacherID;
 		
+		private EntitySet<CLASS> _CLASSes;
+		
 		private EntitySet<COURSE> _COURSEs;
 		
 		private EntityRef<TEACHER> _TEACHER;
@@ -809,6 +855,7 @@ namespace WindowClassProject
 		
 		public DEPARTMENT()
 		{
+			this._CLASSes = new EntitySet<CLASS>(new Action<CLASS>(this.attach_CLASSes), new Action<CLASS>(this.detach_CLASSes));
 			this._COURSEs = new EntitySet<COURSE>(new Action<COURSE>(this.attach_COURSEs), new Action<COURSE>(this.detach_COURSEs));
 			this._TEACHER = default(EntityRef<TEACHER>);
 			OnCreated();
@@ -878,6 +925,19 @@ namespace WindowClassProject
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEPARTMENT_CLASS", Storage="_CLASSes", ThisKey="departmentID", OtherKey="departmentID")]
+		public EntitySet<CLASS> CLASSes
+		{
+			get
+			{
+				return this._CLASSes;
+			}
+			set
+			{
+				this._CLASSes.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="DEPARTMENT_COURSE", Storage="_COURSEs", ThisKey="departmentID", OtherKey="departmentID")]
 		public EntitySet<COURSE> COURSEs
 		{
@@ -891,7 +951,7 @@ namespace WindowClassProject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEACHER_DEPARTMENT", Storage="_TEACHER", ThisKey="teacherID", OtherKey="teacherID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEACHER_DEPARTMENT", Storage="_TEACHER", ThisKey="teacherID", OtherKey="teacherID", IsForeignKey=true, DeleteRule="SET NULL")]
 		public TEACHER TEACHER
 		{
 			get
@@ -945,6 +1005,18 @@ namespace WindowClassProject
 			}
 		}
 		
+		private void attach_CLASSes(CLASS entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEPARTMENT = this;
+		}
+		
+		private void detach_CLASSes(CLASS entity)
+		{
+			this.SendPropertyChanging();
+			entity.DEPARTMENT = null;
+		}
+		
 		private void attach_COURSEs(COURSE entity)
 		{
 			this.SendPropertyChanging();
@@ -963,6 +1035,8 @@ namespace WindowClassProject
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _groupOrder;
 		
 		private string _groupID;
 		
@@ -988,6 +1062,8 @@ namespace WindowClassProject
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OngroupOrderChanging(int value);
+    partial void OngroupOrderChanged();
     partial void OngroupIDChanging(string value);
     partial void OngroupIDChanged();
     partial void OngroupNameChanging(string value);
@@ -1011,7 +1087,27 @@ namespace WindowClassProject
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupOrder", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int groupOrder
+		{
+			get
+			{
+				return this._groupOrder;
+			}
+			set
+			{
+				if ((this._groupOrder != value))
+				{
+					this.OngroupOrderChanging(value);
+					this.SendPropertyChanging();
+					this._groupOrder = value;
+					this.SendPropertyChanged("groupOrder");
+					this.OngroupOrderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256)")]
 		public string groupID
 		{
 			get
@@ -1305,8 +1401,12 @@ namespace WindowClassProject
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.SCORE")]
-	public partial class SCORE
+	public partial class SCORE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _studentID;
 		
 		private string _groupID;
 		
@@ -1314,11 +1414,53 @@ namespace WindowClassProject
 		
 		private string _evalute;
 		
+		private EntityRef<STUDENT> _STUDENT;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnstudentIDChanging(string value);
+    partial void OnstudentIDChanged();
+    partial void OngroupIDChanging(string value);
+    partial void OngroupIDChanged();
+    partial void Onscore1Changing(System.Nullable<double> value);
+    partial void Onscore1Changed();
+    partial void OnevaluteChanging(string value);
+    partial void OnevaluteChanged();
+    #endregion
+		
 		public SCORE()
 		{
+			this._STUDENT = default(EntityRef<STUDENT>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentID", DbType="NVarChar(256) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string studentID
+		{
+			get
+			{
+				return this._studentID;
+			}
+			set
+			{
+				if ((this._studentID != value))
+				{
+					if (this._STUDENT.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnstudentIDChanging(value);
+					this.SendPropertyChanging();
+					this._studentID = value;
+					this.SendPropertyChanged("studentID");
+					this.OnstudentIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string groupID
 		{
 			get
@@ -1329,7 +1471,11 @@ namespace WindowClassProject
 			{
 				if ((this._groupID != value))
 				{
+					this.OngroupIDChanging(value);
+					this.SendPropertyChanging();
 					this._groupID = value;
+					this.SendPropertyChanged("groupID");
+					this.OngroupIDChanged();
 				}
 			}
 		}
@@ -1345,7 +1491,11 @@ namespace WindowClassProject
 			{
 				if ((this._score1 != value))
 				{
+					this.Onscore1Changing(value);
+					this.SendPropertyChanging();
 					this._score1 = value;
+					this.SendPropertyChanged("score1");
+					this.Onscore1Changed();
 				}
 			}
 		}
@@ -1361,8 +1511,66 @@ namespace WindowClassProject
 			{
 				if ((this._evalute != value))
 				{
+					this.OnevaluteChanging(value);
+					this.SendPropertyChanging();
 					this._evalute = value;
+					this.SendPropertyChanged("evalute");
+					this.OnevaluteChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STUDENT_SCORE", Storage="_STUDENT", ThisKey="studentID", OtherKey="studentID", IsForeignKey=true)]
+		public STUDENT STUDENT
+		{
+			get
+			{
+				return this._STUDENT.Entity;
+			}
+			set
+			{
+				STUDENT previousValue = this._STUDENT.Entity;
+				if (((previousValue != value) 
+							|| (this._STUDENT.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._STUDENT.Entity = null;
+						previousValue.SCOREs.Remove(this);
+					}
+					this._STUDENT.Entity = value;
+					if ((value != null))
+					{
+						value.SCOREs.Add(this);
+						this._studentID = value.studentID;
+					}
+					else
+					{
+						this._studentID = default(string);
+					}
+					this.SendPropertyChanged("STUDENT");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -1513,6 +1721,8 @@ namespace WindowClassProject
 		
 		private EntitySet<GROUPSUBJECT> _GROUPSUBJECTs;
 		
+		private EntitySet<SCORE> _SCOREs;
+		
 		private EntityRef<CLASS> _CLASS;
 		
 		private EntityRef<USERACCOUNT> _USERACCOUNT;
@@ -1550,6 +1760,7 @@ namespace WindowClassProject
 		public STUDENT()
 		{
 			this._GROUPSUBJECTs = new EntitySet<GROUPSUBJECT>(new Action<GROUPSUBJECT>(this.attach_GROUPSUBJECTs), new Action<GROUPSUBJECT>(this.detach_GROUPSUBJECTs));
+			this._SCOREs = new EntitySet<SCORE>(new Action<SCORE>(this.attach_SCOREs), new Action<SCORE>(this.detach_SCOREs));
 			this._CLASS = default(EntityRef<CLASS>);
 			this._USERACCOUNT = default(EntityRef<USERACCOUNT>);
 			OnCreated();
@@ -1816,6 +2027,19 @@ namespace WindowClassProject
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STUDENT_SCORE", Storage="_SCOREs", ThisKey="studentID", OtherKey="studentID")]
+		public EntitySet<SCORE> SCOREs
+		{
+			get
+			{
+				return this._SCOREs;
+			}
+			set
+			{
+				this._SCOREs.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CLASS_STUDENT", Storage="_CLASS", ThisKey="classID", OtherKey="classID", IsForeignKey=true)]
 		public CLASS CLASS
 		{
@@ -1911,6 +2135,18 @@ namespace WindowClassProject
 		}
 		
 		private void detach_GROUPSUBJECTs(GROUPSUBJECT entity)
+		{
+			this.SendPropertyChanging();
+			entity.STUDENT = null;
+		}
+		
+		private void attach_SCOREs(SCORE entity)
+		{
+			this.SendPropertyChanging();
+			entity.STUDENT = this;
+		}
+		
+		private void detach_SCOREs(SCORE entity)
 		{
 			this.SendPropertyChanging();
 			entity.STUDENT = null;
@@ -2229,7 +2465,7 @@ namespace WindowClassProject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USERACCOUNT_TEACHER", Storage="_USERACCOUNT", ThisKey="userAccountID", OtherKey="userAccountID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="USERACCOUNT_TEACHER", Storage="_USERACCOUNT", ThisKey="userAccountID", OtherKey="userAccountID", IsForeignKey=true, DeleteRule="SET NULL")]
 		public USERACCOUNT USERACCOUNT
 		{
 			get
