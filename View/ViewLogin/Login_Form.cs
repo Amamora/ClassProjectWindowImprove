@@ -107,6 +107,12 @@ namespace WindowClassProject.View.ViewLogin
         {
 
         }
+
+        private void forgotLbl_Click(object sender, EventArgs e)
+        {
+            ForgotPasswordForm forgort = new ForgotPasswordForm();
+            forgort.Show();
+        }
         //
 
     }

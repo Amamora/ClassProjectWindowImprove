@@ -27,27 +27,25 @@ namespace WindowClassProject.View.ViewTeacher
          */
         private void TeacherForm_Load(object sender, EventArgs e)
         {
-            TeacherDAO teach = new TeacherDAO();
-            teach.connectGetAllTeacher(dataTeacherGridView);
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
-              
-               
+
+
 
                 var count = db.TEACHERs.GroupBy(x => x.teacherID).Select(x => x.Count());
                 totalTeacherLbl.Text = "Total Teacher:" + count.Count();
-               /* var scourse = from TEACHER te in db.TEACHERs
-                              select new
-                              {
-                                  TeacherID = te.teacherID,
-                                  teacherImag = (te.picture).ToArray()
-                              };
+                /* var scourse = from TEACHER te in db.TEACHERs
+                               select new
+                               {
+                                   TeacherID = te.teacherID,
+                                   teacherImag = (te.picture).ToArray()
+                               };
 
-                dataTeacherGridView.DataSource = scourse;
-                DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-               dataTeacherGridView.RowTemplate.Height = 80;
-                picCol = (DataGridViewImageColumn)dataTeacherGridView.Columns[1];
-                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+                 dataTeacherGridView.DataSource = scourse;
+                 DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+                dataTeacherGridView.RowTemplate.Height = 80;
+                 picCol = (DataGridViewImageColumn)dataTeacherGridView.Columns[1];
+                 picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
 
 
                 //try to retrive binary to image~~
@@ -55,7 +53,16 @@ namespace WindowClassProject.View.ViewTeacher
 
 
             }
-    }
+            loadDataTeacher();
+
+        }
+        private void loadDataTeacher()
+        {
+
+            TeacherDAO teach = new TeacherDAO();
+            teach.connectGetAllTeacher(dataTeacherGridView);
+
+        }
 
 
         #region action transfer binary to image or byte
@@ -101,11 +108,12 @@ namespace WindowClassProject.View.ViewTeacher
         #endregion
         private void searchButton_Click(object sender, EventArgs e)
         {
-            using(MyLinQDataContext db=new MyLinQDataContext())
-            {
-                dataTeacherGridView.DataSource = from teach in db.TEACHERs
-                                                 select teach;
-            }
+            searchLoadTeacher();
+        }
+        public void searchLoadTeacher()
+        {
+            TeacherDAO teach = new TeacherDAO();
+            teach.searchTeacher(searchBox.Text, dataTeacherGridView);
         }
 
         #region action direct in datagridview
@@ -123,7 +131,7 @@ namespace WindowClassProject.View.ViewTeacher
             TeacherForm_Load(sender, e);
         }
 
-      
+
 
 
         private void dataTeacherGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
@@ -136,6 +144,64 @@ namespace WindowClassProject.View.ViewTeacher
         {
             AddTeacherForm add = new AddTeacherForm();
             add.Show();
+        }
+
+        private void dataTeacherGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditTeacherForm edit = new EditTeacherForm(dataTeacherGridView.CurrentRow.Cells[1].Value.ToString());
+            edit.Show();
+        }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+
+
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBox_Enter(object sender, EventArgs e)
+        {
+            TeacherDAO teach = new TeacherDAO();
+            teach.searchTeacher(searchBox.Text, dataTeacherGridView);
+
+
+        }
+
+        private void searchBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            /*if (e.KeyChar == (char)Keys.Enter)
+            {
+
+                
+            }*/
+
+            /*if (e.KeyChar == 13)
+            {
+                MessageBox.Show("Enter key pressed");
+            }*/
+        }
+
+        private void searchBox_KeyDown_1(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string id = searchBox.Text;
+                TeacherDAO teach = new TeacherDAO();
+                searchBox.Clear();
+                teach.searchTeacher(id, dataTeacherGridView);
+
+            }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            TeacherForm_Load(sender, e);
         }
     }
 }

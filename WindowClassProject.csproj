@@ -258,6 +258,12 @@
     <Compile Include="View\ViewManageOfStudent\StudentManageForm.Designer.cs">
       <DependentUpon>StudentManageForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ViewMangeAll\DashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewMangeAll\DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewMangeAll\ManageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,11 +300,17 @@
     <Compile Include="View\ViewStudent\AddStudentPanelForm.Designer.cs">
       <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewStudent\EditStudent.cs">
+    <Compile Include="View\ViewStudent\EditStudentPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ViewStudent\EditStudent.Designer.cs">
-      <DependentUpon>EditStudent.cs</DependentUpon>
+    <Compile Include="View\ViewStudent\EditStudentPanelForm.Designer.cs">
+      <DependentUpon>EditStudentPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentDetailPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewStudent\StudentDetailPanelForm.Designer.cs">
+      <DependentUpon>StudentDetailPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewStudent\StudentPanelForm.cs">
       <SubType>Form</SubType>
@@ -329,6 +341,12 @@
     </Compile>
     <Compile Include="View\ViewTeacher\ClassPanelForm.Designer.cs">
       <DependentUpon>ClassPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewTeacher\EditTeacherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewTeacher\EditTeacherForm.Designer.cs">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewTeacher\TeacherForm.cs">
       <SubType>Form</SubType>
@@ -365,6 +383,9 @@
     <EmbeddedResource Include="View\ViewManageOfStudent\StudentManageForm.resx">
       <DependentUpon>StudentManageForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewMangeAll\DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewMangeAll\ManageForm.resx">
       <DependentUpon>ManageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,8 +398,11 @@
     <EmbeddedResource Include="View\ViewStudent\AddStudentPanelForm.resx">
       <DependentUpon>AddStudentPanelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewStudent\EditStudent.resx">
-      <DependentUpon>EditStudent.cs</DependentUpon>
+    <EmbeddedResource Include="View\ViewStudent\EditStudentPanelForm.resx">
+      <DependentUpon>EditStudentPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewStudent\StudentDetailPanelForm.resx">
+      <DependentUpon>StudentDetailPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewStudent\StudentPanelForm.resx">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
@@ -394,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewTeacher\ClassPanelForm.resx">
       <DependentUpon>ClassPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewTeacher\EditTeacherForm.resx">
+      <DependentUpon>EditTeacherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewTeacher\TeacherForm.resx">
       <DependentUpon>TeacherForm.cs</DependentUpon>
@@ -580,6 +607,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_envelope_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_post_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

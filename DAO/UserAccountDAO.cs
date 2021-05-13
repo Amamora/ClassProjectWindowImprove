@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace WindowClassProject.DAO
     class UserAccountDAO
     {
 
-        MyDataBase mydata = new MyDataBase();
+     
         UserAccount user = new UserAccount();
         public UserAccount loginUserAccount(string userTxt, string passTxt)
         {
@@ -53,5 +54,41 @@ namespace WindowClassProject.DAO
 
             }
         }
+
+        public System.Drawing.Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            {
+                System.Drawing.Image returnImage = System.Drawing.Image.FromStream(ms);
+                return returnImage;
+            }
+        }
+       public bool loadImageForUserAccount(UserAccount user)
+        {
+            MyDataBase myData = new MyDataBase();
+            myData.openConnection();
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            DataTable table = new DataTable();
+
+            SqlCommand cmd = new SqlCommand("SELECT stu.picture FROM [WINDOWCLASS].[dbo].[USERACCOUNT] us JOIN [WINDOWCLASS].[dbo].[STUDENT] stu ON stu.userAccountID=us.userAccountID WHERE us.userAccount = @User", myData.getConnection);
+
+            cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = user.userAccount;
+            adapter.SelectCommand = cmd;
+            adapter.Fill(table);
+            if (table.Rows.Count>0)
+            {
+                Console.WriteLine("ASDAS");
+                user.imageAccount = (byte[])table.Rows[0]["picture"];
+                myData.closeConnection();
+                return true;
+
+            }
+
+            myData.closeConnection();
+            return false;
+        }
+
     }
 }

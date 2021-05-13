@@ -10,20 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowClassProject.View.ViewStudent
 {
-    public partial class EditStudent : Form
+    public partial class StudentDetailPanelForm : Form
     {
-        public EditStudent()
+        public StudentDetailPanelForm()
         {
             InitializeComponent();
-        }
-        public EditStudent(STUDENT stu)
-        {
-            InitializeComponent();
-        }
-
-        private void EditStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

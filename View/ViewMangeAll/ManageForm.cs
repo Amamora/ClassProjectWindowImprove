@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowClassProject.DAO;
 using WindowClassProject.Model;
 using WindowClassProject.View.ViewCourse;
 using WindowClassProject.View.ViewScore;
@@ -49,6 +50,13 @@ namespace WindowClassProject.View.ViewManageStudent
 
         private void ManageForm_Load(object sender, EventArgs e)
         {
+            UserAccountDAO us = new UserAccountDAO();
+
+            if (us.loadImageForUserAccount(nowUser))
+            {
+                
+                pictureBoxAccount.Image = us.ByteArrayToImage(nowUser.imageAccount);
+            }
             random = new Random();
             hideSubMenu();
         }
@@ -234,7 +242,7 @@ namespace WindowClassProject.View.ViewManageStudent
                 openMailBoxPanel.Text = "";
                 openManageBtn.Text = "";
                 exitBtn.Text = "";
-                openChartPanel.Text = "";
+               
                 openTimeTablePanel.Text = "";
 
                 openStudentPanelChild.Text = "";
@@ -252,7 +260,7 @@ namespace WindowClassProject.View.ViewManageStudent
                 openMailBoxPanel.Text = "Mail Box";
                 openManageBtn.Text = "Manage";
                 exitBtn.Text = "Exit";
-                openChartPanel.Text = "Chart";
+               
                 openTimeTablePanel.Text = "Time Table";
 
                 openStudentPanelChild.Text = "Student";
@@ -274,6 +282,16 @@ namespace WindowClassProject.View.ViewManageStudent
         private void openGroupSubjectPanel_Click(object sender, EventArgs e)
         {
             openChildFormInPanel(new AddGroupSubjectForm());
+        }
+
+        private void advanceToolPictureBox_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void notificationPictureBox_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

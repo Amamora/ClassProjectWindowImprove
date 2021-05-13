@@ -16,6 +16,7 @@ namespace WindowClassProject.Model
         public string password { get; set; }
 
         public int typeID { get; set; }
+       public byte[] imageAccount { get; set; }
         public UserAccount()
         {
 

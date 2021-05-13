@@ -19,6 +19,8 @@ namespace WindowClassProject.View.ViewStudent
         public AddStudentPanelForm()
         {
             InitializeComponent();
+            birthDatePicker.Format = DateTimePickerFormat.Custom;
+            birthDatePicker.CustomFormat = "dd/MM/yyyy";
 
         }
     

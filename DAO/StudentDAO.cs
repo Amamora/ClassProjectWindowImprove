@@ -14,6 +14,9 @@ namespace WindowClassProject.DAO
     class StudentDAO
     {
         MyDataBase mydata = new MyDataBase();
+
+        #region insert new student by parameter
+
         public bool insertNewStudent(string studentID, string  studentFName, string lastName, DateTime date, string adress,int gender, string phone,string email,string cmnd, MemoryStream picture,string classID)
         {
             mydata.openConnection();
@@ -52,6 +55,8 @@ namespace WindowClassProject.DAO
                 return false;
             }
         }
+        #endregion
+        #region check exist student by sql code or linq 
         public bool checkExistStudent(string studentID)
         {
             mydata.openConnection();
@@ -71,6 +76,23 @@ namespace WindowClassProject.DAO
             return true;
 
         }
+
+        public bool checkExistByLinQ(string studentID)
+        {
+            using(MyLinQDataContext db=new MyLinQDataContext())
+            {
+                var scource = from STUDENT stu in db.STUDENTs
+                              where stu.studentID == studentID
+                              select stu;
+                if (scource.Count() > 0)
+                {
+                    return false;
+                }
+            }
+            return false;
+
+        }
+        #endregion
 
         public void connectionDataBase(DataGridView dataGridView1)
         {
@@ -92,7 +114,7 @@ namespace WindowClassProject.DAO
 
             dataGridView1.DataSource = dt;
            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-              dataGridView1.RowTemplate.Height = 80;
+              dataGridView1.RowTemplate.Height = 90;
               picCol = (DataGridViewImageColumn)dataGridView1.Columns[6];
               picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
 
@@ -130,47 +152,15 @@ namespace WindowClassProject.DAO
         }
 
         #endregion
-
-        public bool updateInforStudent(int id, string fname, string lname, DateTimePicker bdate, string gender, string phone, MemoryStream picture, int initialID)
+        #region
+        public void connectionDetailStudent()
         {
             MyDataBase myDataBase = new MyDataBase();
 
-
-
-
-            SqlCommand sqlCommand = new SqlCommand("UPDATE [viduDB].[dbo].[user_infor] SET Id=@id, fname=@fname, lname=@lname, bdate=@bdate, gender=@gender, phone=@phone, picture =@picture " +
-                "WHERE Id=@initialID", myDataBase.getConnection);
-            sqlCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            sqlCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
-            sqlCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
-            sqlCommand.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate.Value;
-            sqlCommand.Parameters.Add("@gender", SqlDbType.NVarChar).Value = gender;
-            sqlCommand.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
-            sqlCommand.Parameters.Add("@initialID", SqlDbType.Int).Value = initialID;
-
-            sqlCommand.Parameters.Add("@picture", SqlDbType.Image).Value = picture.ToArray();
-            myDataBase.openConnection();
-            if ((sqlCommand.ExecuteNonQuery() == 1))
-            {
-                mydata.closeConnection();
-                return true;
-            }
-            else
-            {
-                mydata.closeConnection();
-                return false;
-            }
-        }
-
-        ///search student by id
-        public void searchStudentByid(int id, DataGridView dataGridView1)
-        {
-            MyDataBase myDataBase = new MyDataBase();
             myDataBase.openConnection();
             DataSet dataSet = new DataSet();
-            SqlCommand command = new SqlCommand("SELECT * FROM  [viduDB].[dbo].[user_infor] WHERE Id=@id ", myDataBase.getConnection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            dataGridView1.RowTemplate.Height = 80;
+            SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY studentID ASC) AS N'Order',studentID as 'Student ID',studentFName as 'First Name',studentLName as 'Last Name',studentBDate,studentEmail,picture FROM [WINDOWCLASS].[dbo].[STUDENT] ", myDataBase.getConnection);
+
 
             command.CommandType = CommandType.Text;
             SqlDataAdapter sqlAdapt = new SqlDataAdapter(command);
@@ -181,9 +171,118 @@ namespace WindowClassProject.DAO
 
 
 
-            dataGridView1.DataSource = dt;
+           /* dataGridView1.DataSource = dt;
+            DataGridViewImageColumn picCol = new DataGridViewImageColumn();
+            dataGridView1.RowTemplate.Height = 80;
+            picCol = (DataGridViewImageColumn)dataGridView1.Columns[6];
+            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;*/
+        }
+        #endregion
+
+        #region load data for editting panel
+        public DataTable LoadDataToEdit(string studentID)
+        {
+            MyDataBase myDataBase = new MyDataBase();
+
+            myDataBase.openConnection();
+
+
+            SqlCommand command = new SqlCommand("SELECT * FROM [WINDOWCLASS].[dbo].[STUDENT] WHERE studentID=@stu", myDataBase.getConnection);
+            command.Parameters.Add("@stu", SqlDbType.NVarChar).Value = studentID;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter sqlAdapt = new SqlDataAdapter(command);
+            sqlAdapt.SelectCommand = command;
+
+
+            sqlAdapt.Fill(dt);
+            myDataBase.closeConnection();
+
+
+
+            return dt;
+
+
 
         }
+        #endregion
+
+        #region update information for student
+        //(string studentID, string  studentFName, string lastName, DateTime date, string adress,int gender, string phone,string email,string cmnd, MemoryStream picture,string classID)
+        public bool updateInforStudent(string id, string fname, string lname, DateTimePicker bdate, string adress, int gender, string phone, string email, string cmnd, MemoryStream picture, string classID, string studentID)
+        {
+            MyDataBase myDataBase = new MyDataBase();
+
+
+
+
+            SqlCommand sqlCommand = new SqlCommand("UPDATE [WINDOWCLASS].[dbo].[STUDENT] SET studentID=@id, studentFName=@fname, studentLName=@lname, studentBDate=@bdate,studentAddress=@address,studentGender=@gender, studentPhone=@phone,studentEmail=@email,studentCMND=@cmnd,picture =@picture,classID=@class " + "WHERE studentID=@initialID", myDataBase.getConnection);
+            sqlCommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
+            sqlCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+            sqlCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+            sqlCommand.Parameters.Add("@bdate", SqlDbType.DateTime).Value = bdate.Value;
+            sqlCommand.Parameters.Add("@email", SqlDbType.NVarChar).Value = email;
+            sqlCommand.Parameters.Add("@address", SqlDbType.NVarChar).Value = adress;
+            sqlCommand.Parameters.Add("@cmnd", SqlDbType.NVarChar).Value = cmnd;
+
+            sqlCommand.Parameters.Add("@gender", SqlDbType.Bit).Value = gender;
+            sqlCommand.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
+
+
+            sqlCommand.Parameters.Add("@picture", SqlDbType.Image).Value = picture.ToArray();
+            sqlCommand.Parameters.Add("@class", SqlDbType.NVarChar).Value = classID;
+            sqlCommand.Parameters.Add("@initialID", SqlDbType.NVarChar).Value = studentID;
+            myDataBase.openConnection();
+            if ((sqlCommand.ExecuteNonQuery() == 1))
+            {
+                myDataBase.closeConnection();
+                return true;
+            }
+            else
+            {
+                myDataBase.closeConnection();
+                return false;
+            }
+        }
+        #endregion
+        #region search student by ID
+        public void searchStudentByid(string id, DataGridView dataGridView1)
+        {
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                var count = from STUDENT s in db.STUDENTs
+                            where s.studentID == id
+                            select s;
+                if (count.Count() == 0)
+                {
+                    MessageBox.Show("ID student not exist");
+                    return;
+                }
+
+            }
+            MyDataBase myDataBase = new MyDataBase();
+            myDataBase.openConnection();
+            DataSet dataSet = new DataSet();
+            SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY studentID ASC) AS N'Order',studentID as 'Student ID',studentFName as 'First Name',studentLName as 'Last Name', studentBDate, studentEmail, picture FROM [WINDOWCLASS].[dbo].[STUDENT] WHERE studentID =@stu ", myDataBase.getConnection);
+            command.Parameters.Add("@stu", SqlDbType.NVarChar).Value = id;
+            dataGridView1.RowTemplate.Height = 80;
+
+            command.CommandType = CommandType.Text;
+            SqlDataAdapter sqlAdapt = new SqlDataAdapter(command);
+
+            DataTable dt = new DataTable();
+            sqlAdapt.Fill(dt);
+
+
+
+
+            dataGridView1.DataSource = dt;
+            myDataBase.closeConnection();
+
+        }
+        #endregion
+
+
 
     }
 }

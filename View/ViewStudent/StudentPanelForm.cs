@@ -386,5 +386,30 @@ namespace WindowClassProject.View.ViewStudent
         {
 
         }
+
+        private void dataStudentGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditStudentPanelForm panelEdit = new EditStudentPanelForm(dataStudentGridView.CurrentRow.Cells[1].Value.ToString());
+
+            panelEdit.Show();
+        }
+
+        private void searchBox_TextChanged(object sender, EventArgs e)
+        {
+
+           
+        }
+
+        private void searchBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            string id = searchBox.Text;
+            if (e.KeyCode == Keys.Enter)
+            {
+                StudentDAO dao = new StudentDAO();
+                dao.searchStudentByid(id, dataStudentGridView);
+                searchBox.Clear();
+            }
+        }
     }
 }
