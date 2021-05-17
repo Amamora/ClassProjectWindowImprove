@@ -25,7 +25,8 @@ namespace WindowClassProject.DAO
         //check exist student score
         //get avg score of course
 
-        // delete score
+        // delete score base groupid and studentid
+
         //selectcoure
         //
 

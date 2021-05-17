@@ -141,5 +141,28 @@ namespace WindowClassProject.DAO
             }
         }
         #endregion
+        #region get Teacher by useraccount ID
+        public TeacherModel getTeacherByAccountID(int id,TeacherModel te)
+        {
+            MyDataBase mydata = new MyDataBase();
+            mydata.openConnection();
+            SqlCommand command = new SqlCommand("SELECT * FROM [WINDOWCLASS].[dbo].[TEACHER] WHERE userAccountID = @te", mydata.getConnection);
+
+            command.Parameters.Add("@te", SqlDbType.Int).Value = id;
+            DataTable tb = new DataTable();
+            SqlDataAdapter ap = new SqlDataAdapter();
+            ap.SelectCommand = command;
+            ap.Fill(tb);
+
+            te.teacherID = tb.Rows[0]["teacherID"].ToString();
+            te.teacherFName = tb.Rows[0]["teacherID"].ToString();
+            te.teacherLName = tb.Rows[0]["teacherLName"].ToString();
+            te.userAccountID = Int32.Parse(tb.Rows[0]["userAccountID"].ToString());
+            te.picture = (byte[])(tb.Rows[0]["picture"]);
+
+            return te;
+
+        }
+        #endregion
     }
 }

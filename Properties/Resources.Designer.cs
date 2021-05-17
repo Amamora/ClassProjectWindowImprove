@@ -363,6 +363,16 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_plus_math_30px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_plus_math_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_post_40px {
             get {
                 object obj = ResourceManager.GetObject("icons8_post_40px", resourceCulture);

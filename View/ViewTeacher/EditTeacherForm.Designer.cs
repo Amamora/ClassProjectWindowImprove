@@ -35,6 +35,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.clearBtn = new System.Windows.Forms.Button();
             this.addInforStudentBtn = new System.Windows.Forms.Button();
             this.upImageBtn = new System.Windows.Forms.Button();
+            this.pictureAccount = new System.Windows.Forms.PictureBox();
             this.FeMaleRadio = new System.Windows.Forms.RadioButton();
             this.maleRadio = new System.Windows.Forms.RadioButton();
             this.birthDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -57,13 +58,12 @@ namespace WindowClassProject.View.ViewTeacher
             this.backPageBtn = new System.Windows.Forms.Button();
             this.backPagePanel = new System.Windows.Forms.Panel();
             this.titleLbl = new System.Windows.Forms.Label();
-            this.pictureAccount = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.fullAddPanel.SuspendLayout();
             this.contentAddPersonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).BeginInit();
             this.topAddPersonPanel.SuspendLayout();
             this.backPagePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,6 +157,16 @@ namespace WindowClassProject.View.ViewTeacher
             this.upImageBtn.Text = "Upload Image";
             this.upImageBtn.UseVisualStyleBackColor = true;
             this.upImageBtn.Click += new System.EventHandler(this.upImageBtn_Click);
+            // 
+            // pictureAccount
+            // 
+            this.pictureAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureAccount.Location = new System.Drawing.Point(65, 542);
+            this.pictureAccount.Name = "pictureAccount";
+            this.pictureAccount.Size = new System.Drawing.Size(140, 119);
+            this.pictureAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureAccount.TabIndex = 26;
+            this.pictureAccount.TabStop = false;
             // 
             // FeMaleRadio
             // 
@@ -391,16 +401,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.titleLbl.TabIndex = 0;
             this.titleLbl.Text = "New Information Teacher";
             // 
-            // pictureAccount
-            // 
-            this.pictureAccount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureAccount.Location = new System.Drawing.Point(65, 542);
-            this.pictureAccount.Name = "pictureAccount";
-            this.pictureAccount.Size = new System.Drawing.Size(140, 119);
-            this.pictureAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureAccount.TabIndex = 26;
-            this.pictureAccount.TabStop = false;
-            // 
             // EditTeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -414,10 +414,10 @@ namespace WindowClassProject.View.ViewTeacher
             this.fullAddPanel.ResumeLayout(false);
             this.contentAddPersonPanel.ResumeLayout(false);
             this.contentAddPersonPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
             this.topAddPersonPanel.ResumeLayout(false);
             this.backPagePanel.ResumeLayout(false);
             this.backPagePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAccount)).EndInit();
             this.ResumeLayout(false);
 
         }

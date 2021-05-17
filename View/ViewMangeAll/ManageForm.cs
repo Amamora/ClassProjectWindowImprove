@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowClassProject.DAO;
 using WindowClassProject.Model;
+using WindowClassProject.View.OtherForm;
 using WindowClassProject.View.ViewCourse;
 using WindowClassProject.View.ViewScore;
 using WindowClassProject.View.ViewStudent;
@@ -36,13 +37,7 @@ namespace WindowClassProject.View.ViewManageStudent
             nowUser.typeID = typeID;
 
 
-            if (nowUser.typeID == 3)
-            {
-                openCoursePanelChild.Visible = false;
-               
-                openTeacherPanelChild.Visible = false;
-                openManagePanel.Height=150;
-            }
+            
             
 
 
@@ -183,6 +178,8 @@ namespace WindowClassProject.View.ViewManageStudent
 
         private void openMailBoxPanel_Click(object sender, EventArgs e)
         {
+            activeBtn(sender);
+            openChildFormInPanel(new MailBox());
 
         }
         #endregion

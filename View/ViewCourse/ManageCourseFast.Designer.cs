@@ -323,10 +323,10 @@ namespace WindowClassProject.View.ViewCourse
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(211, 25);
+            this.label5.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(236, 26);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 29);
+            this.label5.Size = new System.Drawing.Size(208, 37);
             this.label5.TabIndex = 34;
             this.label5.Text = "Choose Course ";
             // 

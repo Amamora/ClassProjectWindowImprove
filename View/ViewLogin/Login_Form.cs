@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowClassProject.Model;
 using WindowClassProject.View.ViewManageStudent;
 using WindowClassProject.DAO;
+using WindowClassProject.View.ViewManageOfStudent;
 
 namespace WindowClassProject.View.ViewLogin
 {
@@ -70,12 +71,22 @@ namespace WindowClassProject.View.ViewLogin
                 {
                     return;
                 }
-               
+                if (user.typeID == 1)
+                {
+
                     ManageForm mana = new ManageForm(user.userAccountID, user.userAccount, user.password, user.typeID);
-                this.Hide();
+                    this.Hide();
                     mana.FormClosed += (s, args) => this.Close();
                     mana.Show();
-               
+                }
+                else
+                {
+                    StudentManageForm manas = new StudentManageForm(user.userAccountID, user.userAccount, user.password, user.typeID);
+                    
+                    this.Hide();
+                    manas.FormClosed += (s, args) => this.Close();
+                    manas.Show();
+                }
                 
 
             }
