@@ -29,15 +29,17 @@ namespace WindowClassProject.View.ViewCourse
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CoursePanelForm));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.topCoursePanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.searchTxt = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.searchTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.totalCourseLbl = new System.Windows.Forms.Label();
             this.toolCoursePanel = new System.Windows.Forms.Panel();
             this.fastManageBtn = new System.Windows.Forms.Button();
-            this.dataShowCoursePanel = new System.Windows.Forms.Panel();
-            this.dataCourseGrid = new System.Windows.Forms.DataGridView();
             this.button8 = new System.Windows.Forms.Button();
             this.exportWordFileBtn = new System.Windows.Forms.Button();
             this.exportExcelFileBtn = new System.Windows.Forms.Button();
@@ -46,6 +48,8 @@ namespace WindowClassProject.View.ViewCourse
             this.button3 = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
+            this.dataShowCoursePanel = new System.Windows.Forms.Panel();
+            this.dataCourseGrid = new System.Windows.Forms.DataGridView();
             this.topCoursePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.toolCoursePanel.SuspendLayout();
@@ -66,7 +70,6 @@ namespace WindowClassProject.View.ViewCourse
             // panel1
             // 
             this.panel1.Controls.Add(this.searchTxt);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(505, 0);
             this.panel1.Name = "panel1";
@@ -75,28 +78,79 @@ namespace WindowClassProject.View.ViewCourse
             // 
             // searchTxt
             // 
-            this.searchTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTxt.Location = new System.Drawing.Point(117, 52);
-            this.searchTxt.Multiline = true;
+            this.searchTxt.AcceptsReturn = false;
+            this.searchTxt.AcceptsTab = false;
+            this.searchTxt.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.searchTxt.AnimationSpeed = 200;
+            this.searchTxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.searchTxt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+            this.searchTxt.BackColor = System.Drawing.Color.Transparent;
+            this.searchTxt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchTxt.BackgroundImage")));
+            this.searchTxt.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.searchTxt.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.searchTxt.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.searchTxt.BorderColorIdle = System.Drawing.Color.Silver;
+            this.searchTxt.BorderRadius = 40;
+            this.searchTxt.BorderThickness = 2;
+            this.searchTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.searchTxt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTxt.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.searchTxt.DefaultText = "";
+            this.searchTxt.FillColor = System.Drawing.Color.White;
+            this.searchTxt.HideSelection = true;
+            this.searchTxt.IconLeft = null;
+            this.searchTxt.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.searchTxt.IconPadding = 10;
+            this.searchTxt.IconRight = global::WindowClassProject.Properties.Resources.icons8_cancel_30px;
+            this.searchTxt.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.searchTxt.Lines = new string[0];
+            this.searchTxt.Location = new System.Drawing.Point(39, 71);
+            this.searchTxt.MaxLength = 32767;
+            this.searchTxt.MinimumSize = new System.Drawing.Size(1, 1);
+            this.searchTxt.Modified = false;
+            this.searchTxt.Multiline = false;
             this.searchTxt.Name = "searchTxt";
-            this.searchTxt.Size = new System.Drawing.Size(340, 48);
-            this.searchTxt.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(485, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 48);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "search";
-            this.button1.UseVisualStyleBackColor = true;
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchTxt.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.searchTxt.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchTxt.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.White;
+            stateProperties4.ForeColor = System.Drawing.Color.Empty;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.searchTxt.OnIdleState = stateProperties4;
+            this.searchTxt.Padding = new System.Windows.Forms.Padding(3);
+            this.searchTxt.PasswordChar = '\0';
+            this.searchTxt.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.searchTxt.PlaceholderText = "Search Course By ID course";
+            this.searchTxt.ReadOnly = false;
+            this.searchTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.searchTxt.SelectedText = "";
+            this.searchTxt.SelectionLength = 0;
+            this.searchTxt.SelectionStart = 0;
+            this.searchTxt.ShortcutsEnabled = true;
+            this.searchTxt.Size = new System.Drawing.Size(457, 60);
+            this.searchTxt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.searchTxt.TabIndex = 0;
+            this.searchTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.searchTxt.TextMarginBottom = 0;
+            this.searchTxt.TextMarginLeft = 3;
+            this.searchTxt.TextMarginTop = 0;
+            this.searchTxt.TextPlaceholder = "Search Course By ID course";
+            this.searchTxt.UseSystemPasswordChar = false;
+            this.searchTxt.WordWrap = true;
+            this.searchTxt.OnIconRightClick += new System.EventHandler(this.bunifuTextBox1_OnIconRightClick);
             // 
             // totalCourseLbl
             // 
@@ -137,31 +191,6 @@ namespace WindowClassProject.View.ViewCourse
             this.fastManageBtn.Text = "Fast Manage";
             this.fastManageBtn.UseVisualStyleBackColor = true;
             this.fastManageBtn.Click += new System.EventHandler(this.fastManageBtn_Click);
-            // 
-            // dataShowCoursePanel
-            // 
-            this.dataShowCoursePanel.Controls.Add(this.dataCourseGrid);
-            this.dataShowCoursePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataShowCoursePanel.Location = new System.Drawing.Point(0, 199);
-            this.dataShowCoursePanel.Name = "dataShowCoursePanel";
-            this.dataShowCoursePanel.Size = new System.Drawing.Size(1118, 592);
-            this.dataShowCoursePanel.TabIndex = 2;
-            // 
-            // dataCourseGrid
-            // 
-            this.dataCourseGrid.AllowUserToAddRows = false;
-            this.dataCourseGrid.AllowUserToDeleteRows = false;
-            this.dataCourseGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataCourseGrid.BackgroundColor = System.Drawing.Color.White;
-            this.dataCourseGrid.ColumnHeadersHeight = 28;
-            this.dataCourseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataCourseGrid.Location = new System.Drawing.Point(0, 0);
-            this.dataCourseGrid.Name = "dataCourseGrid";
-            this.dataCourseGrid.RowHeadersWidth = 51;
-            this.dataCourseGrid.RowTemplate.Height = 24;
-            this.dataCourseGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataCourseGrid.Size = new System.Drawing.Size(1118, 592);
-            this.dataCourseGrid.TabIndex = 0;
             // 
             // button8
             // 
@@ -256,6 +285,31 @@ namespace WindowClassProject.View.ViewCourse
             this.addCourseBtn.UseVisualStyleBackColor = true;
             this.addCourseBtn.Click += new System.EventHandler(this.addCourseBtn_Click);
             // 
+            // dataShowCoursePanel
+            // 
+            this.dataShowCoursePanel.Controls.Add(this.dataCourseGrid);
+            this.dataShowCoursePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataShowCoursePanel.Location = new System.Drawing.Point(0, 199);
+            this.dataShowCoursePanel.Name = "dataShowCoursePanel";
+            this.dataShowCoursePanel.Size = new System.Drawing.Size(1118, 592);
+            this.dataShowCoursePanel.TabIndex = 2;
+            // 
+            // dataCourseGrid
+            // 
+            this.dataCourseGrid.AllowUserToAddRows = false;
+            this.dataCourseGrid.AllowUserToDeleteRows = false;
+            this.dataCourseGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCourseGrid.BackgroundColor = System.Drawing.Color.White;
+            this.dataCourseGrid.ColumnHeadersHeight = 28;
+            this.dataCourseGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataCourseGrid.Location = new System.Drawing.Point(0, 0);
+            this.dataCourseGrid.Name = "dataCourseGrid";
+            this.dataCourseGrid.RowHeadersWidth = 51;
+            this.dataCourseGrid.RowTemplate.Height = 24;
+            this.dataCourseGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataCourseGrid.Size = new System.Drawing.Size(1118, 592);
+            this.dataCourseGrid.TabIndex = 0;
+            // 
             // CoursePanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -271,7 +325,6 @@ namespace WindowClassProject.View.ViewCourse
             this.topCoursePanel.ResumeLayout(false);
             this.topCoursePanel.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.toolCoursePanel.ResumeLayout(false);
             this.dataShowCoursePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataCourseGrid)).EndInit();
@@ -294,9 +347,8 @@ namespace WindowClassProject.View.ViewCourse
         private System.Windows.Forms.Button addCourseBtn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label totalCourseLbl;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataCourseGrid;
-        private System.Windows.Forms.TextBox searchTxt;
         private System.Windows.Forms.Button fastManageBtn;
+        private Bunifu.UI.WinForms.BunifuTextBox searchTxt;
     }
 }

@@ -39,7 +39,7 @@ namespace WindowClassProject.DAO
         {
             MyDataBase mydata = new MyDataBase();
             mydata.openConnection();
-            SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY teacherID ASC) AS N'Order',teacherID,teacherFName,teacherLName,teacherEmail,picture  FROM [WINDOWCLASS].[dbo].[TEACHER]", mydata.getConnection);
+            SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY teacherID ASC) AS N'Order',teacherID as 'Teacher ID',teacherFName as 'Teacher FName',teacherLName,teacherEmail as 'Email',picture as 'Picture' FROM [WINDOWCLASS].[dbo].[TEACHER]", mydata.getConnection);
             DataTable tb = new DataTable();
             SqlDataAdapter ap = new SqlDataAdapter();
             ap.SelectCommand = command;
@@ -48,9 +48,11 @@ namespace WindowClassProject.DAO
 
             view.DataSource = tb;
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            view.RowTemplate.Height = 80;
+            view.RowTemplate.Height = 90;
             picCol = (DataGridViewImageColumn)view.Columns[5];
             picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+
+            
 
         }
 

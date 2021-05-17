@@ -41,9 +41,6 @@ namespace WindowClassProject.View.ViewStudent
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -84,10 +81,11 @@ namespace WindowClassProject.View.ViewStudent
             this.maleGenderRadio = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.addressTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.cmndTxt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.dataShowCoreStudent = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panelChart = new System.Windows.Forms.Panel();
-            this.bunifuCircleProgress1 = new Bunifu.UI.WinForms.BunifuCircleProgress();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.uploadBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.studentIDTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.EmailTxt = new Bunifu.UI.WinForms.BunifuTextBox();
@@ -95,12 +93,16 @@ namespace WindowClassProject.View.ViewStudent
             this.studentLNameTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.studentFNameTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBoxStudent = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.numberCourseCount = new System.Windows.Forms.Label();
+            this.averageScore = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataShowCoreStudent)).BeginInit();
             this.panelChart.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -124,6 +126,7 @@ namespace WindowClassProject.View.ViewStudent
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.classCombox);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label6);
@@ -140,7 +143,6 @@ namespace WindowClassProject.View.ViewStudent
             this.panel2.Controls.Add(this.maleGenderRadio);
             this.panel2.Controls.Add(this.addressTxt);
             this.panel2.Controls.Add(this.cmndTxt);
-            this.panel2.Controls.Add(this.dataShowCoreStudent);
             this.panel2.Controls.Add(this.panelChart);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 36);
@@ -705,71 +707,8 @@ namespace WindowClassProject.View.ViewStudent
             this.cmndTxt.UseSystemPasswordChar = false;
             this.cmndTxt.WordWrap = true;
             // 
-            // dataShowCoreStudent
-            // 
-            this.dataShowCoreStudent.AllowCustomTheming = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.dataShowCoreStudent.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataShowCoreStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataShowCoreStudent.BackgroundColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataShowCoreStudent.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dataShowCoreStudent.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataShowCoreStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataShowCoreStudent.ColumnHeadersHeight = 40;
-            this.dataShowCoreStudent.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.dataShowCoreStudent.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dataShowCoreStudent.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataShowCoreStudent.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dataShowCoreStudent.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataShowCoreStudent.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dataShowCoreStudent.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.dataShowCoreStudent.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.dataShowCoreStudent.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.CurrentTheme.HeaderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            this.dataShowCoreStudent.CurrentTheme.HeaderStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.CurrentTheme.Name = null;
-            this.dataShowCoreStudent.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dataShowCoreStudent.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dataShowCoreStudent.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dataShowCoreStudent.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataShowCoreStudent.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataShowCoreStudent.Dock = System.Windows.Forms.DockStyle.Right;
-            this.dataShowCoreStudent.EnableHeadersVisualStyles = false;
-            this.dataShowCoreStudent.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dataShowCoreStudent.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataShowCoreStudent.HeaderBgColor = System.Drawing.Color.Empty;
-            this.dataShowCoreStudent.HeaderForeColor = System.Drawing.Color.White;
-            this.dataShowCoreStudent.Location = new System.Drawing.Point(556, 343);
-            this.dataShowCoreStudent.Name = "dataShowCoreStudent";
-            this.dataShowCoreStudent.RowHeadersVisible = false;
-            this.dataShowCoreStudent.RowHeadersWidth = 51;
-            this.dataShowCoreStudent.RowTemplate.Height = 40;
-            this.dataShowCoreStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataShowCoreStudent.Size = new System.Drawing.Size(562, 412);
-            this.dataShowCoreStudent.TabIndex = 2;
-            this.dataShowCoreStudent.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
             // panelChart
             // 
-            this.panelChart.Controls.Add(this.bunifuCircleProgress1);
             this.panelChart.Controls.Add(this.panel3);
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelChart.Location = new System.Drawing.Point(0, 0);
@@ -777,45 +716,11 @@ namespace WindowClassProject.View.ViewStudent
             this.panelChart.Size = new System.Drawing.Size(1118, 343);
             this.panelChart.TabIndex = 1;
             // 
-            // bunifuCircleProgress1
-            // 
-            this.bunifuCircleProgress1.Animated = false;
-            this.bunifuCircleProgress1.AnimationInterval = 1;
-            this.bunifuCircleProgress1.AnimationSpeed = 1;
-            this.bunifuCircleProgress1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCircleProgress1.CircleMargin = 10;
-            this.bunifuCircleProgress1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuCircleProgress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold);
-            this.bunifuCircleProgress1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuCircleProgress1.IsPercentage = false;
-            this.bunifuCircleProgress1.LineProgressThickness = 10;
-            this.bunifuCircleProgress1.LineThickness = 10;
-            this.bunifuCircleProgress1.Location = new System.Drawing.Point(798, 0);
-            this.bunifuCircleProgress1.Name = "bunifuCircleProgress1";
-            this.bunifuCircleProgress1.ProgressAnimationSpeed = 200;
-            this.bunifuCircleProgress1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgress1.ProgressColor = System.Drawing.Color.DodgerBlue;
-            this.bunifuCircleProgress1.ProgressColor2 = System.Drawing.Color.DodgerBlue;
-            this.bunifuCircleProgress1.ProgressEndCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
-            this.bunifuCircleProgress1.ProgressFillStyle = Bunifu.UI.WinForms.BunifuCircleProgress.FillStyles.Solid;
-            this.bunifuCircleProgress1.ProgressStartCap = Bunifu.UI.WinForms.BunifuCircleProgress.CapStyles.Round;
-            this.bunifuCircleProgress1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.bunifuCircleProgress1.Size = new System.Drawing.Size(320, 320);
-            this.bunifuCircleProgress1.SubScriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.bunifuCircleProgress1.SubScriptMargin = new System.Windows.Forms.Padding(5, -20, 0, 0);
-            this.bunifuCircleProgress1.SubScriptText = ".00";
-            this.bunifuCircleProgress1.SuperScriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.bunifuCircleProgress1.SuperScriptMargin = new System.Windows.Forms.Padding(5, 20, 0, 0);
-            this.bunifuCircleProgress1.SuperScriptText = ".%";
-            this.bunifuCircleProgress1.TabIndex = 16;
-            this.bunifuCircleProgress1.Text = "30";
-            this.bunifuCircleProgress1.TextMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.bunifuCircleProgress1.Value = 30;
-            this.bunifuCircleProgress1.ValueByTransition = 30;
-            this.bunifuCircleProgress1.ValueMargin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.uploadBtn);
             this.panel3.Controls.Add(this.studentIDTxt);
             this.panel3.Controls.Add(this.EmailTxt);
@@ -826,8 +731,38 @@ namespace WindowClassProject.View.ViewStudent
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(684, 343);
+            this.panel3.Size = new System.Drawing.Size(919, 343);
             this.panel3.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(212, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(192, 29);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Student LName";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(215, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 29);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Student FName";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(263, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 29);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Student ID:";
             // 
             // uploadBtn
             // 
@@ -947,7 +882,7 @@ namespace WindowClassProject.View.ViewStudent
             this.studentIDTxt.IconRight = null;
             this.studentIDTxt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.studentIDTxt.Lines = new string[0];
-            this.studentIDTxt.Location = new System.Drawing.Point(220, 18);
+            this.studentIDTxt.Location = new System.Drawing.Point(453, 24);
             this.studentIDTxt.MaxLength = 32767;
             this.studentIDTxt.MinimumSize = new System.Drawing.Size(1, 1);
             this.studentIDTxt.Modified = false;
@@ -1170,7 +1105,7 @@ namespace WindowClassProject.View.ViewStudent
             this.studentLNameTxt.IconRight = null;
             this.studentLNameTxt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.studentLNameTxt.Lines = new string[0];
-            this.studentLNameTxt.Location = new System.Drawing.Point(220, 147);
+            this.studentLNameTxt.Location = new System.Drawing.Point(453, 156);
             this.studentLNameTxt.MaxLength = 32767;
             this.studentLNameTxt.MinimumSize = new System.Drawing.Size(1, 1);
             this.studentLNameTxt.Modified = false;
@@ -1244,7 +1179,7 @@ namespace WindowClassProject.View.ViewStudent
             this.studentFNameTxt.IconRight = null;
             this.studentFNameTxt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.studentFNameTxt.Lines = new string[0];
-            this.studentFNameTxt.Location = new System.Drawing.Point(220, 84);
+            this.studentFNameTxt.Location = new System.Drawing.Point(453, 89);
             this.studentFNameTxt.MaxLength = 32767;
             this.studentFNameTxt.MinimumSize = new System.Drawing.Size(1, 1);
             this.studentFNameTxt.Modified = false;
@@ -1307,6 +1242,47 @@ namespace WindowClassProject.View.ViewStudent
             this.pictureBoxStudent.TabStop = false;
             this.pictureBoxStudent.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.averageScore);
+            this.panel4.Controls.Add(this.numberCourseCount);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(648, 343);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(470, 412);
+            this.panel4.TabIndex = 23;
+            // 
+            // numberCourseCount
+            // 
+            this.numberCourseCount.AutoSize = true;
+            this.numberCourseCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberCourseCount.Location = new System.Drawing.Point(11, 125);
+            this.numberCourseCount.Name = "numberCourseCount";
+            this.numberCourseCount.Size = new System.Drawing.Size(82, 25);
+            this.numberCourseCount.TabIndex = 0;
+            this.numberCourseCount.Text = "Course:";
+            // 
+            // averageScore
+            // 
+            this.averageScore.AutoSize = true;
+            this.averageScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.averageScore.Location = new System.Drawing.Point(11, 168);
+            this.averageScore.Name = "averageScore";
+            this.averageScore.Size = new System.Drawing.Size(149, 25);
+            this.averageScore.TabIndex = 2;
+            this.averageScore.Text = "Average Score:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 233);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(227, 25);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Last Active: 7 month ago";
+            // 
             // EditStudentPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1323,10 +1299,12 @@ namespace WindowClassProject.View.ViewStudent
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataShowCoreStudent)).EndInit();
             this.panelChart.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1337,7 +1315,6 @@ namespace WindowClassProject.View.ViewStudent
         private System.Windows.Forms.Panel panel2;
         private Bunifu.UI.WinForms.BunifuTextBox addressTxt;
         private Bunifu.UI.WinForms.BunifuTextBox cmndTxt;
-        private Bunifu.UI.WinForms.BunifuDataGridView dataShowCoreStudent;
         private System.Windows.Forms.Panel panelChart;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuTextBox EmailTxt;
@@ -1358,10 +1335,16 @@ namespace WindowClassProject.View.ViewStudent
         private Bunifu.UI.WinForms.BunifuDatePicker birthDateTimePick;
         private Bunifu.UI.WinForms.BunifuRadioButton femaleGenderRadio;
         private Bunifu.UI.WinForms.BunifuRadioButton maleGenderRadio;
-        private Bunifu.UI.WinForms.BunifuCircleProgress bunifuCircleProgress1;
         private Bunifu.UI.WinForms.BunifuTextBox studentIDTxt;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton uploadBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox classCombox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label averageScore;
+        private System.Windows.Forms.Label numberCourseCount;
     }
 }

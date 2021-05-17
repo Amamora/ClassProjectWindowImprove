@@ -216,6 +216,18 @@
       <DependentUpon>MyLinQ.dbml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\OtherForm\ChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherForm\ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OtherForm\MailBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OtherForm\MailBox.Designer.cs">
+      <DependentUpon>MailBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ViewCourse\AddCoursePanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +263,12 @@
     </Compile>
     <Compile Include="View\ViewLogin\Login_Form.Designer.cs">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewLogin\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ViewLogin\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ViewManageOfStudent\StudentManageForm.cs">
       <SubType>Form</SubType>
@@ -365,6 +383,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\OtherForm\MailBox.resx">
+      <DependentUpon>MailBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewCourse\AddCoursePanelForm.resx">
       <DependentUpon>AddCoursePanelForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -379,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewLogin\Login_Form.resx">
       <DependentUpon>Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewLogin\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewManageOfStudent\StudentManageForm.resx">
       <DependentUpon>StudentManageForm.cs</DependentUpon>
@@ -603,7 +627,7 @@
     <None Include="Resources\icons8_search_32px.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="View\OtherForm\" />
+    <None Include="Resources\icons8_menu_40px.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_envelope_50px.png" />
@@ -613,6 +637,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_post_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cancel_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-popup-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_delete_30px_1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

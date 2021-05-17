@@ -16,5 +16,10 @@ namespace WindowClassProject.View.ViewManageOfStudent
         {
             InitializeComponent();
         }
+        TEACHER teach = new TEACHER();
+        private void StudentManageForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

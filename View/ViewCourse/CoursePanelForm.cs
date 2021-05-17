@@ -395,5 +395,10 @@ namespace WindowClassProject.View.ViewCourse
             AddCoursePanelForm add = new AddCoursePanelForm();
             add.Show();
         }
+
+        private void bunifuTextBox1_OnIconRightClick(object sender, EventArgs e)
+        {
+            searchTxt.Text = "";
+        }
     }
 }

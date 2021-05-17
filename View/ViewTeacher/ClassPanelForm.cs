@@ -26,7 +26,7 @@ namespace WindowClassProject.View.ViewTeacher
         {
 
         }
-        bool modeClass = true;
+     
         private void ClassPanelForm_Load(object sender, EventArgs e)
         {
             LoadDataGrid(dataShowGrid);
@@ -264,6 +264,7 @@ namespace WindowClassProject.View.ViewTeacher
                 cls.teacherID = cl.teacherID;
                 cls.schoolyear = cl.schoolyear;
                 dt.SubmitChanges();
+                MessageBox.Show("Edit sucess!");
 
 
 
@@ -282,7 +283,7 @@ namespace WindowClassProject.View.ViewTeacher
                 cl.teacherID = teacherIDTxt.Text;
                 cl.schoolyear = Int32.Parse(schoolYearTxt.Text);
                 cl.departmentID = dep.departmentID;
-                
+            editclass(cl);
             
 
 
@@ -376,8 +377,17 @@ namespace WindowClassProject.View.ViewTeacher
 
         private void dataShowGrid_DoubleClick(object sender, EventArgs e)
         {
+            string test = dataShowGrid.CurrentRow.Cells[0].Value.ToString();
+            
             classIDTxt.Text = dataShowGrid.CurrentRow.Cells[0].Value.ToString();
-           teacherIDTxt.Text = dataShowGrid.CurrentRow.Cells[1].Value.ToString();
+            if (dataShowGrid.CurrentRow.Cells[1].Value == null)
+            {
+                teacherIDTxt.Text = "";
+            }
+            else
+            {
+                teacherIDTxt.Text = dataShowGrid.CurrentRow.Cells[1].Value.ToString();
+            }
            schoolYearTxt.Text = dataShowGrid.CurrentRow.Cells[2].Value.ToString();
            departmentSelectBox.Text = dataShowGrid.CurrentRow.Cells[3].Value.ToString();
 

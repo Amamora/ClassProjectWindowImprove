@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowClassProject.View.ViewMangeAll
+namespace WindowClassProject.View.OtherForm
 {
-    public partial class DashBoardForm : Form
+    public partial class ChartForm : Form
     {
-        public DashBoardForm()
+        public ChartForm()
         {
             InitializeComponent();
-        }
-
-        private void bunifuTileButton1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

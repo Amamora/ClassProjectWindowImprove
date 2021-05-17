@@ -114,7 +114,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.showStudentInGroupBtn.TabIndex = 1;
             this.showStudentInGroupBtn.Text = "Show Score Group";
             this.showStudentInGroupBtn.UseVisualStyleBackColor = true;
-            this.showStudentInGroupBtn.Click += new System.EventHandler(this.showStudentInGroupBtn_Click);
+            this.showStudentInGroupBtn.Click += new System.EventHandler(this.showStudentBtn_Click);
             // 
             // showGroupBtn
             // 
@@ -140,6 +140,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.dataShowGrid.RowTemplate.Height = 24;
             this.dataShowGrid.Size = new System.Drawing.Size(645, 709);
             this.dataShowGrid.TabIndex = 0;
+            this.dataShowGrid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataShowGrid_CellDoubleClick);
             // 
             // panel5
             // 
@@ -253,6 +254,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.showStudentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.showStudentBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.showStudentBtn.UseVisualStyleBackColor = true;
+            this.showStudentBtn.Click += new System.EventHandler(this.showStudentBtn_Click);
             // 
             // clearGroupBtn
             // 

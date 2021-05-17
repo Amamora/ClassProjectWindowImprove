@@ -92,14 +92,7 @@ namespace WindowClassProject.View.ViewTeacher
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
 
-                var count = from GROUPSUBJECT g in db.GROUPSUBJECTs
-                            where g.groupID == groupIDTxt.Text
-                            select g;
-                if (count.Count() > 0)
-                {
-                    MessageBox.Show("Group id exist!");
-                    return false;
-                }
+
                 TEACHER t = teacherCombox.SelectedItem as TEACHER;
                 COURSE c = courseCombox.SelectedItem as COURSE;
                 STUDENT s = studentCombox.SelectedItem as STUDENT;
@@ -108,7 +101,7 @@ namespace WindowClassProject.View.ViewTeacher
                          select g;
                 if (gr.Count() > 0)
                 {
-                    MessageBox.Show("The same content of Group!!");
+                    MessageBox.Show("The exist student ID and teacher ID in the same content of Group!!");
                     return false;
                 }
             }
@@ -134,7 +127,7 @@ namespace WindowClassProject.View.ViewTeacher
                     db.SubmitChanges();
 
                     MessageBox.Show("Sucess");
-                   
+
 
 
                 }
@@ -180,8 +173,8 @@ namespace WindowClassProject.View.ViewTeacher
             g.studentID = s.studentID;
             g.courseID = c.courseID;
             editGroupSubject(g);
-            
-            
+
+
         }
 
         public static bool  deleteGroupSubject(string id)
@@ -262,8 +255,9 @@ namespace WindowClassProject.View.ViewTeacher
                 studentCombox.Text = g.studentID;
                 courseCombox.Text = g.courseID;
 
-                    
+
             }
+            
 
         }
 
@@ -289,20 +283,66 @@ namespace WindowClassProject.View.ViewTeacher
                         join SCORE score in data.SCOREs
                         on sco.groupID equals score.groupID
 
-                                 where sco.groupID == groupIDTxt.Text
-                                 select new
-                                 {
-                                     GroupName = sco.groupName,
-                                     GroupID=sco.groupID,
-                                     CourseName=co.courseName,
-                                     TeacherID=sco.teacherID,
-                                     Score=stu.studentID
+                        where sco.groupID == groupIDTxt.Text
+                        select new
+                        {
+                            GroupName = sco.groupName,
+                            GroupID = sco.groupID,
+                            CourseName = co.courseName,
+                            TeacherID = sco.teacherID,
+                            Score = stu.studentID
 
-                                 };
+                        };
 
 
             }
 
+        }
+
+        private void showStudentBtn_Click(object sender, EventArgs e)
+        {
+            using (MyLinQDataContext data = new MyLinQDataContext())
+            {
+                var check = from GROUPSUBJECT gr in data.GROUPSUBJECTs
+                            where gr.groupID == groupIDTxt.Text
+                            select gr;
+                if (check.Count() == 0)
+                {
+                    MessageBox.Show("ID Group not exist!");
+                    groupIDTxt.Focus();
+                    return;
+                }
+
+                var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
+                        join COURSE co in data.COURSEs
+                        on sco.courseID equals co.courseID
+                        join STUDENT stu in data.STUDENTs
+                        on sco.studentID equals stu.studentID
+                        join SCORE score in data.SCOREs
+                        on sco.groupID equals score.groupID
+
+                        where sco.groupID == groupIDTxt.Text
+                        select new
+                        {
+                            GroupName = sco.groupName,
+                            GroupID = sco.groupID,
+                            CourseName = co.courseName,
+                            TeacherID = sco.teacherID,
+                            Score = stu.studentID
+
+                        };
+
+
+            }
+        }
+
+        private void dataShowGrid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            groupIDTxt.Text = dataShowGrid.CurrentRow.Cells[0].Value.ToString();
+            groupNameTxt.Text = dataShowGrid.CurrentRow.Cells[1].Value.ToString();
+            teacherCombox.Text = dataShowGrid.CurrentRow.Cells[2].Value.ToString();
+            studentCombox.Text = dataShowGrid.CurrentRow.Cells[3].Value.ToString();
+            courseCombox.Text = dataShowGrid.CurrentRow.Cells[4].Value.ToString();
         }
     }
 }

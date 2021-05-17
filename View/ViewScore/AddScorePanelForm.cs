@@ -28,13 +28,12 @@ namespace WindowClassProject.View.ViewScore
                 if (check.Count() == 0)
                 {
                     MessageBox.Show("ID Group not exist!");
-                   selectSearchBox.Focus();
+                    selectSearchBox.Focus();
                     return;
                 }
 
                 var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
-                        join COURSE co in data.COURSEs
-                        on sco.courseID equals co.courseID
+
                         join STUDENT stu in data.STUDENTs
                         on sco.studentID equals stu.studentID
                         join SCORE score in data.SCOREs
@@ -45,12 +44,12 @@ namespace WindowClassProject.View.ViewScore
                         {
                             GroupName = sco.groupName,
                             GroupID = sco.groupID,
-                            CourseName = co.courseName,
+                            StudentName = stu.studentFName + " " + stu.studentLName,
                             TeacherID = sco.teacherID,
-                            Score = stu.studentID
+                            Score = score.score1
 
                         };
-
+                dataSubScoreView.DataSource = g;
 
             }
         }
@@ -62,17 +61,20 @@ namespace WindowClassProject.View.ViewScore
                 using (MyLinQDataContext db = new MyLinQDataContext())
                 {
                     SCORE sc = new SCORE();
-                    GROUPSUBJECT gr = selectGroupID.SelectedItem as GROUPSUBJECT;
-                    sc.groupID = gr.groupID;
-                    sc.score1 = Int32.Parse(scoreTxt.Text);
+
+
+                    sc.score1= float.Parse(scoreTxt.Text);
                     sc.evalute = descriptionTxt.Text;
+                    sc.studentID = studentIDtxt.Text;
+                    sc.groupID = selectGroupID.Text;
                     db.SCOREs.InsertOnSubmit(sc);
+                    MessageBox.Show("Insert sucess!");
                     db.SubmitChanges();
-                    
+
 
                 }
-                AddScorePanelForm_Load(sender,e);
-                }
+                AddScorePanelForm_Load(sender, e);
+            }
 
         }
         public bool checkAll()
@@ -96,7 +98,7 @@ namespace WindowClassProject.View.ViewScore
 
                 var src = from SCORE sc in db.SCOREs
                           join GROUPSUBJECT gr in db.GROUPSUBJECTs on sc.groupID equals gr.groupID
-                          where gr.studentID == studentIDtxt.Text
+                          where gr.studentID == studentIDtxt.Text && sc != null
                           select sc;
                 if (src.Count() > 0)
                 {
@@ -106,7 +108,7 @@ namespace WindowClassProject.View.ViewScore
             }
             return true;
         }
-        public void loadDataGrid(DataGridView data) 
+        public void loadDataGrid(DataGridView data)
         {
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
@@ -126,7 +128,10 @@ namespace WindowClassProject.View.ViewScore
                 data.DataSource = source;
 
                 var souceGroupID = from GROUPSUBJECT g in db.GROUPSUBJECTs
-                                   select g;
+                                   group g.groupID by g.groupID into g
+                                   select g.Key;
+
+
                 selectGroupID.DataSource = souceGroupID;
                 selectGroupID.DisplayMember = "groupID";
                 selectSearchBox.DataSource = souceGroupID;
@@ -138,7 +143,7 @@ namespace WindowClassProject.View.ViewScore
         private void AddScorePanelForm_Load(object sender, EventArgs e)
         {
             loadDataGrid(dataSubScoreView);
-            
+
 
         }
 
@@ -153,7 +158,31 @@ namespace WindowClassProject.View.ViewScore
 
         private void showStudentDataBtn_Click(object sender, EventArgs e)
         {
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                //show student follow select group ID =>
 
+                var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
+
+                              join STUDENT stu in db.STUDENTs on groupSub.studentID equals stu.studentID
+                              where groupSub.groupID == selectGroupID.Text
+                              select new
+                              {
+                                  GroupID = groupSub.groupID,
+                                  GroupName = groupSub.groupName,
+                                  StudentID = stu.studentID,
+                                  StudentName = stu.studentFName + " " + stu.studentLName,
+
+                              };
+                if (scource.Count() == 0)
+                {
+                    MessageBox.Show("Nodata");
+                    return;
+                }
+                dataSubScoreView.DataSource = scource;
+
+
+            }
         }
     }
-}
+    }

@@ -170,7 +170,7 @@ namespace WindowClassProject.View.ViewStudent
             this.searchButton.IdleIconLeftImage = null;
             this.searchButton.IdleIconRightImage = null;
             this.searchButton.IndicateFocus = false;
-            this.searchButton.Location = new System.Drawing.Point(445, 50);
+            this.searchButton.Location = new System.Drawing.Point(445, 46);
             this.searchButton.Name = "searchButton";
             this.searchButton.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.searchButton.OnDisabledState.BorderRadius = 40;
@@ -204,7 +204,7 @@ namespace WindowClassProject.View.ViewStudent
             this.searchButton.OnPressedState.ForeColor = System.Drawing.Color.White;
             this.searchButton.OnPressedState.IconLeftImage = null;
             this.searchButton.OnPressedState.IconRightImage = null;
-            this.searchButton.Size = new System.Drawing.Size(137, 59);
+            this.searchButton.Size = new System.Drawing.Size(65, 63);
             this.searchButton.TabIndex = 19;
             this.searchButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.searchButton.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -226,7 +226,7 @@ namespace WindowClassProject.View.ViewStudent
             this.searchBox.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.searchBox.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
             this.searchBox.BorderColorIdle = System.Drawing.Color.Silver;
-            this.searchBox.BorderRadius = 1;
+            this.searchBox.BorderRadius = 40;
             this.searchBox.BorderThickness = 1;
             this.searchBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.searchBox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -270,7 +270,7 @@ namespace WindowClassProject.View.ViewStudent
             this.searchBox.Padding = new System.Windows.Forms.Padding(3);
             this.searchBox.PasswordChar = '\0';
             this.searchBox.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.searchBox.PlaceholderText = "Search by Student ID......";
+            this.searchBox.PlaceholderText = "Search by Student ID....";
             this.searchBox.ReadOnly = false;
             this.searchBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.searchBox.SelectedText = "";
@@ -284,7 +284,7 @@ namespace WindowClassProject.View.ViewStudent
             this.searchBox.TextMarginBottom = 0;
             this.searchBox.TextMarginLeft = 3;
             this.searchBox.TextMarginTop = 0;
-            this.searchBox.TextPlaceholder = "Search by Student ID......";
+            this.searchBox.TextPlaceholder = "Search by Student ID....";
             this.searchBox.UseSystemPasswordChar = false;
             this.searchBox.WordWrap = true;
             this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged);

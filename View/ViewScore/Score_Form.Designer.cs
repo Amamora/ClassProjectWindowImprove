@@ -67,11 +67,8 @@ namespace WindowClassProject.View.ViewScore
             this.comboBoxSearch.FormattingEnabled = true;
             this.comboBoxSearch.Items.AddRange(new object[] {
             "Course ID",
-            "Course Name",
-            "Group Name",
             "Group ID",
             "Student ID",
-            "Student Name",
             "Score"});
             this.comboBoxSearch.Location = new System.Drawing.Point(87, 34);
             this.comboBoxSearch.Name = "comboBoxSearch";
@@ -167,31 +164,31 @@ namespace WindowClassProject.View.ViewScore
             // exportPdfBtn
             // 
             this.exportPdfBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exportPdfBtn.Image = global::WindowClassProject.Properties.Resources.icons8_pdf_30px;
             this.exportPdfBtn.Location = new System.Drawing.Point(0, 126);
             this.exportPdfBtn.Name = "exportPdfBtn";
             this.exportPdfBtn.Size = new System.Drawing.Size(64, 63);
             this.exportPdfBtn.TabIndex = 2;
-            this.exportPdfBtn.Text = "pdf";
             this.exportPdfBtn.UseVisualStyleBackColor = true;
             // 
             // exportExcelBtn
             // 
             this.exportExcelBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exportExcelBtn.Image = global::WindowClassProject.Properties.Resources.icons8_file_excel_30px;
             this.exportExcelBtn.Location = new System.Drawing.Point(0, 63);
             this.exportExcelBtn.Name = "exportExcelBtn";
             this.exportExcelBtn.Size = new System.Drawing.Size(64, 63);
             this.exportExcelBtn.TabIndex = 1;
-            this.exportExcelBtn.Text = "excell";
             this.exportExcelBtn.UseVisualStyleBackColor = true;
             // 
             // exportWordBtn
             // 
             this.exportWordBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exportWordBtn.Image = global::WindowClassProject.Properties.Resources.icons8_microsoft_word_30px;
             this.exportWordBtn.Location = new System.Drawing.Point(0, 0);
             this.exportWordBtn.Name = "exportWordBtn";
             this.exportWordBtn.Size = new System.Drawing.Size(64, 63);
             this.exportWordBtn.TabIndex = 0;
-            this.exportWordBtn.Text = "word";
             this.exportWordBtn.UseVisualStyleBackColor = true;
             // 
             // panel4

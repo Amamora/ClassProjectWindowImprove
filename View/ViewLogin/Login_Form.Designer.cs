@@ -40,17 +40,17 @@ namespace WindowClassProject.View.ViewLogin
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.kGradientPanel1 = new WindowClassProject.KGradientPanel();
-            this.loginBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.passTxt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.userTxt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.hidePictureBox = new System.Windows.Forms.PictureBox();
-            this.showPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.hrUser = new System.Windows.Forms.Panel();
             this.signUpLbl = new System.Windows.Forms.Label();
             this.forgotLbl = new System.Windows.Forms.Label();
             this.rememberBox = new System.Windows.Forms.CheckBox();
             this.loginLbl = new System.Windows.Forms.Label();
+            this.loginBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.passTxt = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.userTxt = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.hidePictureBox = new System.Windows.Forms.PictureBox();
+            this.showPictureBox = new System.Windows.Forms.PictureBox();
             this.kGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hidePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showPictureBox)).BeginInit();
@@ -78,6 +78,82 @@ namespace WindowClassProject.View.ViewLogin
             this.kGradientPanel1.Size = new System.Drawing.Size(682, 633);
             this.kGradientPanel1.TabIndex = 0;
             this.kGradientPanel1.TopColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(113)))), ((int)(((byte)(254)))));
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel1.Location = new System.Drawing.Point(120, 356);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(455, 3);
+            this.panel1.TabIndex = 3;
+            // 
+            // hrUser
+            // 
+            this.hrUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.hrUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.hrUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.hrUser.Location = new System.Drawing.Point(120, 243);
+            this.hrUser.Name = "hrUser";
+            this.hrUser.Size = new System.Drawing.Size(455, 3);
+            this.hrUser.TabIndex = 20;
+            // 
+            // signUpLbl
+            // 
+            this.signUpLbl.AutoSize = true;
+            this.signUpLbl.BackColor = System.Drawing.Color.Transparent;
+            this.signUpLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.signUpLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signUpLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.signUpLbl.Location = new System.Drawing.Point(229, 574);
+            this.signUpLbl.Name = "signUpLbl";
+            this.signUpLbl.Size = new System.Drawing.Size(255, 20);
+            this.signUpLbl.TabIndex = 19;
+            this.signUpLbl.Text = "You don\'t have account? Sign Up\r\n";
+            this.signUpLbl.Click += new System.EventHandler(this.signUpLbl_Click);
+            // 
+            // forgotLbl
+            // 
+            this.forgotLbl.AutoSize = true;
+            this.forgotLbl.BackColor = System.Drawing.Color.Transparent;
+            this.forgotLbl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.forgotLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotLbl.ForeColor = System.Drawing.Color.White;
+            this.forgotLbl.Location = new System.Drawing.Point(430, 382);
+            this.forgotLbl.Name = "forgotLbl";
+            this.forgotLbl.Size = new System.Drawing.Size(145, 20);
+            this.forgotLbl.TabIndex = 18;
+            this.forgotLbl.Text = "Forgot Password?";
+            this.forgotLbl.Click += new System.EventHandler(this.forgotLbl_Click);
+            // 
+            // rememberBox
+            // 
+            this.rememberBox.AutoSize = true;
+            this.rememberBox.BackColor = System.Drawing.Color.Transparent;
+            this.rememberBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rememberBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.rememberBox.Location = new System.Drawing.Point(108, 378);
+            this.rememberBox.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
+            this.rememberBox.Name = "rememberBox";
+            this.rememberBox.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.rememberBox.Size = new System.Drawing.Size(159, 24);
+            this.rememberBox.TabIndex = 16;
+            this.rememberBox.Text = "Remember Pass";
+            this.rememberBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rememberBox.UseVisualStyleBackColor = false;
+            // 
+            // loginLbl
+            // 
+            this.loginLbl.AutoSize = true;
+            this.loginLbl.BackColor = System.Drawing.Color.Transparent;
+            this.loginLbl.Font = new System.Drawing.Font("VnAllegie2", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginLbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.loginLbl.Location = new System.Drawing.Point(224, 67);
+            this.loginLbl.Name = "loginLbl";
+            this.loginLbl.Size = new System.Drawing.Size(243, 51);
+            this.loginLbl.TabIndex = 11;
+            this.loginLbl.Text = "Account Login";
             // 
             // loginBtn
             // 
@@ -340,81 +416,6 @@ namespace WindowClassProject.View.ViewLogin
             this.showPictureBox.TabIndex = 21;
             this.showPictureBox.TabStop = false;
             this.showPictureBox.Click += new System.EventHandler(this.showPictureBox_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Location = new System.Drawing.Point(120, 356);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(455, 3);
-            this.panel1.TabIndex = 3;
-            // 
-            // hrUser
-            // 
-            this.hrUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.hrUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.hrUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.hrUser.Location = new System.Drawing.Point(120, 243);
-            this.hrUser.Name = "hrUser";
-            this.hrUser.Size = new System.Drawing.Size(455, 3);
-            this.hrUser.TabIndex = 20;
-            // 
-            // signUpLbl
-            // 
-            this.signUpLbl.AutoSize = true;
-            this.signUpLbl.BackColor = System.Drawing.Color.Transparent;
-            this.signUpLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signUpLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signUpLbl.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signUpLbl.Location = new System.Drawing.Point(229, 574);
-            this.signUpLbl.Name = "signUpLbl";
-            this.signUpLbl.Size = new System.Drawing.Size(255, 20);
-            this.signUpLbl.TabIndex = 19;
-            this.signUpLbl.Text = "You don\'t have account? Sign Up\r\n";
-            // 
-            // forgotLbl
-            // 
-            this.forgotLbl.AutoSize = true;
-            this.forgotLbl.BackColor = System.Drawing.Color.Transparent;
-            this.forgotLbl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.forgotLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotLbl.ForeColor = System.Drawing.Color.White;
-            this.forgotLbl.Location = new System.Drawing.Point(430, 382);
-            this.forgotLbl.Name = "forgotLbl";
-            this.forgotLbl.Size = new System.Drawing.Size(145, 20);
-            this.forgotLbl.TabIndex = 18;
-            this.forgotLbl.Text = "Forgot Password?";
-            this.forgotLbl.Click += new System.EventHandler(this.forgotLbl_Click);
-            // 
-            // rememberBox
-            // 
-            this.rememberBox.AutoSize = true;
-            this.rememberBox.BackColor = System.Drawing.Color.Transparent;
-            this.rememberBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rememberBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.rememberBox.Location = new System.Drawing.Point(108, 378);
-            this.rememberBox.Margin = new System.Windows.Forms.Padding(4, 3, 3, 3);
-            this.rememberBox.Name = "rememberBox";
-            this.rememberBox.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.rememberBox.Size = new System.Drawing.Size(159, 24);
-            this.rememberBox.TabIndex = 16;
-            this.rememberBox.Text = "Remember Pass";
-            this.rememberBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rememberBox.UseVisualStyleBackColor = false;
-            // 
-            // loginLbl
-            // 
-            this.loginLbl.AutoSize = true;
-            this.loginLbl.BackColor = System.Drawing.Color.Transparent;
-            this.loginLbl.Font = new System.Drawing.Font("VnAllegie2", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginLbl.ForeColor = System.Drawing.SystemColors.Control;
-            this.loginLbl.Location = new System.Drawing.Point(224, 67);
-            this.loginLbl.Name = "loginLbl";
-            this.loginLbl.Size = new System.Drawing.Size(243, 51);
-            this.loginLbl.TabIndex = 11;
-            this.loginLbl.Text = "Account Login";
             // 
             // Login_Form
             // 
