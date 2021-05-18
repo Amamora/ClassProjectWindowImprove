@@ -26,7 +26,7 @@ namespace WindowClassProject.View.ViewStudent
 
             InitializeComponent();
 
-            
+
 
         }
 
@@ -45,7 +45,7 @@ namespace WindowClassProject.View.ViewStudent
                 totalStudentLbl.Text = "Total Student: " + counts.Count();
             }
             loadDataForDataGrid(dataStudentGridView);
-            
+
         }
         private void loadDataForDataGrid(DataGridView dataGridView)
         {
@@ -71,7 +71,7 @@ namespace WindowClassProject.View.ViewStudent
                     catch (IOException ex)
                     {
                         fileError = true;
-                        MessageBox.Show("It wasn't possible to write data to word",ex.Message);
+                        MessageBox.Show("It wasn't possible to write data to word", ex.Message);
                     }
                 }
 
@@ -164,7 +164,7 @@ namespace WindowClassProject.View.ViewStudent
                     catch (IOException ex)
                     {
                         fileError = true;
-                        MessageBox.Show("It wasn't possible to write data to pdf",ex.Message);
+                        MessageBox.Show("It wasn't possible to write data to pdf", ex.Message);
                     }
                 }
 
@@ -344,7 +344,7 @@ namespace WindowClassProject.View.ViewStudent
                             cell.Range.Text = " ";
                             document.InlineShapes.AddPicture(@"E:\E_PART2\HKII__2021\Windown_Program\Day1\ex1\Screenshot 2021-02-25 000816.png");
                             File.Delete(@"E:\E_PART2\HKII__2021\Windown_Program\Day1\ex1\Screenshot 2021-02-25 000816.png");
-                       
+
                         }
                         else if (dataGrid.Rows[x - 1].Cells[y - 1].Value.GetType() == typeof(DateTime))
                         {
@@ -357,7 +357,7 @@ namespace WindowClassProject.View.ViewStudent
                     }
                 }
             }
-           
+
             //Save the document
             winword.Application.Visible = true;
             document.SaveAs2(fileName);
@@ -402,7 +402,7 @@ namespace WindowClassProject.View.ViewStudent
         private void searchBox_TextChanged(object sender, EventArgs e)
         {
 
-           
+
         }
 
         private void searchBox_KeyDown(object sender, KeyEventArgs e)
@@ -424,7 +424,7 @@ namespace WindowClassProject.View.ViewStudent
             para1.AppendText("TRƯỜNG ĐẠI HỌC SPKT TP.HCM").CharacterFormat.Bold = true;
             Spire.Doc.Tab tab1 = para1.Format.Tabs.AddTab(639);
             tab1.TabLeader = TabLeader.NoLeader;
-            para1.AppendText("\tNgày in: 14/04/2021\n");
+            para1.AppendText("\tNgày :01/05/2021\n");
 
             Spire.Doc.Documents.Paragraph para2 = section.AddParagraph();
             Spire.Doc.Tab tab2 = para1.Format.Tabs.AddTab(36);
@@ -462,7 +462,7 @@ namespace WindowClassProject.View.ViewStudent
             AddHeaderTitle(section);
 
             Spire.Doc.Table table = section.AddTable(true);
-            String[] header = { "Order", "Student ID", "First Name", "Last Name", "Date of birth", "Student Email", "Picture" };
+            String[] header = { "Order", "Student ID", "Student Firstname", " Student LastName", "Date",  "Email", "Picture" };
             int RowCount = dataGrid.Rows.Count;
             int ColumnCount = dataGrid.Columns.Count;
             String[][] data = new String[RowCount][];
@@ -476,28 +476,23 @@ namespace WindowClassProject.View.ViewStudent
             {
                 for (int r = 0; r < RowCount; r++)
                 {
-
-
-                    data[r][c] = dataGrid.Rows[r].Cells[c].Value.ToString();
-
+                    if (dataGrid.Rows[r].Cells[c].Value.GetType() != typeof(byte[]))
+                    {
+                        if (dataGrid.Rows[r].Cells[c].Value.GetType() == typeof(DateTime))
+                        {
+                            data[r][c] = ((DateTime)dataGrid.Rows[r].Cells[c].Value).ToString("dd/MM/yyyy");
+                        }
+                        else
+                        {
+                            data[r][c] = dataGrid.Rows[r].Cells[c].Value.ToString();
+                        }
+                    }
+                    else
+                    {
+                        data[r][c] = "";
+                    }
                 }
             }
-
-           
-            for (int i = 0; i < RowCount; i++)
-            {
-                System.Drawing.Image image1 = byteArrayToImage((byte[])dataGrid.Rows[i].Cells[6].Value);
-
-
-                image1.Save(@"E:\tt.PNG");
-                DocPicture pic = table.Rows[i+1].Cells[6].Paragraphs[0].AppendPicture((image1));
-                pic.Width = 80;
-                pic.Height = 80;
-                File.Delete(@"E:\tt.PNG");
-                
-            }
-
-
 
             table.ResetCells(data.Length + 1, header.Length);
 
@@ -543,12 +538,23 @@ namespace WindowClassProject.View.ViewStudent
                 }
             }
 
+            for (int i = 0; i < RowCount; i++)
+            {
+                string path = System.Windows.Forms.Application.StartupPath;
+                System.Drawing.Image image1 = byteArrayToImage((byte[])dataGrid.Rows[i].Cells[6].Value);
+                image1.Save(path + "\\p1.PNG");
+                DocPicture pic = table.Rows[i + 1].Cells[6].Paragraphs[0].AppendPicture((image1));
+                pic.Width = 80;
+                pic.Height = 80;
+                File.Delete(path + "\\p1.PNG");
+            }
+
             //Save and Launch
             document.SaveToFile(filename);
-            MessageBox.Show("Document Created Successfully!", "Export File", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Export DOC file sucess!", "Export File", MessageBoxButtons.OK, MessageBoxIcon.Information);
             document.Close();
-        }
-#endregion
 
+        }
+        #endregion
     }
 }

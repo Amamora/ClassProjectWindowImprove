@@ -44,8 +44,8 @@ namespace WindowClassProject.View.ViewStudent
             this.importDatabaseBtn = new System.Windows.Forms.Button();
             this.exportPDFButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolPanel.SuspendLayout();
@@ -162,6 +162,7 @@ namespace WindowClassProject.View.ViewStudent
             this.workButton.Size = new System.Drawing.Size(63, 47);
             this.workButton.TabIndex = 3;
             this.workButton.UseVisualStyleBackColor = true;
+            this.workButton.Click += new System.EventHandler(this.workButton_Click);
             // 
             // exportExcelButton
             // 
@@ -230,6 +231,14 @@ namespace WindowClassProject.View.ViewStudent
             this.panel3.Size = new System.Drawing.Size(1118, 597);
             this.panel3.TabIndex = 3;
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 522);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1118, 75);
+            this.panel4.TabIndex = 1;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -240,14 +249,6 @@ namespace WindowClassProject.View.ViewStudent
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 597);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 522);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1118, 75);
-            this.panel4.TabIndex = 1;
             // 
             // StudentPanelOfTeacher
             // 

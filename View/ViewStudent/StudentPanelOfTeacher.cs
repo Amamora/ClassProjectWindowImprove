@@ -16,5 +16,10 @@ namespace WindowClassProject.View.ViewStudent
         {
             InitializeComponent();
         }
+
+        private void workButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
