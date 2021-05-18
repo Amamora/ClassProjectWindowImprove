@@ -47,7 +47,8 @@ namespace WindowClassProject.View.ViewManageOfStudent
                 pictureAccountBox.Image = us.ByteArrayToImage(teacher.picture);
             }
             loadDatalist(listGroupIDCheck);
-            loadDatalist(selectGroupIDEdit);
+            loadDatalist(selectGroupID);
+            loadDatalist(selectSearchBox);
 
         }
 
@@ -89,7 +90,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
                     sc.score1 = float.Parse(scoreTxt.Text);
                     sc.evalute = descriptionTxt.Text;
                     sc.studentID = studentIDtxt.Text;
-                    sc.groupID = selectGroupIDEdit.Text;
+                    sc.groupID = selectGroupID.Text;
                     db.SCOREs.InsertOnSubmit(sc);
                     MessageBox.Show("Insert sucess!");
                     db.SubmitChanges();
@@ -136,6 +137,99 @@ namespace WindowClassProject.View.ViewManageOfStudent
             AllStudentManage mana = new AllStudentManage();
             mana.Show();
 
+        }
+
+        private void addBtn_Click_1(object sender, EventArgs e)
+        {
+            if (checkAll())
+            {
+                using (MyLinQDataContext db = new MyLinQDataContext())
+                {
+                    SCORE sc = new SCORE();
+
+
+                    sc.score1 = float.Parse(scoreTxt.Text);
+                    sc.evalute = descriptionTxt.Text;
+                    sc.studentID = studentIDtxt.Text;
+                    sc.groupID = selectGroupID.Text;
+                    db.SCOREs.InsertOnSubmit(sc);
+                    MessageBox.Show("Insert sucess!");
+                    db.SubmitChanges();
+
+
+                }
+               
+            }
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void showStudentDataBtn_Click(object sender, EventArgs e)
+        {
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                //show student follow select group ID =>
+
+                var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
+
+                              join STUDENT stu in db.STUDENTs on groupSub.studentID equals stu.studentID
+                              where groupSub.groupID == selectGroupID.Text
+                              select new
+                              {
+                                  GroupID = groupSub.groupID,
+                                  GroupName = groupSub.groupName,
+                                  StudentID = stu.studentID,
+                                  StudentName = stu.studentFName + " " + stu.studentLName,
+
+                              };
+                if (scource.Count() == 0)
+                {
+                    MessageBox.Show("Nodata");
+                    return;
+                }
+                dataSubScoreView.DataSource = scource;
+
+
+            }
+        }
+
+        private void showScoreDataBtn_Click(object sender, EventArgs e)
+        {
+            using (MyLinQDataContext data = new MyLinQDataContext())
+            {
+                var check = from GROUPSUBJECT gr in data.GROUPSUBJECTs
+                            where gr.groupID == selectSearchBox.Text
+                            select gr;
+                if (check.Count() == 0)
+                {
+                    MessageBox.Show("ID Group not exist!");
+                    selectSearchBox.Focus();
+                    return;
+                }
+
+                var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
+
+                        join STUDENT stu in data.STUDENTs
+                        on sco.studentID equals stu.studentID
+                        join SCORE score in data.SCOREs
+                        on sco.groupID equals score.groupID
+
+                        where sco.groupID == selectSearchBox.Text
+                        select new
+                        {
+                            GroupName = sco.groupName,
+                            GroupID = sco.groupID,
+                            StudentName = stu.studentFName + " " + stu.studentLName,
+                            TeacherID = sco.teacherID,
+                            Score = score.score1
+
+                        };
+                dataSubScoreView.DataSource = g;
+
+            }
         }
     }
 }

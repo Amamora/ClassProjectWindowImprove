@@ -212,6 +212,7 @@ namespace WindowClassProject.View.ViewScore
             this.removeBtn.TabIndex = 25;
             this.removeBtn.Text = "Remove";
             this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // cancelBtn
             // 
@@ -240,6 +241,7 @@ namespace WindowClassProject.View.ViewScore
             this.editScoreBtn.TabIndex = 27;
             this.editScoreBtn.Text = "Edit Score";
             this.editScoreBtn.UseVisualStyleBackColor = true;
+            this.editScoreBtn.Click += new System.EventHandler(this.editScoreBtn_Click);
             // 
             // AddScorePanelForm
             // 

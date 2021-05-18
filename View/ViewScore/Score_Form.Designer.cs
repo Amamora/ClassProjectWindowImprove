@@ -202,12 +202,15 @@ namespace WindowClassProject.View.ViewScore
             // 
             // dataScoreDataGridView
             // 
+            this.dataScoreDataGridView.AllowUserToAddRows = false;
+            this.dataScoreDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataScoreDataGridView.BackgroundColor = System.Drawing.Color.White;
             this.dataScoreDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataScoreDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataScoreDataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataScoreDataGridView.Name = "dataScoreDataGridView";
             this.dataScoreDataGridView.RowHeadersWidth = 51;
-            this.dataScoreDataGridView.RowTemplate.Height = 24;
+            this.dataScoreDataGridView.RowTemplate.Height = 40;
             this.dataScoreDataGridView.Size = new System.Drawing.Size(854, 691);
             this.dataScoreDataGridView.TabIndex = 0;
             // 

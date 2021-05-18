@@ -30,21 +30,8 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentManageForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.editScoreBtn = new System.Windows.Forms.Button();
-            this.selectGroupIDEdit = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.descriptionTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.scoreTxt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.studentIDtxt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.removeBtn = new System.Windows.Forms.Button();
-            this.cancelBtn = new System.Windows.Forms.Button();
-            this.addBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkAllStudentBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.chooseGroupLbl = new System.Windows.Forms.Label();
@@ -59,161 +46,43 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.showStudentDataBtn = new System.Windows.Forms.Button();
+            this.dataSubScoreView = new System.Windows.Forms.DataGridView();
+            this.editScoreBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.selectSearchBox = new System.Windows.Forms.ComboBox();
+            this.showScoreDataBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.selectGroupID = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.descriptionTxt = new System.Windows.Forms.TextBox();
+            this.scoreTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.studentIDtxt = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.avgByScoreBtn = new System.Windows.Forms.Button();
+            this.removeBtn = new System.Windows.Forms.Button();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccountBox)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.bunifuPanel1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 887);
+            this.panel1.Size = new System.Drawing.Size(613, 352);
             this.panel1.TabIndex = 0;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.editScoreBtn);
-            this.panel4.Controls.Add(this.selectGroupIDEdit);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.descriptionTxt);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.scoreTxt);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.studentIDtxt);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.removeBtn);
-            this.panel4.Controls.Add(this.cancelBtn);
-            this.panel4.Controls.Add(this.addBtn);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 376);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(613, 511);
-            this.panel4.TabIndex = 2;
-            // 
-            // editScoreBtn
-            // 
-            this.editScoreBtn.Location = new System.Drawing.Point(33, 472);
-            this.editScoreBtn.Name = "editScoreBtn";
-            this.editScoreBtn.Size = new System.Drawing.Size(159, 36);
-            this.editScoreBtn.TabIndex = 39;
-            this.editScoreBtn.Text = "Edit Score";
-            this.editScoreBtn.UseVisualStyleBackColor = true;
-            // 
-            // selectGroupIDEdit
-            // 
-            this.selectGroupIDEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectGroupIDEdit.FormattingEnabled = true;
-            this.selectGroupIDEdit.Location = new System.Drawing.Point(195, 112);
-            this.selectGroupIDEdit.Name = "selectGroupIDEdit";
-            this.selectGroupIDEdit.Size = new System.Drawing.Size(389, 37);
-            this.selectGroupIDEdit.TabIndex = 35;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(28, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 25);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Select GroupID";
-            // 
-            // descriptionTxt
-            // 
-            this.descriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionTxt.Location = new System.Drawing.Point(195, 271);
-            this.descriptionTxt.Multiline = true;
-            this.descriptionTxt.Name = "descriptionTxt";
-            this.descriptionTxt.Size = new System.Drawing.Size(390, 100);
-            this.descriptionTxt.TabIndex = 33;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 271);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 25);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Evaluate";
-            // 
-            // scoreTxt
-            // 
-            this.scoreTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.scoreTxt.Location = new System.Drawing.Point(195, 198);
-            this.scoreTxt.Multiline = true;
-            this.scoreTxt.Name = "scoreTxt";
-            this.scoreTxt.Size = new System.Drawing.Size(390, 43);
-            this.scoreTxt.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(28, 204);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 25);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Score";
-            // 
-            // studentIDtxt
-            // 
-            this.studentIDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentIDtxt.Location = new System.Drawing.Point(195, 38);
-            this.studentIDtxt.Multiline = true;
-            this.studentIDtxt.Name = "studentIDtxt";
-            this.studentIDtxt.Size = new System.Drawing.Size(390, 33);
-            this.studentIDtxt.TabIndex = 29;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(28, 38);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 25);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Student ID";
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.Location = new System.Drawing.Point(244, 414);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(123, 41);
-            this.removeBtn.TabIndex = 38;
-            this.removeBtn.Text = "Remove";
-            this.removeBtn.UseVisualStyleBackColor = true;
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.Location = new System.Drawing.Point(447, 414);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(120, 42);
-            this.cancelBtn.TabIndex = 37;
-            this.cancelBtn.Text = "Show List";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            // 
-            // addBtn
-            // 
-            this.addBtn.Location = new System.Drawing.Point(33, 414);
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(147, 42);
-            this.addBtn.TabIndex = 36;
-            this.addBtn.Text = "Add";
-            this.addBtn.UseVisualStyleBackColor = true;
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // panel2
             // 
@@ -224,7 +93,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 145);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(613, 231);
+            this.panel2.Size = new System.Drawing.Size(613, 211);
             this.panel2.TabIndex = 1;
             // 
             // checkAllStudentBtn
@@ -246,11 +115,11 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.checkAllStudentBtn.ColorContrastOnClick = 45;
             this.checkAllStudentBtn.ColorContrastOnHover = 45;
             this.checkAllStudentBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.checkAllStudentBtn.CustomizableEdges = borderEdges1;
+            borderEdges8.BottomLeft = true;
+            borderEdges8.BottomRight = true;
+            borderEdges8.TopLeft = true;
+            borderEdges8.TopRight = true;
+            this.checkAllStudentBtn.CustomizableEdges = borderEdges8;
             this.checkAllStudentBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.checkAllStudentBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.checkAllStudentBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -399,7 +268,6 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(613, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(769, 220);
@@ -419,7 +287,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             this.selectGroupIDAddCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectGroupIDAddCom.FormattingEnabled = true;
-            this.selectGroupIDAddCom.Location = new System.Drawing.Point(273, 91);
+            this.selectGroupIDAddCom.Location = new System.Drawing.Point(298, 85);
             this.selectGroupIDAddCom.Name = "selectGroupIDAddCom";
             this.selectGroupIDAddCom.Size = new System.Drawing.Size(389, 37);
             this.selectGroupIDAddCom.TabIndex = 39;
@@ -453,48 +321,219 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.label9.TabIndex = 36;
             this.label9.Text = "Student ID";
             // 
-            // label10
+            // panel4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1141, 268);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 17);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Select Group ID";
+            this.panel4.Controls.Add(this.editScoreBtn);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.selectGroupID);
+            this.panel4.Controls.Add(this.label4);
+            this.panel4.Controls.Add(this.descriptionTxt);
+            this.panel4.Controls.Add(this.scoreTxt);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.studentIDtxt);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.avgByScoreBtn);
+            this.panel4.Controls.Add(this.removeBtn);
+            this.panel4.Controls.Add(this.addBtn);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 365);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1382, 522);
+            this.panel4.TabIndex = 2;
             // 
-            // comboBox3
+            // showStudentDataBtn
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(762, 266);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(332, 33);
-            this.comboBox3.TabIndex = 3;
+            this.showStudentDataBtn.Location = new System.Drawing.Point(71, 18);
+            this.showStudentDataBtn.Name = "showStudentDataBtn";
+            this.showStudentDataBtn.Size = new System.Drawing.Size(219, 50);
+            this.showStudentDataBtn.TabIndex = 1;
+            this.showStudentDataBtn.Text = "ShowStudent";
+            this.showStudentDataBtn.UseVisualStyleBackColor = true;
+            this.showStudentDataBtn.Click += new System.EventHandler(this.showStudentDataBtn_Click);
+            // 
+            // dataSubScoreView
+            // 
+            this.dataSubScoreView.AllowUserToAddRows = false;
+            this.dataSubScoreView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataSubScoreView.BackgroundColor = System.Drawing.Color.White;
+            this.dataSubScoreView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSubScoreView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataSubScoreView.Location = new System.Drawing.Point(0, 147);
+            this.dataSubScoreView.Name = "dataSubScoreView";
+            this.dataSubScoreView.RowHeadersWidth = 51;
+            this.dataSubScoreView.RowTemplate.Height = 24;
+            this.dataSubScoreView.Size = new System.Drawing.Size(691, 375);
+            this.dataSubScoreView.TabIndex = 0;
+            // 
+            // editScoreBtn
+            // 
+            this.editScoreBtn.Location = new System.Drawing.Point(426, 448);
+            this.editScoreBtn.Name = "editScoreBtn";
+            this.editScoreBtn.Size = new System.Drawing.Size(159, 50);
+            this.editScoreBtn.TabIndex = 41;
+            this.editScoreBtn.Text = "Edit Score";
+            this.editScoreBtn.UseVisualStyleBackColor = true;
             // 
             // panel5
             // 
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(613, 367);
+            this.panel5.Controls.Add(this.selectSearchBox);
+            this.panel5.Controls.Add(this.showScoreDataBtn);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.showStudentDataBtn);
+            this.panel5.Controls.Add(this.dataSubScoreView);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel5.Location = new System.Drawing.Point(691, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(769, 520);
-            this.panel5.TabIndex = 5;
+            this.panel5.Size = new System.Drawing.Size(691, 522);
+            this.panel5.TabIndex = 36;
+            // 
+            // selectSearchBox
+            // 
+            this.selectSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectSearchBox.FormattingEnabled = true;
+            this.selectSearchBox.Location = new System.Drawing.Point(189, 85);
+            this.selectSearchBox.Name = "selectSearchBox";
+            this.selectSearchBox.Size = new System.Drawing.Size(389, 37);
+            this.selectSearchBox.TabIndex = 28;
+            // 
+            // showScoreDataBtn
+            // 
+            this.showScoreDataBtn.Location = new System.Drawing.Point(353, 18);
+            this.showScoreDataBtn.Name = "showScoreDataBtn";
+            this.showScoreDataBtn.Size = new System.Drawing.Size(225, 50);
+            this.showScoreDataBtn.TabIndex = 2;
+            this.showScoreDataBtn.Text = "Show Score";
+            this.showScoreDataBtn.UseVisualStyleBackColor = true;
+            this.showScoreDataBtn.Click += new System.EventHandler(this.showScoreDataBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(145, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Select GroupID";
+            // 
+            // selectGroupID
+            // 
+            this.selectGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectGroupID.FormattingEnabled = true;
+            this.selectGroupID.Location = new System.Drawing.Point(202, 96);
+            this.selectGroupID.Name = "selectGroupID";
+            this.selectGroupID.Size = new System.Drawing.Size(389, 37);
+            this.selectGroupID.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(35, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(145, 25);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Select GroupID";
+            // 
+            // descriptionTxt
+            // 
+            this.descriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descriptionTxt.Location = new System.Drawing.Point(202, 305);
+            this.descriptionTxt.Multiline = true;
+            this.descriptionTxt.Name = "descriptionTxt";
+            this.descriptionTxt.Size = new System.Drawing.Size(390, 100);
+            this.descriptionTxt.TabIndex = 33;
+            // 
+            // scoreTxt
+            // 
+            this.scoreTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreTxt.Location = new System.Drawing.Point(202, 232);
+            this.scoreTxt.Multiline = true;
+            this.scoreTxt.Name = "scoreTxt";
+            this.scoreTxt.Size = new System.Drawing.Size(390, 43);
+            this.scoreTxt.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(35, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 25);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Score";
+            // 
+            // studentIDtxt
+            // 
+            this.studentIDtxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentIDtxt.Location = new System.Drawing.Point(202, 22);
+            this.studentIDtxt.Multiline = true;
+            this.studentIDtxt.Name = "studentIDtxt";
+            this.studentIDtxt.Size = new System.Drawing.Size(390, 33);
+            this.studentIDtxt.TabIndex = 29;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 25);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Student ID";
+            // 
+            // avgByScoreBtn
+            // 
+            this.avgByScoreBtn.Location = new System.Drawing.Point(396, 521);
+            this.avgByScoreBtn.Name = "avgByScoreBtn";
+            this.avgByScoreBtn.Size = new System.Drawing.Size(195, 36);
+            this.avgByScoreBtn.TabIndex = 40;
+            this.avgByScoreBtn.Text = "Average by score";
+            this.avgByScoreBtn.UseVisualStyleBackColor = true;
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.Location = new System.Drawing.Point(257, 448);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(123, 50);
+            this.removeBtn.TabIndex = 39;
+            this.removeBtn.Text = "Remove";
+            this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            // 
+            // addBtn
+            // 
+            this.addBtn.Location = new System.Drawing.Point(98, 448);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(121, 50);
+            this.addBtn.TabIndex = 37;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(35, 305);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 25);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Evaluate";
             // 
             // StudentManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 887);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "StudentManageForm";
             this.Text = "StudentManageForm";
             this.Load += new System.EventHandler(this.StudentManageForm_Load);
             this.panel1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.bunifuPanel1.ResumeLayout(false);
@@ -502,8 +541,12 @@ namespace WindowClassProject.View.ViewManageOfStudent
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccountBox)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -518,27 +561,30 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private Bunifu.UI.WinForms.BunifuPictureBox pictureAccountBox;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton checkAllStudentBtn;
         private System.Windows.Forms.Label chooseGroupLbl;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button editScoreBtn;
-        private System.Windows.Forms.ComboBox selectGroupIDEdit;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox descriptionTxt;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox scoreTxt;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox studentIDtxt;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button removeBtn;
-        private System.Windows.Forms.Button cancelBtn;
-        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Button addStudentGroupBtn;
         private System.Windows.Forms.ComboBox selectGroupIDAddCom;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button editScoreBtn;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ComboBox selectSearchBox;
+        private System.Windows.Forms.Button showScoreDataBtn;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button showStudentDataBtn;
+        private System.Windows.Forms.DataGridView dataSubScoreView;
+        private System.Windows.Forms.ComboBox selectGroupID;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox descriptionTxt;
+        private System.Windows.Forms.TextBox scoreTxt;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox studentIDtxt;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button avgByScoreBtn;
+        private System.Windows.Forms.Button removeBtn;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Label label6;
     }
 }

@@ -44,7 +44,8 @@ namespace WindowClassProject.View.ViewScore
                         {
                             GroupName = sco.groupName,
                             GroupID = sco.groupID,
-                            StudentName = stu.studentFName + " " + stu.studentLName,
+                            StudentID=sco.studentID,
+                            StudentName = stu.studentFName ,
                             TeacherID = sco.teacherID,
                             Score = score.score1
 
@@ -98,7 +99,7 @@ namespace WindowClassProject.View.ViewScore
 
                 var src = from SCORE sc in db.SCOREs
                           join GROUPSUBJECT gr in db.GROUPSUBJECTs on sc.groupID equals gr.groupID
-                          where gr.studentID == studentIDtxt.Text && sc != null
+                          where gr.studentID == studentIDtxt.Text && sc != null&& gr.groupID==selectGroupID.Text
                           select sc;
                 if (src.Count() > 0)
                 {
@@ -183,6 +184,16 @@ namespace WindowClassProject.View.ViewScore
 
 
             }
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void editScoreBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

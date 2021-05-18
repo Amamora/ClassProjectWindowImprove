@@ -18,7 +18,13 @@ namespace WindowClassProject.DAO
         public void connectionDataBase(DataGridView data)
         {
             mydata.openConnection();
-            SqlCommand command = new SqlCommand("");
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT * FROM [WINDOWCLASS].[dbo].[SCORE]", mydata.getConnection);
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            data.DataSource = table;
+            mydata.closeConnection();
         }
 
         //add score
@@ -29,6 +35,12 @@ namespace WindowClassProject.DAO
 
         //selectcoure
         //
+       /* public DataTable connectData(string groupID)
+        {
+            mydata.openConnection();
+
+        }*/
+
 
     }
 }
