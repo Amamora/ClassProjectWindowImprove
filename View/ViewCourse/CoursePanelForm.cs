@@ -34,7 +34,7 @@ namespace WindowClassProject.View.ViewCourse
             {
                 var counts = mydata.COURSEs.GroupBy(x => x.courseID).Select(g => g.Count());
 
-                totalCourseLbl.Text = "Total Student: " + counts.Count();
+                totalCourseLbl.Text = "Total Course : " + counts.Count();
             }
         }
 
@@ -293,7 +293,7 @@ namespace WindowClassProject.View.ViewCourse
 
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "PDF (*.pdf)|*.pdf";
-            sfd.FileName = "Output.pdf";
+            sfd.FileName = "OutputCourse.pdf";
             bool fileError = false;
             if (sfd.ShowDialog() == DialogResult.OK)
             {

@@ -88,6 +88,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.backPageBtn.TabIndex = 1;
             this.backPageBtn.Text = "Back";
             this.backPageBtn.UseVisualStyleBackColor = true;
+            this.backPageBtn.Click += new System.EventHandler(this.backPageBtn_Click);
             // 
             // topAddPersonPanel
             // 
@@ -406,7 +407,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.ClientSize = new System.Drawing.Size(1117, 801);
             this.Controls.Add(this.panel1);
             this.Name = "AddTeacherForm";
-            this.Text = "AddTeacherForm";
+            this.Text = "Add Information of new Teacher";
             this.Load += new System.EventHandler(this.AddTeacherForm_Load);
             this.topAddPersonPanel.ResumeLayout(false);
             this.backPagePanel.ResumeLayout(false);

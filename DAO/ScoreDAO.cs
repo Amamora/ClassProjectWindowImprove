@@ -35,12 +35,37 @@ namespace WindowClassProject.DAO
 
         //selectcoure
         //
-       /* public DataTable connectData(string groupID)
+        public DataTable connectData(string groupID)
         {
             mydata.openConnection();
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT stu.studentID,stu.studentFname,stu.studentLName, gr.groupID,gr.groupName,score.score from [WINDOWCLASS].[dbo].[SCORE] score join [WINDOWCLASS].[dbo].[STUDENT] stu on score.studentID=stu.studentID join [WINDOWCLASS].[dbo].[GROUPSUBJECT] gr on gr.groupID=score.groupID where gr.groupID= @groupID", mydata.getConnection);
+            command.Parameters.Add("@groupID", SqlDbType.NVarChar).Value = groupID;
+            
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+            
+            mydata.closeConnection();
+            return table;
 
-        }*/
+        }
 
+        public DataTable searchByCourseID(string courseID)
+        {
+
+            mydata.openConnection();
+            DataTable table = new DataTable();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlCommand command = new SqlCommand("SELECT stu.studentID,stu.studentFname,stu.studentLName, gr.groupID,gr.groupName,score.score from [WINDOWCLASS].[dbo].[SCORE] score join [WINDOWCLASS].[dbo].[STUDENT] stu on score.studentID=stu.studentID join [WINDOWCLASS].[dbo].[GROUPSUBJECT] gr on gr.groupID=score.groupID where gr.courseID= @groupID", mydata.getConnection);
+            command.Parameters.Add("@groupID", SqlDbType.NVarChar).Value = courseID;
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            mydata.closeConnection();
+            return table;
+        }
 
     }
 }

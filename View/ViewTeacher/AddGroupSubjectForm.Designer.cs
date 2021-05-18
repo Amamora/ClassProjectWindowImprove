@@ -40,7 +40,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.label5 = new System.Windows.Forms.Label();
             this.panelChooseOption = new System.Windows.Forms.Panel();
             this.courseCombox = new System.Windows.Forms.ComboBox();
-            this.studentCombox = new System.Windows.Forms.ComboBox();
             this.teacherCombox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,7 +48,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.removeGroupBtn = new System.Windows.Forms.Button();
             this.editGroupBtn = new System.Windows.Forms.Button();
             this.addGroupBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupNameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -165,11 +163,9 @@ namespace WindowClassProject.View.ViewTeacher
             // panelChooseOption
             // 
             this.panelChooseOption.Controls.Add(this.courseCombox);
-            this.panelChooseOption.Controls.Add(this.studentCombox);
             this.panelChooseOption.Controls.Add(this.teacherCombox);
             this.panelChooseOption.Controls.Add(this.label4);
             this.panelChooseOption.Controls.Add(this.panel4);
-            this.panelChooseOption.Controls.Add(this.label3);
             this.panelChooseOption.Controls.Add(this.label2);
             this.panelChooseOption.Controls.Add(this.groupNameTxt);
             this.panelChooseOption.Controls.Add(this.label1);
@@ -189,22 +185,10 @@ namespace WindowClassProject.View.ViewTeacher
             this.courseCombox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.courseCombox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courseCombox.FormattingEnabled = true;
-            this.courseCombox.Location = new System.Drawing.Point(40, 455);
+            this.courseCombox.Location = new System.Drawing.Point(40, 383);
             this.courseCombox.Name = "courseCombox";
             this.courseCombox.Size = new System.Drawing.Size(327, 28);
             this.courseCombox.TabIndex = 28;
-            // 
-            // studentCombox
-            // 
-            this.studentCombox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.studentCombox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.studentCombox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentCombox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentCombox.FormattingEnabled = true;
-            this.studentCombox.Location = new System.Drawing.Point(40, 342);
-            this.studentCombox.Name = "studentCombox";
-            this.studentCombox.Size = new System.Drawing.Size(327, 28);
-            this.studentCombox.TabIndex = 27;
             // 
             // teacherCombox
             // 
@@ -223,7 +207,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 409);
+            this.label4.Location = new System.Drawing.Point(40, 337);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 25);
             this.label4.TabIndex = 24;
@@ -300,18 +284,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.addGroupBtn.UseVisualStyleBackColor = true;
             this.addGroupBtn.Click += new System.EventHandler(this.addGroupBtn_Click);
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 299);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 25);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Student ID";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -385,7 +357,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.ClientSize = new System.Drawing.Size(1118, 791);
             this.Controls.Add(this.panel1);
             this.Name = "AddGroupSubjectForm";
-            this.Text = "AddGroupSubjectForm";
+            this.Text = "Add Student Into Group Form";
             this.Load += new System.EventHandler(this.AddGroupSubjectForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
@@ -420,7 +392,6 @@ namespace WindowClassProject.View.ViewTeacher
         private System.Windows.Forms.Button addGroupBtn;
         private System.Windows.Forms.Button searchClassID;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox groupNameTxt;
         private System.Windows.Forms.Label label1;
@@ -428,7 +399,6 @@ namespace WindowClassProject.View.ViewTeacher
         private System.Windows.Forms.Label firstNameLbl;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox courseCombox;
-        private System.Windows.Forms.ComboBox studentCombox;
         private System.Windows.Forms.ComboBox teacherCombox;
     }
 }

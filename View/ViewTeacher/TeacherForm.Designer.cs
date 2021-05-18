@@ -39,8 +39,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.toolPanel = new System.Windows.Forms.Panel();
             this.removeBtn = new System.Windows.Forms.Button();
             this.importFileExcelButton = new System.Windows.Forms.Button();
-            this.dataTeacherGridView = new System.Windows.Forms.DataGridView();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.saveButton = new System.Windows.Forms.Button();
             this.workButton = new System.Windows.Forms.Button();
             this.exportExcelButton = new System.Windows.Forms.Button();
@@ -48,6 +46,8 @@ namespace WindowClassProject.View.ViewTeacher
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.importDatabaseBtn = new System.Windows.Forms.Button();
             this.exportPDFButton = new System.Windows.Forms.Button();
+            this.dataTeacherGridView = new System.Windows.Forms.DataGridView();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.titlePaneTeacher.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolPanel.SuspendLayout();
@@ -105,6 +105,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.searchBox.Size = new System.Drawing.Size(263, 38);
             this.searchBox.TabIndex = 17;
             this.searchBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchBox.TextChanged += new System.EventHandler(this.searchBox_TextChanged_1);
             // 
             // searchButton
             // 
@@ -172,31 +173,6 @@ namespace WindowClassProject.View.ViewTeacher
             this.importFileExcelButton.Text = "Save Edit";
             this.importFileExcelButton.UseVisualStyleBackColor = true;
             // 
-            // dataTeacherGridView
-            // 
-            this.dataTeacherGridView.AllowUserToAddRows = false;
-            this.dataTeacherGridView.AllowUserToOrderColumns = true;
-            this.dataTeacherGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataTeacherGridView.BackgroundColor = System.Drawing.Color.White;
-            this.dataTeacherGridView.ColumnHeadersHeight = 29;
-            this.dataTeacherGridView.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dataTeacherGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataTeacherGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataTeacherGridView.Location = new System.Drawing.Point(0, 160);
-            this.dataTeacherGridView.Name = "dataTeacherGridView";
-            this.dataTeacherGridView.RowHeadersWidth = 51;
-            this.dataTeacherGridView.RowTemplate.Height = 24;
-            this.dataTeacherGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataTeacherGridView.Size = new System.Drawing.Size(1118, 631);
-            this.dataTeacherGridView.TabIndex = 19;
-            this.dataTeacherGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTeacherGridView_CellDoubleClick);
-            this.dataTeacherGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataTeacherGridView_UserDeletedRow);
-            // 
-            // toolTip1
-            // 
-            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-            this.toolTip1.ToolTipTitle = "Seach by ID avoid Error";
-            // 
             // saveButton
             // 
             this.saveButton.Dock = System.Windows.Forms.DockStyle.Right;
@@ -218,6 +194,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.workButton.Size = new System.Drawing.Size(63, 47);
             this.workButton.TabIndex = 3;
             this.workButton.UseVisualStyleBackColor = true;
+            this.workButton.Click += new System.EventHandler(this.workButton_Click);
             // 
             // exportExcelButton
             // 
@@ -229,6 +206,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.exportExcelButton.Size = new System.Drawing.Size(63, 47);
             this.exportExcelButton.TabIndex = 2;
             this.exportExcelButton.UseVisualStyleBackColor = true;
+            this.exportExcelButton.Click += new System.EventHandler(this.exportExcelButton_Click);
             // 
             // refreshBtn
             // 
@@ -240,6 +218,7 @@ namespace WindowClassProject.View.ViewTeacher
             this.refreshBtn.Size = new System.Drawing.Size(80, 47);
             this.refreshBtn.TabIndex = 2;
             this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click_1);
             // 
             // btnAddStudent
             // 
@@ -276,6 +255,32 @@ namespace WindowClassProject.View.ViewTeacher
             this.exportPDFButton.Size = new System.Drawing.Size(63, 47);
             this.exportPDFButton.TabIndex = 2;
             this.exportPDFButton.UseVisualStyleBackColor = true;
+            this.exportPDFButton.Click += new System.EventHandler(this.exportPDFButton_Click);
+            // 
+            // dataTeacherGridView
+            // 
+            this.dataTeacherGridView.AllowUserToAddRows = false;
+            this.dataTeacherGridView.AllowUserToOrderColumns = true;
+            this.dataTeacherGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataTeacherGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataTeacherGridView.ColumnHeadersHeight = 29;
+            this.dataTeacherGridView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dataTeacherGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataTeacherGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataTeacherGridView.Location = new System.Drawing.Point(0, 160);
+            this.dataTeacherGridView.Name = "dataTeacherGridView";
+            this.dataTeacherGridView.RowHeadersWidth = 51;
+            this.dataTeacherGridView.RowTemplate.Height = 24;
+            this.dataTeacherGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataTeacherGridView.Size = new System.Drawing.Size(1118, 631);
+            this.dataTeacherGridView.TabIndex = 19;
+            this.dataTeacherGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTeacherGridView_CellDoubleClick);
+            this.dataTeacherGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataTeacherGridView_UserDeletedRow);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip1.ToolTipTitle = "Seach by ID avoid Error";
             // 
             // TeacherForm
             // 

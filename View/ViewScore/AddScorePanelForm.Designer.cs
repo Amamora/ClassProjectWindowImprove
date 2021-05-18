@@ -48,6 +48,7 @@ namespace WindowClassProject.View.ViewScore
             this.cancelBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.editScoreBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +108,7 @@ namespace WindowClassProject.View.ViewScore
             // dataSubScoreView
             // 
             this.dataSubScoreView.AllowUserToAddRows = false;
+            this.dataSubScoreView.AllowUserToDeleteRows = false;
             this.dataSubScoreView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataSubScoreView.BackgroundColor = System.Drawing.Color.White;
             this.dataSubScoreView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -117,6 +119,7 @@ namespace WindowClassProject.View.ViewScore
             this.dataSubScoreView.RowTemplate.Height = 24;
             this.dataSubScoreView.Size = new System.Drawing.Size(599, 473);
             this.dataSubScoreView.TabIndex = 0;
+            this.dataSubScoreView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataSubScoreView_CellDoubleClick);
             // 
             // selectGroupID
             // 
@@ -243,11 +246,22 @@ namespace WindowClassProject.View.ViewScore
             this.editScoreBtn.UseVisualStyleBackColor = true;
             this.editScoreBtn.Click += new System.EventHandler(this.editScoreBtn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(268, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(124, 44);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Score";
+            // 
             // AddScorePanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 620);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.editScoreBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.selectGroupID);
@@ -265,7 +279,8 @@ namespace WindowClassProject.View.ViewScore
             this.MaximumSize = new System.Drawing.Size(1220, 667);
             this.MinimumSize = new System.Drawing.Size(1220, 667);
             this.Name = "AddScorePanelForm";
-            this.Text = "AddScorePanelForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Score for Student";
             this.Load += new System.EventHandler(this.AddScorePanelForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -296,5 +311,6 @@ namespace WindowClassProject.View.ViewScore
         private System.Windows.Forms.ComboBox selectSearchBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button editScoreBtn;
+        private System.Windows.Forms.Label label6;
     }
 }

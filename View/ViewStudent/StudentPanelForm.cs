@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowClassProject.DAO;
+using WindowClassProject.View.ViewTeacher;
 using Word = Microsoft.Office.Interop.Word;
 
 namespace WindowClassProject.View.ViewStudent
@@ -33,7 +34,7 @@ namespace WindowClassProject.View.ViewStudent
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             AddStudentPanelForm add = new AddStudentPanelForm();
-            add.Show();
+            add.ShowDialog();
         }
 
         private void StudentPanelForm_Load(object sender, EventArgs e)
@@ -175,10 +176,11 @@ namespace WindowClassProject.View.ViewStudent
                     try
                     {
                         iTextSharp.text.pdf.PdfPTable pdfTable = new PdfPTable(dataStudentGridView.Columns.Count);
+                        
                         pdfTable.DefaultCell.Padding = 3;
                         pdfTable.WidthPercentage = 100;
                         pdfTable.HorizontalAlignment = iTextSharp.text.Element.ALIGN_LEFT;
-
+                       //focuss how to create unicode with itexsharp.........
 
                         foreach (DataGridViewColumn column in dataStudentGridView.Columns)
                         {
@@ -195,9 +197,9 @@ namespace WindowClassProject.View.ViewStudent
                             pdfTable.AddCell(dataStudentGridView.Rows[i].Cells[3].Value.ToString());
                             pdfTable.AddCell(dataStudentGridView.Rows[i].Cells[4].Value.ToString());
                             pdfTable.AddCell(dataStudentGridView.Rows[i].Cells[5].Value.ToString());
-                            pdfTable.AddCell(dataStudentGridView.Rows[i].Cells[6].Value.ToString());
+                         
 
-                            byte[] imagesbyte = (byte[])(dataStudentGridView.Rows[i].Cells[7].Value);
+                            byte[] imagesbyte = (byte[])(dataStudentGridView.Rows[i].Cells[6].Value);
                             iTextSharp.text.Image myimage = iTextSharp.text.Image.GetInstance(imagesbyte);
                             pdfTable.AddCell(myimage);
 
@@ -236,7 +238,7 @@ namespace WindowClassProject.View.ViewStudent
         }
         #endregion
 
-        #region creadocument for report
+        #region creadocument for report microsoft doc
         public void CreateWordDocument(DataGridView dataGrid, string fileName)
         {
             //Declare size of table
@@ -396,7 +398,7 @@ namespace WindowClassProject.View.ViewStudent
         {
             EditStudentPanelForm panelEdit = new EditStudentPanelForm(dataStudentGridView.CurrentRow.Cells[1].Value.ToString());
 
-            panelEdit.Show();
+            panelEdit.ShowDialog();
         }
 
         private void searchBox_TextChanged(object sender, EventArgs e)
@@ -447,7 +449,8 @@ namespace WindowClassProject.View.ViewStudent
             tab4.TabLeader = TabLeader.NoLeader;
             para4.AppendText("Số tín chỉ: 3\n");
             para4.AppendText("\nLớp học phần:\t");
-            para4.AppendText("202WINPR230579E_01CLC\n").CharacterFormat.Bold = true;
+            para4.AppendText("202WINPR230579E_01CLC\t").CharacterFormat.Bold = true;
+            para4.AppendText("Số Sinh Viên :"+dataStudentGridView.Rows.Count+"\n");
             para4.AppendText("\nCBGD:\t");
             para4.AppendText("Lê Vĩnh Thịnh (0132)\n").CharacterFormat.Bold = true;
             para4.Format.HorizontalAlignment = Spire.Doc.Documents.HorizontalAlignment.Left;
@@ -556,5 +559,26 @@ namespace WindowClassProject.View.ViewStudent
 
         }
         #endregion
+
+        private void addStudentJoinGroupBtn_Click(object sender, EventArgs e)
+        {
+            AddGroupSubjectForm adds = new AddGroupSubjectForm();
+            adds.ShowDialog();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                string studentID = dataStudentGridView.SelectedCells[0].OwningRow.Cells["Student ID"].Value.ToString();
+
+                STUDENT sty = db.STUDENTs.Where(p => p.studentID.Equals(studentID)).FirstOrDefault();
+                db.STUDENTs.DeleteOnSubmit(sty);
+
+              
+
+                db.SubmitChanges();
+            }
+        }
     }
 }

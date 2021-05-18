@@ -16,5 +16,16 @@ namespace WindowClassProject.View.OtherForm
         {
             InitializeComponent();
         }
+
+        private void ChartForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void  renderPie()
+        {
+
+
+        }
     }
 }

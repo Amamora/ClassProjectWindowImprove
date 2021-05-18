@@ -49,6 +49,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             loadDatalist(listGroupIDCheck);
             loadDatalist(selectGroupID);
             loadDatalist(selectSearchBox);
+            loadDatalist(selectGroupIDAddCom);
 
         }
 
@@ -121,7 +122,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
 
                 var src = from SCORE sc in db.SCOREs
                           join GROUPSUBJECT gr in db.GROUPSUBJECTs on sc.groupID equals gr.groupID
-                          where gr.studentID == studentIDtxt.Text && sc != null
+                          where  sc != null
                           select sc;
                 if (src.Count() > 0)
                 {
@@ -134,7 +135,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
 
         private void checkAllStudentBtn_Click(object sender, EventArgs e)
         {
-            AllStudentManage mana = new AllStudentManage();
+            AllStudentManage mana = new AllStudentManage(listGroupIDCheck.Text);
             mana.Show();
 
         }
@@ -173,7 +174,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             {
                 //show student follow select group ID =>
 
-                var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
+               /* var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
 
                               join STUDENT stu in db.STUDENTs on groupSub.studentID equals stu.studentID
                               where groupSub.groupID == selectGroupID.Text
@@ -191,7 +192,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
                     return;
                 }
                 dataSubScoreView.DataSource = scource;
-
+               */
 
             }
         }
@@ -210,26 +211,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
                     return;
                 }
 
-                var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
-
-                        join STUDENT stu in data.STUDENTs
-                        on sco.studentID equals stu.studentID
-                        join SCORE score in data.SCOREs
-                        on sco.groupID equals score.groupID
-
-                        where sco.groupID == selectSearchBox.Text
-                        select new
-                        {
-                            GroupName = sco.groupName,
-                            GroupID = sco.groupID,
-                            StudentName = stu.studentFName + " " + stu.studentLName,
-                            TeacherID = sco.teacherID,
-                            Score = score.score1
-
-                        };
-                dataSubScoreView.DataSource = g;
-
             }
+            ScoreDAO sco = new ScoreDAO();
+            dataSubScoreView.DataSource = sco.connectData(selectSearchBox.Text);
         }
     }
 }

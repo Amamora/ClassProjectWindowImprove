@@ -190,8 +190,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\LogicControl.cs" />
     <Compile Include="Controller\Program.cs" />
-    <Compile Include="Controller\SpireExportForm.cs" />
     <Compile Include="DAO\ClassDAO.cs" />
     <Compile Include="DAO\CourseDAO.cs" />
     <Compile Include="DAO\DepartmentDAO.cs" />
@@ -352,12 +352,6 @@
     <Compile Include="View\ViewStudent\StudentPanelForm.Designer.cs">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ViewStudent\StudentPanelOfTeacher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ViewStudent\StudentPanelOfTeacher.Designer.cs">
-      <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ViewTeacher\AddGroupSubjectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +393,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\OtherForm\ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\OtherForm\MailBox.resx">
       <DependentUpon>MailBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -435,6 +432,9 @@
     <EmbeddedResource Include="View\ViewScore\AddScorePanelForm.resx">
       <DependentUpon>AddScorePanelForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewScore\LiveChartScore.resx">
+      <DependentUpon>LiveChartScore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ViewScore\Score_Form.resx">
       <DependentUpon>Score_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -449,9 +449,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewStudent\StudentPanelForm.resx">
       <DependentUpon>StudentPanelForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ViewStudent\StudentPanelOfTeacher.resx">
-      <DependentUpon>StudentPanelOfTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ViewTeacher\AddGroupSubjectForm.resx">
       <DependentUpon>AddGroupSubjectForm.cs</DependentUpon>

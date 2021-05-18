@@ -35,8 +35,7 @@ namespace WindowClassProject.View.ViewTeacher
 
                 var studentId = from STUDENT stu in data.STUDENTs //ban chat la list linq student
                                 select stu;
-                studentCombox.DataSource = studentId;
-                studentCombox.DisplayMember = "studentID";
+                
 
                 var course = from COURSE co in data.COURSEs
                              select co;
@@ -45,7 +44,7 @@ namespace WindowClassProject.View.ViewTeacher
 
                 var sourceGroup = from GROUPSUBJECT g in data.GROUPSUBJECTs
 
-                                  select new { g.groupID, g.groupName, g.teacherID, g.studentID, g.courseID };
+                                  select new { g.groupID, g.groupName, g.teacherID,  g.courseID };
                 dataShowGrid.DataSource = sourceGroup;
             }
         }
@@ -95,9 +94,9 @@ namespace WindowClassProject.View.ViewTeacher
 
                 TEACHER t = teacherCombox.SelectedItem as TEACHER;
                 COURSE c = courseCombox.SelectedItem as COURSE;
-                STUDENT s = studentCombox.SelectedItem as STUDENT;
+            
                 var gr = from GROUPSUBJECT g in db.GROUPSUBJECTs
-                         where g.teacherID == t.teacherID && g.courseID == c.courseID && s.studentID == g.studentID
+                         where g.teacherID == t.teacherID && g.courseID == c.courseID 
                          select g;
                 if (gr.Count() > 0)
                 {
@@ -116,13 +115,13 @@ namespace WindowClassProject.View.ViewTeacher
                     GROUPSUBJECT g = new GROUPSUBJECT();
                     TEACHER t = teacherCombox.SelectedItem as TEACHER;
                     COURSE c = courseCombox.SelectedItem as COURSE;
-                    STUDENT s = studentCombox.SelectedItem as STUDENT;
+                   
 
                     g.groupID = groupIDTxt.Text;
                     g.groupName = groupNameTxt.Text;
                     g.teacherID = t.teacherID;
                     g.courseID = c.courseID;
-                    g.studentID = s.studentID;
+                  
                     db.GROUPSUBJECTs.InsertOnSubmit(g);
                     db.SubmitChanges();
 
@@ -147,8 +146,7 @@ namespace WindowClassProject.View.ViewTeacher
                 nGroup.groupName = gr.groupName;
                 nGroup.courseID = gr.courseID;
                 nGroup.teacherID = gr.teacherID;
-                nGroup.studentID = gr.studentID;
-
+               
 
                 db.SubmitChanges();
 
@@ -166,11 +164,11 @@ namespace WindowClassProject.View.ViewTeacher
             GROUPSUBJECT g = new GROUPSUBJECT();
             TEACHER t = teacherCombox.SelectedItem as TEACHER;
             COURSE c = courseCombox.SelectedItem as COURSE;
-            STUDENT s = studentCombox.SelectedItem as STUDENT;
+           
             g.groupID = groupIDTxt.Text;
             g.groupName = groupNameTxt.Text;
             g.teacherID = t.teacherID;
-            g.studentID = s.studentID;
+         
             g.courseID = c.courseID;
             editGroupSubject(g);
 
@@ -228,7 +226,7 @@ namespace WindowClassProject.View.ViewTeacher
 
                 var sourceGroup = from GROUPSUBJECT g in data.GROUPSUBJECTs
 
-                                  select new { g.groupID, g.groupName, g.teacherID, g.studentID, g.courseID };
+                                  select new { g.groupID, g.groupName, g.teacherID, g.courseID };
                 dataShowGrid.DataSource = sourceGroup;
             }
 
@@ -252,7 +250,7 @@ namespace WindowClassProject.View.ViewTeacher
                 GROUPSUBJECT g = data.GROUPSUBJECTs.Single(x => x.groupID == groupIDTxt.Text);
                 groupNameTxt.Text = g.groupName;
                 teacherCombox.Text = g.teacherID;
-                studentCombox.Text = g.studentID;
+              
                 courseCombox.Text = g.courseID;
 
 
@@ -278,10 +276,11 @@ namespace WindowClassProject.View.ViewTeacher
                 var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
                         join COURSE co in data.COURSEs
                         on sco.courseID equals co.courseID
-                        join STUDENT stu in data.STUDENTs
-                        on sco.studentID equals stu.studentID
+                       
                         join SCORE score in data.SCOREs
                         on sco.groupID equals score.groupID
+                        join STUDENT stu in data.STUDENTs
+                        on score.studentID equals stu.studentID
 
                         where sco.groupID == groupIDTxt.Text
                         select new
@@ -316,10 +315,11 @@ namespace WindowClassProject.View.ViewTeacher
                 var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
                         join COURSE co in data.COURSEs
                         on sco.courseID equals co.courseID
-                        join STUDENT stu in data.STUDENTs
-                        on sco.studentID equals stu.studentID
+                       
                         join SCORE score in data.SCOREs
                         on sco.groupID equals score.groupID
+                        join STUDENT stu in data.STUDENTs
+                        on score.studentID equals stu.studentID
 
                         where sco.groupID == groupIDTxt.Text
                         select new
@@ -341,8 +341,8 @@ namespace WindowClassProject.View.ViewTeacher
             groupIDTxt.Text = dataShowGrid.CurrentRow.Cells[0].Value.ToString();
             groupNameTxt.Text = dataShowGrid.CurrentRow.Cells[1].Value.ToString();
             teacherCombox.Text = dataShowGrid.CurrentRow.Cells[2].Value.ToString();
-            studentCombox.Text = dataShowGrid.CurrentRow.Cells[3].Value.ToString();
-            courseCombox.Text = dataShowGrid.CurrentRow.Cells[4].Value.ToString();
+          
+            courseCombox.Text = dataShowGrid.CurrentRow.Cells[3].Value.ToString();
         }
     }
 }

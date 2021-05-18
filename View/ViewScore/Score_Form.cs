@@ -21,6 +21,7 @@ namespace WindowClassProject.View.ViewScore
 
         private void Score_Form_Load(object sender, EventArgs e)
         {
+            comboBoxSearch.SelectedIndex = 0;
             ScoreDAO sco = new ScoreDAO();
             sco.connectionDataBase(dataScoreDataGridView);
         }
@@ -30,5 +31,23 @@ namespace WindowClassProject.View.ViewScore
             AddScorePanelForm add = new AddScorePanelForm();
             add.Show();
         }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            switch (comboBoxSearch.SelectedIndex)
+            {
+                case 0:
+                    break;
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+
+            }
+        }
+
+
     }
 }

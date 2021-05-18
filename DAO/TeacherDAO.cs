@@ -72,24 +72,20 @@ namespace WindowClassProject.DAO
             mydata.closeConnection();
             return tb;
         }
-        public void searchTeacher(string teacherID, DataGridView view)
+        public void searchTeacher(string teacherIDs, DataGridView view)
         {
 
-            using (MyLinQDataContext db = new MyLinQDataContext())
+          bool check=  checkExistOfTeacher(teacherIDs);
+            if (check == false)
             {
-                var sco = from TEACHER t in db.TEACHERs
-                          where t.teacherID == teacherID
-                          select t;
-                if (sco.Count() == 0)
-                {
-                    MessageBox.Show("ID teacher not exist's!");
-                    return;
-                }
+                MessageBox.Show("ID teacher Not exist!");
+                return;
             }
+            
             MyDataBase mydata = new MyDataBase();
             mydata.openConnection();
             SqlCommand command = new SqlCommand("SELECT ROW_NUMBER() OVER (ORDER BY teacherID ASC) AS N'Order',teacherID,teacherFName,teacherLName,teacherEmail,picture  FROM [WINDOWCLASS].[dbo].[TEACHER] where teacherID=@te", mydata.getConnection);
-            command.Parameters.Add("@te", SqlDbType.NVarChar).Value = teacherID;
+            command.Parameters.Add("@te", SqlDbType.NVarChar).Value = teacherIDs;
             DataTable tb = new DataTable();
             SqlDataAdapter ap = new SqlDataAdapter();
             ap.SelectCommand = command;
@@ -104,7 +100,7 @@ namespace WindowClassProject.DAO
             mydata.closeConnection();
 
         }
-        #region load update teachẻ
+        #region load update teacher
         public bool updateInforTeacher(string id, string fname, string lname, DateTimePicker bdate, int gender, string phone, string email, string cmnd, MemoryStream picture, string studentID)
         {
             MyDataBase myDataBase = new MyDataBase();

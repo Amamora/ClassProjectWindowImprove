@@ -130,6 +130,14 @@ namespace WindowClassProject.View.ViewTeacher
             }
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
+                var count = from TEACHER te in db.TEACHERs
+                            where te.teacherID == IDTxt.Text
+                            select te;
+                if (count.Count() > 0)
+                {
+                    MessageBox.Show("The already ID teacher exist in database");
+                    return false;
+                }
 
             }
 
@@ -173,6 +181,11 @@ namespace WindowClassProject.View.ViewTeacher
             emailTxt.Text = "";
             phoneTxt.Text = "";
             pictureAccount.Image = null;
+        }
+
+        private void backPageBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

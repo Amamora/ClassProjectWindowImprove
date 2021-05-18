@@ -1036,15 +1036,11 @@ namespace WindowClassProject
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _groupOrder;
-		
 		private string _groupID;
 		
 		private string _groupName;
 		
 		private string _teacherID;
-		
-		private string _studentID;
 		
 		private System.Nullable<int> _semesterID;
 		
@@ -1054,24 +1050,18 @@ namespace WindowClassProject
 		
 		private EntityRef<SEMESTER> _SEMESTER;
 		
-		private EntityRef<STUDENT> _STUDENT;
-		
 		private EntityRef<TEACHER> _TEACHER;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OngroupOrderChanging(int value);
-    partial void OngroupOrderChanged();
     partial void OngroupIDChanging(string value);
     partial void OngroupIDChanged();
     partial void OngroupNameChanging(string value);
     partial void OngroupNameChanged();
     partial void OnteacherIDChanging(string value);
     partial void OnteacherIDChanged();
-    partial void OnstudentIDChanging(string value);
-    partial void OnstudentIDChanged();
     partial void OnsemesterIDChanging(System.Nullable<int> value);
     partial void OnsemesterIDChanged();
     partial void OncourseIDChanging(string value);
@@ -1082,32 +1072,11 @@ namespace WindowClassProject
 		{
 			this._COURSE = default(EntityRef<COURSE>);
 			this._SEMESTER = default(EntityRef<SEMESTER>);
-			this._STUDENT = default(EntityRef<STUDENT>);
 			this._TEACHER = default(EntityRef<TEACHER>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupOrder", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int groupOrder
-		{
-			get
-			{
-				return this._groupOrder;
-			}
-			set
-			{
-				if ((this._groupOrder != value))
-				{
-					this.OngroupOrderChanging(value);
-					this.SendPropertyChanging();
-					this._groupOrder = value;
-					this.SendPropertyChanged("groupOrder");
-					this.OngroupOrderChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_groupID", DbType="NVarChar(256) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string groupID
 		{
 			get
@@ -1167,30 +1136,6 @@ namespace WindowClassProject
 					this._teacherID = value;
 					this.SendPropertyChanged("teacherID");
 					this.OnteacherIDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_studentID", DbType="NVarChar(256)")]
-		public string studentID
-		{
-			get
-			{
-				return this._studentID;
-			}
-			set
-			{
-				if ((this._studentID != value))
-				{
-					if (this._STUDENT.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnstudentIDChanging(value);
-					this.SendPropertyChanging();
-					this._studentID = value;
-					this.SendPropertyChanged("studentID");
-					this.OnstudentIDChanged();
 				}
 			}
 		}
@@ -1307,40 +1252,6 @@ namespace WindowClassProject
 						this._semesterID = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("SEMESTER");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STUDENT_GROUPSUBJECT", Storage="_STUDENT", ThisKey="studentID", OtherKey="studentID", IsForeignKey=true)]
-		public STUDENT STUDENT
-		{
-			get
-			{
-				return this._STUDENT.Entity;
-			}
-			set
-			{
-				STUDENT previousValue = this._STUDENT.Entity;
-				if (((previousValue != value) 
-							|| (this._STUDENT.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._STUDENT.Entity = null;
-						previousValue.GROUPSUBJECTs.Remove(this);
-					}
-					this._STUDENT.Entity = value;
-					if ((value != null))
-					{
-						value.GROUPSUBJECTs.Add(this);
-						this._studentID = value.studentID;
-					}
-					else
-					{
-						this._studentID = default(string);
-					}
-					this.SendPropertyChanged("STUDENT");
 				}
 			}
 		}
@@ -1719,8 +1630,6 @@ namespace WindowClassProject
 		
 		private System.Nullable<int> _userAccountID;
 		
-		private EntitySet<GROUPSUBJECT> _GROUPSUBJECTs;
-		
 		private EntitySet<SCORE> _SCOREs;
 		
 		private EntityRef<CLASS> _CLASS;
@@ -1759,7 +1668,6 @@ namespace WindowClassProject
 		
 		public STUDENT()
 		{
-			this._GROUPSUBJECTs = new EntitySet<GROUPSUBJECT>(new Action<GROUPSUBJECT>(this.attach_GROUPSUBJECTs), new Action<GROUPSUBJECT>(this.detach_GROUPSUBJECTs));
 			this._SCOREs = new EntitySet<SCORE>(new Action<SCORE>(this.attach_SCOREs), new Action<SCORE>(this.detach_SCOREs));
 			this._CLASS = default(EntityRef<CLASS>);
 			this._USERACCOUNT = default(EntityRef<USERACCOUNT>);
@@ -2014,19 +1922,6 @@ namespace WindowClassProject
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STUDENT_GROUPSUBJECT", Storage="_GROUPSUBJECTs", ThisKey="studentID", OtherKey="studentID")]
-		public EntitySet<GROUPSUBJECT> GROUPSUBJECTs
-		{
-			get
-			{
-				return this._GROUPSUBJECTs;
-			}
-			set
-			{
-				this._GROUPSUBJECTs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="STUDENT_SCORE", Storage="_SCOREs", ThisKey="studentID", OtherKey="studentID")]
 		public EntitySet<SCORE> SCOREs
 		{
@@ -2126,18 +2021,6 @@ namespace WindowClassProject
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_GROUPSUBJECTs(GROUPSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.STUDENT = this;
-		}
-		
-		private void detach_GROUPSUBJECTs(GROUPSUBJECT entity)
-		{
-			this.SendPropertyChanging();
-			entity.STUDENT = null;
 		}
 		
 		private void attach_SCOREs(SCORE entity)

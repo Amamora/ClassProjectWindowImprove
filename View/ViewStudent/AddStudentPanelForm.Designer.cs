@@ -429,6 +429,7 @@ namespace WindowClassProject.View.ViewStudent
             this.backPageBtn.TabIndex = 1;
             this.backPageBtn.Text = "Back";
             this.backPageBtn.UseVisualStyleBackColor = true;
+            this.backPageBtn.Click += new System.EventHandler(this.backPageBtn_Click);
             // 
             // backPagePanel
             // 

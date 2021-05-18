@@ -30,7 +30,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentManageForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkAllStudentBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -47,13 +47,13 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.showStudentDataBtn = new System.Windows.Forms.Button();
-            this.dataSubScoreView = new System.Windows.Forms.DataGridView();
             this.editScoreBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.selectSearchBox = new System.Windows.Forms.ComboBox();
             this.showScoreDataBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.showStudentDataBtn = new System.Windows.Forms.Button();
+            this.dataSubScoreView = new System.Windows.Forms.DataGridView();
             this.selectGroupID = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.descriptionTxt = new System.Windows.Forms.TextBox();
@@ -71,8 +71,8 @@ namespace WindowClassProject.View.ViewManageOfStudent
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccountBox)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,7 +86,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.checkAllStudentBtn);
             this.panel2.Controls.Add(this.chooseGroupLbl);
             this.panel2.Controls.Add(this.listGroupIDCheck);
@@ -115,11 +115,11 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.checkAllStudentBtn.ColorContrastOnClick = 45;
             this.checkAllStudentBtn.ColorContrastOnHover = 45;
             this.checkAllStudentBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges8.BottomLeft = true;
-            borderEdges8.BottomRight = true;
-            borderEdges8.TopLeft = true;
-            borderEdges8.TopRight = true;
-            this.checkAllStudentBtn.CustomizableEdges = borderEdges8;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.checkAllStudentBtn.CustomizableEdges = borderEdges1;
             this.checkAllStudentBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.checkAllStudentBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.checkAllStudentBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -305,7 +305,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(273, 17);
+            this.textBox1.Location = new System.Drawing.Point(297, 17);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(390, 33);
@@ -323,6 +323,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             // panel4
             // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.editScoreBtn);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.selectGroupID);
@@ -342,30 +343,6 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel4.Size = new System.Drawing.Size(1382, 522);
             this.panel4.TabIndex = 2;
             // 
-            // showStudentDataBtn
-            // 
-            this.showStudentDataBtn.Location = new System.Drawing.Point(71, 18);
-            this.showStudentDataBtn.Name = "showStudentDataBtn";
-            this.showStudentDataBtn.Size = new System.Drawing.Size(219, 50);
-            this.showStudentDataBtn.TabIndex = 1;
-            this.showStudentDataBtn.Text = "ShowStudent";
-            this.showStudentDataBtn.UseVisualStyleBackColor = true;
-            this.showStudentDataBtn.Click += new System.EventHandler(this.showStudentDataBtn_Click);
-            // 
-            // dataSubScoreView
-            // 
-            this.dataSubScoreView.AllowUserToAddRows = false;
-            this.dataSubScoreView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataSubScoreView.BackgroundColor = System.Drawing.Color.White;
-            this.dataSubScoreView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataSubScoreView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataSubScoreView.Location = new System.Drawing.Point(0, 147);
-            this.dataSubScoreView.Name = "dataSubScoreView";
-            this.dataSubScoreView.RowHeadersWidth = 51;
-            this.dataSubScoreView.RowTemplate.Height = 24;
-            this.dataSubScoreView.Size = new System.Drawing.Size(691, 375);
-            this.dataSubScoreView.TabIndex = 0;
-            // 
             // editScoreBtn
             // 
             this.editScoreBtn.Location = new System.Drawing.Point(426, 448);
@@ -377,15 +354,16 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel5.Controls.Add(this.selectSearchBox);
             this.panel5.Controls.Add(this.showScoreDataBtn);
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.showStudentDataBtn);
             this.panel5.Controls.Add(this.dataSubScoreView);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(691, 0);
+            this.panel5.Location = new System.Drawing.Point(689, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(691, 522);
+            this.panel5.Size = new System.Drawing.Size(691, 520);
             this.panel5.TabIndex = 36;
             // 
             // selectSearchBox
@@ -416,6 +394,30 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.label5.Size = new System.Drawing.Size(145, 25);
             this.label5.TabIndex = 27;
             this.label5.Text = "Select GroupID";
+            // 
+            // showStudentDataBtn
+            // 
+            this.showStudentDataBtn.Location = new System.Drawing.Point(71, 18);
+            this.showStudentDataBtn.Name = "showStudentDataBtn";
+            this.showStudentDataBtn.Size = new System.Drawing.Size(219, 50);
+            this.showStudentDataBtn.TabIndex = 1;
+            this.showStudentDataBtn.Text = "ShowStudent";
+            this.showStudentDataBtn.UseVisualStyleBackColor = true;
+            this.showStudentDataBtn.Click += new System.EventHandler(this.showStudentDataBtn_Click);
+            // 
+            // dataSubScoreView
+            // 
+            this.dataSubScoreView.AllowUserToAddRows = false;
+            this.dataSubScoreView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataSubScoreView.BackgroundColor = System.Drawing.Color.White;
+            this.dataSubScoreView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataSubScoreView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataSubScoreView.Location = new System.Drawing.Point(0, 141);
+            this.dataSubScoreView.Name = "dataSubScoreView";
+            this.dataSubScoreView.RowHeadersWidth = 51;
+            this.dataSubScoreView.RowTemplate.Height = 24;
+            this.dataSubScoreView.Size = new System.Drawing.Size(687, 375);
+            this.dataSubScoreView.TabIndex = 0;
             // 
             // selectGroupID
             // 
@@ -530,6 +532,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.MaximumSize = new System.Drawing.Size(1400, 934);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1400, 934);
             this.Name = "StudentManageForm";
             this.Text = "StudentManageForm";
             this.Load += new System.EventHandler(this.StudentManageForm_Load);
@@ -543,9 +548,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).EndInit();
             this.ResumeLayout(false);
 
         }

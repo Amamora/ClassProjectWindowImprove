@@ -202,5 +202,10 @@ namespace WindowClassProject.View.ViewStudent
                 MessageBox.Show("only Number");
             }
         }
+
+        private void backPageBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace WindowClassProject.View.ViewLogin
             this.sendGetForgotBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.fogortEmaiTxt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.forgotPassLbl = new Bunifu.UI.WinForms.BunifuPanel();
-            this.bunifuLabel1 = new Bunifu.UI.WinForms.BunifuLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.bunifuPanel1.SuspendLayout();
             this.forgotPassLbl.SuspendLayout();
             this.SuspendLayout();
@@ -234,7 +234,7 @@ namespace WindowClassProject.View.ViewLogin
             this.forgotPassLbl.BorderColor = System.Drawing.Color.Transparent;
             this.forgotPassLbl.BorderRadius = 1;
             this.forgotPassLbl.BorderThickness = 0;
-            this.forgotPassLbl.Controls.Add(this.bunifuLabel1);
+            this.forgotPassLbl.Controls.Add(this.label1);
             this.forgotPassLbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.forgotPassLbl.Location = new System.Drawing.Point(0, 0);
             this.forgotPassLbl.Name = "forgotPassLbl";
@@ -242,22 +242,18 @@ namespace WindowClassProject.View.ViewLogin
             this.forgotPassLbl.Size = new System.Drawing.Size(732, 84);
             this.forgotPassLbl.TabIndex = 0;
             // 
-            // bunifuLabel1
+            // label1
             // 
-            this.bunifuLabel1.AllowParentOverrides = false;
-            this.bunifuLabel1.AutoEllipsis = false;
-            this.bunifuLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.CursorType = System.Windows.Forms.Cursors.Default;
-            this.bunifuLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
-            this.bunifuLabel1.ForeColor = System.Drawing.Color.Transparent;
-            this.bunifuLabel1.Location = new System.Drawing.Point(55, 23);
-            this.bunifuLabel1.Name = "bunifuLabel1";
-            this.bunifuLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bunifuLabel1.Size = new System.Drawing.Size(215, 37);
-            this.bunifuLabel1.TabIndex = 0;
-            this.bunifuLabel1.Text = "Forget Password";
-            this.bunifuLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.bunifuLabel1.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(67, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(289, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Forget Password";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ForgotPasswordForm
             // 
@@ -286,6 +282,6 @@ namespace WindowClassProject.View.ViewLogin
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton sendGetForgotBtn;
         private Bunifu.UI.WinForms.BunifuTextBox fogortEmaiTxt;
         private Bunifu.UI.WinForms.BunifuPanel forgotPassLbl;
-        private Bunifu.UI.WinForms.BunifuLabel bunifuLabel1;
+        private System.Windows.Forms.Label label1;
     }
 }

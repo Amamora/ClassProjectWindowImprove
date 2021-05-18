@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowClassProject.DAO;
 
 namespace WindowClassProject.View.ViewScore
 {
@@ -17,9 +18,10 @@ namespace WindowClassProject.View.ViewScore
         {
             InitializeComponent();
         }
-
+        bool modeClass = true;
         private void showScoreDataBtn_Click(object sender, EventArgs e)
         {
+            modeClass = false;
             using (MyLinQDataContext data = new MyLinQDataContext())
             {
                 var check = from GROUPSUBJECT gr in data.GROUPSUBJECTs
@@ -32,27 +34,9 @@ namespace WindowClassProject.View.ViewScore
                     return;
                 }
 
-                var g = from GROUPSUBJECT sco in data.GROUPSUBJECTs
-
-                        join STUDENT stu in data.STUDENTs
-                        on sco.studentID equals stu.studentID
-                        join SCORE score in data.SCOREs
-                        on sco.groupID equals score.groupID
-
-                        where sco.groupID == selectSearchBox.Text
-                        select new
-                        {
-                            GroupName = sco.groupName,
-                            GroupID = sco.groupID,
-                            StudentID=sco.studentID,
-                            StudentName = stu.studentFName ,
-                            TeacherID = sco.teacherID,
-                            Score = score.score1
-
-                        };
-                dataSubScoreView.DataSource = g;
-
             }
+            ScoreDAO sco = new ScoreDAO();
+            dataSubScoreView.DataSource=sco.connectData(selectSearchBox.Text);
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -93,13 +77,13 @@ namespace WindowClassProject.View.ViewScore
                 if (stud.Count() == 0)
                 {
                     MessageBox.Show("STUDENT ID NOT EXISTS!");
-
+                    return false;
                 }
                 //tu student id=> groupsubject =>core
 
                 var src = from SCORE sc in db.SCOREs
                           join GROUPSUBJECT gr in db.GROUPSUBJECTs on sc.groupID equals gr.groupID
-                          where gr.studentID == studentIDtxt.Text && sc != null&& gr.groupID==selectGroupID.Text
+                          where sc.studentID == studentIDtxt.Text && sc != null&& gr.groupID==selectGroupID.Text
                           select sc;
                 if (src.Count() > 0)
                 {
@@ -116,12 +100,14 @@ namespace WindowClassProject.View.ViewScore
                 var source = from SCORE s in db.SCOREs
                              join GROUPSUBJECT gr in db.GROUPSUBJECTs on s.groupID equals gr.groupID
                              join COURSE co in db.COURSEs on gr.courseID equals co.courseID
-                             join STUDENT stu in db.STUDENTs on gr.studentID equals stu.studentID
+                             join STUDENT stu in db.STUDENTs on s.studentID equals stu.studentID
                              select new
                              {
                                  GroupID = gr.groupID,
-                                 CourseName = co.courseName,
+                                 StudentID=stu.studentID,
                                  StudentName = stu.studentLName,
+                                 CourseName = co.courseName,
+                                
                                  Score = s.score1,
 
                              }
@@ -159,13 +145,14 @@ namespace WindowClassProject.View.ViewScore
 
         private void showStudentDataBtn_Click(object sender, EventArgs e)
         {
+            modeClass = true;
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
                 //show student follow select group ID =>
 
                 var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
-
-                              join STUDENT stu in db.STUDENTs on groupSub.studentID equals stu.studentID
+                              join SCORE score in db.SCOREs on groupSub.groupID equals score.groupID
+                              join STUDENT stu in db.STUDENTs on  score.studentID equals stu.studentID
                               where groupSub.groupID == selectGroupID.Text
                               select new
                               {
@@ -194,6 +181,23 @@ namespace WindowClassProject.View.ViewScore
         private void editScoreBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataSubScoreView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (modeClass==true)
+            {
+                selectGroupID.Text = dataSubScoreView.CurrentRow.Cells[0].Value.ToString();
+                studentIDtxt.Text = dataSubScoreView.CurrentRow.Cells[1].Value.ToString();
+
+            }
+            else
+            {
+                selectGroupID.Text = dataSubScoreView.CurrentRow.Cells[0].Value.ToString();
+                studentIDtxt.Text = dataSubScoreView.CurrentRow.Cells[1].Value.ToString();
+                scoreTxt.Text = dataSubScoreView.CurrentRow.Cells[5].Value.ToString();
+
+            }
         }
     }
     }

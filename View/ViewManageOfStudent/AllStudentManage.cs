@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowClassProject.DAO;
 
 namespace WindowClassProject.View.ViewManageOfStudent
 {
@@ -20,22 +21,15 @@ namespace WindowClassProject.View.ViewManageOfStudent
         {
             InitializeComponent();
             this.groupID = groupID;
+            groupIDLbl.Text = " Student ID in group ID " + groupID;
+            loadData(dataStudentInGroupID);
         }
         string groupID;
         
         public void loadData(DataGridView dataShowGrid)
         {
-            using (MyLinQDataContext data = new MyLinQDataContext())
-            {
-
-
-
-                var sourceGroup = from GROUPSUBJECT g in data.GROUPSUBJECTs
-                                  join STUDENT stu in data.STUDENTs on g.studentID equals stu.studentID 
-                                  where g.groupID==groupID
-                                  select new { g.groupID, g.groupName, g.teacherID, g.studentID,studentFullName=stu.studentFName+" "+stu.studentLName ,g.courseID };
-                dataShowGrid.DataSource = sourceGroup;
-            }
+            ScoreDAO sco = new ScoreDAO();
+        dataShowGrid.DataSource=  sco.connectData(groupID);
         }
         private void label2_Click(object sender, EventArgs e)
         {
