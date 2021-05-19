@@ -18,10 +18,10 @@ namespace WindowClassProject.View.ViewScore
         {
             InitializeComponent();
         }
-        bool modeClass = true;
+       
         private void showScoreDataBtn_Click(object sender, EventArgs e)
         {
-            modeClass = false;
+            
             using (MyLinQDataContext data = new MyLinQDataContext())
             {
                 var check = from GROUPSUBJECT gr in data.GROUPSUBJECTs
@@ -145,7 +145,7 @@ namespace WindowClassProject.View.ViewScore
 
         private void showStudentDataBtn_Click(object sender, EventArgs e)
         {
-            modeClass = true;
+           
             using (MyLinQDataContext db = new MyLinQDataContext())
             {
                 //show student follow select group ID =>
@@ -185,19 +185,7 @@ namespace WindowClassProject.View.ViewScore
 
         private void dataSubScoreView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (modeClass==true)
-            {
-                selectGroupID.Text = dataSubScoreView.CurrentRow.Cells[0].Value.ToString();
-                studentIDtxt.Text = dataSubScoreView.CurrentRow.Cells[1].Value.ToString();
-
-            }
-            else
-            {
-                selectGroupID.Text = dataSubScoreView.CurrentRow.Cells[0].Value.ToString();
-                studentIDtxt.Text = dataSubScoreView.CurrentRow.Cells[1].Value.ToString();
-                scoreTxt.Text = dataSubScoreView.CurrentRow.Cells[5].Value.ToString();
-
-            }
+          
         }
     }
     }

@@ -78,7 +78,7 @@ namespace WindowClassProject.View.OtherForm
             this.data.Location = new System.Drawing.Point(239, 189);
             this.data.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(655, 398);
+            this.data.Size = new System.Drawing.Size(655, 596);
             this.data.TabIndex = 1;
             this.data.Theme = Bunifu.Dataviz.WinForms.BunifuDatavizAdvanced._theme.theme1;
             this.data.Title = "";

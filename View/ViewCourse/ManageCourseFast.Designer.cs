@@ -210,7 +210,7 @@ namespace WindowClassProject.View.ViewCourse
             this.firstLoadListbox.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.firstLoadListbox.Location = new System.Drawing.Point(21, 500);
             this.firstLoadListbox.Name = "firstLoadListbox";
-            this.firstLoadListbox.Size = new System.Drawing.Size(106, 34);
+            this.firstLoadListbox.Size = new System.Drawing.Size(126, 34);
             this.firstLoadListbox.TabIndex = 24;
             this.firstLoadListbox.Text = "First";
             this.firstLoadListbox.UseVisualStyleBackColor = true;

@@ -34,11 +34,14 @@ namespace WindowClassProject.View.ViewScore
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            switch (comboBoxSearch.SelectedIndex)
+            ScoreDAO sco = new ScoreDAO()
+;            switch (comboBoxSearch.SelectedIndex)
             {
                 case 0:
+                    dataScoreDataGridView.DataSource=sco.searchByCourseID(searchBox.Text);
                     break;
                 case 1:
+                   dataScoreDataGridView.DataSource= sco.connectData(searchBox.Text);
                     break;
                 case 2:
                     break;

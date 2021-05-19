@@ -31,19 +31,10 @@ namespace WindowClassProject.View.ViewManageStudent
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageForm));
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.openManagePanel = new System.Windows.Forms.Panel();
-            this.userPanel = new System.Windows.Forms.Panel();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.contactBtn = new System.Windows.Forms.Button();
-            this.homeBtn = new System.Windows.Forms.Button();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBoxAccount = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.actionMenuPictureBox = new System.Windows.Forms.PictureBox();
             this.exitBtn = new System.Windows.Forms.Button();
             this.openMailBoxPanel = new System.Windows.Forms.Button();
             this.openTimeTablePanel = new System.Windows.Forms.Button();
+            this.openManagePanel = new System.Windows.Forms.Panel();
             this.openGroupSubjectPanel = new System.Windows.Forms.Button();
             this.openClassPanelBtn = new System.Windows.Forms.Button();
             this.openScorePanelChild = new System.Windows.Forms.Button();
@@ -52,12 +43,21 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openStudentPanelChild = new System.Windows.Forms.Button();
             this.openManageBtn = new System.Windows.Forms.Button();
             this.openDashBtn = new System.Windows.Forms.Button();
+            this.userPanel = new System.Windows.Forms.Panel();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.picAccount = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.contactBtn = new System.Windows.Forms.Button();
+            this.homeBtn = new System.Windows.Forms.Button();
+            this.actionMenuPictureBox = new System.Windows.Forms.PictureBox();
+            this.panelChildForm = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
             this.openManagePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actionMenuPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,125 +79,6 @@ namespace WindowClassProject.View.ViewManageStudent
             this.menuPanel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.menuPanel.Size = new System.Drawing.Size(246, 934);
             this.menuPanel.TabIndex = 0;
-            // 
-            // openManagePanel
-            // 
-            this.openManagePanel.Controls.Add(this.openGroupSubjectPanel);
-            this.openManagePanel.Controls.Add(this.openClassPanelBtn);
-            this.openManagePanel.Controls.Add(this.openScorePanelChild);
-            this.openManagePanel.Controls.Add(this.openTeacherPanelChild);
-            this.openManagePanel.Controls.Add(this.openCoursePanelChild);
-            this.openManagePanel.Controls.Add(this.openStudentPanelChild);
-            this.openManagePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.openManagePanel.Location = new System.Drawing.Point(0, 256);
-            this.openManagePanel.Name = "openManagePanel";
-            this.openManagePanel.Size = new System.Drawing.Size(246, 333);
-            this.openManagePanel.TabIndex = 3;
-            // 
-            // userPanel
-            // 
-            this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.userPanel.Location = new System.Drawing.Point(0, 0);
-            this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(246, 116);
-            this.userPanel.TabIndex = 0;
-            // 
-            // topPanel
-            // 
-            this.topPanel.Controls.Add(this.panel1);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(246, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1154, 88);
-            this.topPanel.TabIndex = 1;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.contactBtn);
-            this.panel1.Controls.Add(this.homeBtn);
-            this.panel1.Controls.Add(this.actionMenuPictureBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1154, 88);
-            this.panel1.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBoxAccount);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(875, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(279, 88);
-            this.panel2.TabIndex = 0;
-            // 
-            // contactBtn
-            // 
-            this.contactBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.contactBtn.FlatAppearance.BorderSize = 0;
-            this.contactBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.contactBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactBtn.ForeColor = System.Drawing.Color.White;
-            this.contactBtn.Location = new System.Drawing.Point(160, 0);
-            this.contactBtn.Name = "contactBtn";
-            this.contactBtn.Size = new System.Drawing.Size(92, 88);
-            this.contactBtn.TabIndex = 2;
-            this.contactBtn.Text = "Contact";
-            this.contactBtn.UseVisualStyleBackColor = true;
-            // 
-            // homeBtn
-            // 
-            this.homeBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.homeBtn.FlatAppearance.BorderSize = 0;
-            this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeBtn.ForeColor = System.Drawing.Color.White;
-            this.homeBtn.Location = new System.Drawing.Point(68, 0);
-            this.homeBtn.Name = "homeBtn";
-            this.homeBtn.Size = new System.Drawing.Size(92, 88);
-            this.homeBtn.TabIndex = 1;
-            this.homeBtn.Text = "Home";
-            this.homeBtn.UseVisualStyleBackColor = true;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.DimGray;
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(246, 88);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1154, 846);
-            this.panelChildForm.TabIndex = 2;
-            // 
-            // pictureBoxAccount
-            // 
-            this.pictureBoxAccount.AllowFocused = false;
-            this.pictureBoxAccount.AutoSizeHeight = false;
-            this.pictureBoxAccount.BorderRadius = 44;
-            this.pictureBoxAccount.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBoxAccount.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAccount.Image")));
-            this.pictureBoxAccount.IsCircle = true;
-            this.pictureBoxAccount.Location = new System.Drawing.Point(185, 0);
-            this.pictureBoxAccount.Name = "pictureBoxAccount";
-            this.pictureBoxAccount.Size = new System.Drawing.Size(94, 88);
-            this.pictureBoxAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxAccount.TabIndex = 0;
-            this.pictureBoxAccount.TabStop = false;
-            this.pictureBoxAccount.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
-            // 
-            // actionMenuPictureBox
-            // 
-            this.actionMenuPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.actionMenuPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.actionMenuPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_menu_40px;
-            this.actionMenuPictureBox.Location = new System.Drawing.Point(0, 0);
-            this.actionMenuPictureBox.Name = "actionMenuPictureBox";
-            this.actionMenuPictureBox.Size = new System.Drawing.Size(68, 88);
-            this.actionMenuPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.actionMenuPictureBox.TabIndex = 0;
-            this.actionMenuPictureBox.TabStop = false;
-            this.actionMenuPictureBox.Click += new System.EventHandler(this.actionMenuPictureBox_Click);
             // 
             // exitBtn
             // 
@@ -252,6 +133,20 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openTimeTablePanel.Text = "Time Table";
             this.openTimeTablePanel.UseVisualStyleBackColor = true;
             this.openTimeTablePanel.Click += new System.EventHandler(this.openTimeTablePanel_Click);
+            // 
+            // openManagePanel
+            // 
+            this.openManagePanel.Controls.Add(this.openGroupSubjectPanel);
+            this.openManagePanel.Controls.Add(this.openClassPanelBtn);
+            this.openManagePanel.Controls.Add(this.openScorePanelChild);
+            this.openManagePanel.Controls.Add(this.openTeacherPanelChild);
+            this.openManagePanel.Controls.Add(this.openCoursePanelChild);
+            this.openManagePanel.Controls.Add(this.openStudentPanelChild);
+            this.openManagePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.openManagePanel.Location = new System.Drawing.Point(0, 256);
+            this.openManagePanel.Name = "openManagePanel";
+            this.openManagePanel.Size = new System.Drawing.Size(246, 333);
+            this.openManagePanel.TabIndex = 3;
             // 
             // openGroupSubjectPanel
             // 
@@ -398,6 +293,111 @@ namespace WindowClassProject.View.ViewManageStudent
             this.openDashBtn.Click += new System.EventHandler(this.openDashBtn_Click);
             this.openDashBtn.MouseCaptureChanged += new System.EventHandler(this.openDashBtn_MouseCaptureChanged);
             // 
+            // userPanel
+            // 
+            this.userPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.userPanel.Location = new System.Drawing.Point(0, 0);
+            this.userPanel.Name = "userPanel";
+            this.userPanel.Size = new System.Drawing.Size(246, 116);
+            this.userPanel.TabIndex = 0;
+            // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.panel1);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(246, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1154, 88);
+            this.topPanel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(79)))), ((int)(((byte)(108)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.contactBtn);
+            this.panel1.Controls.Add(this.homeBtn);
+            this.panel1.Controls.Add(this.actionMenuPictureBox);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1154, 88);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.picAccount);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(875, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(279, 88);
+            this.panel2.TabIndex = 0;
+            // 
+            // picAccount
+            // 
+            this.picAccount.AllowFocused = false;
+            this.picAccount.AutoSizeHeight = true;
+            this.picAccount.BorderRadius = 50;
+            this.picAccount.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picAccount.Image = ((System.Drawing.Image)(resources.GetObject("picAccount.Image")));
+            this.picAccount.IsCircle = true;
+            this.picAccount.Location = new System.Drawing.Point(179, 0);
+            this.picAccount.Name = "picAccount";
+            this.picAccount.Size = new System.Drawing.Size(100, 100);
+            this.picAccount.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAccount.TabIndex = 0;
+            this.picAccount.TabStop = false;
+            this.picAccount.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
+            // 
+            // contactBtn
+            // 
+            this.contactBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.contactBtn.FlatAppearance.BorderSize = 0;
+            this.contactBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.contactBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactBtn.ForeColor = System.Drawing.Color.White;
+            this.contactBtn.Location = new System.Drawing.Point(160, 0);
+            this.contactBtn.Name = "contactBtn";
+            this.contactBtn.Size = new System.Drawing.Size(92, 88);
+            this.contactBtn.TabIndex = 2;
+            this.contactBtn.Text = "Contact";
+            this.contactBtn.UseVisualStyleBackColor = true;
+            // 
+            // homeBtn
+            // 
+            this.homeBtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.homeBtn.FlatAppearance.BorderSize = 0;
+            this.homeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeBtn.ForeColor = System.Drawing.Color.White;
+            this.homeBtn.Location = new System.Drawing.Point(68, 0);
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(92, 88);
+            this.homeBtn.TabIndex = 1;
+            this.homeBtn.Text = "Home";
+            this.homeBtn.UseVisualStyleBackColor = true;
+            // 
+            // actionMenuPictureBox
+            // 
+            this.actionMenuPictureBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.actionMenuPictureBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.actionMenuPictureBox.Image = global::WindowClassProject.Properties.Resources.icons8_menu_40px;
+            this.actionMenuPictureBox.Location = new System.Drawing.Point(0, 0);
+            this.actionMenuPictureBox.Name = "actionMenuPictureBox";
+            this.actionMenuPictureBox.Size = new System.Drawing.Size(68, 88);
+            this.actionMenuPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.actionMenuPictureBox.TabIndex = 0;
+            this.actionMenuPictureBox.TabStop = false;
+            this.actionMenuPictureBox.Click += new System.EventHandler(this.actionMenuPictureBox_Click);
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.DimGray;
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(246, 88);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(1154, 846);
+            this.panelChildForm.TabIndex = 2;
+            // 
             // ManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,7 +418,7 @@ namespace WindowClassProject.View.ViewManageStudent
             this.topPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAccount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actionMenuPictureBox)).EndInit();
             this.ResumeLayout(false);
 
@@ -446,7 +446,7 @@ namespace WindowClassProject.View.ViewManageStudent
         private System.Windows.Forms.Button homeBtn;
         private System.Windows.Forms.PictureBox actionMenuPictureBox;
         private System.Windows.Forms.Button openGroupSubjectPanel;
-        private Bunifu.UI.WinForms.BunifuPictureBox pictureBoxAccount;
         private System.Windows.Forms.Panel panel2;
+        private Bunifu.UI.WinForms.BunifuPictureBox picAccount;
     }
 }

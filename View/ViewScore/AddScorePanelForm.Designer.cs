@@ -200,6 +200,7 @@ namespace WindowClassProject.View.ViewScore
             // 
             // avgByScoreBtn
             // 
+            this.avgByScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avgByScoreBtn.Location = new System.Drawing.Point(377, 572);
             this.avgByScoreBtn.Name = "avgByScoreBtn";
             this.avgByScoreBtn.Size = new System.Drawing.Size(195, 36);
@@ -209,6 +210,7 @@ namespace WindowClassProject.View.ViewScore
             // 
             // removeBtn
             // 
+            this.removeBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeBtn.Location = new System.Drawing.Point(232, 499);
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(123, 41);
@@ -219,6 +221,7 @@ namespace WindowClassProject.View.ViewScore
             // 
             // cancelBtn
             // 
+            this.cancelBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBtn.Location = new System.Drawing.Point(435, 499);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(120, 42);
@@ -228,6 +231,7 @@ namespace WindowClassProject.View.ViewScore
             // 
             // addBtn
             // 
+            this.addBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.Location = new System.Drawing.Point(70, 499);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(103, 42);
@@ -238,6 +242,7 @@ namespace WindowClassProject.View.ViewScore
             // 
             // editScoreBtn
             // 
+            this.editScoreBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editScoreBtn.Location = new System.Drawing.Point(70, 572);
             this.editScoreBtn.Name = "editScoreBtn";
             this.editScoreBtn.Size = new System.Drawing.Size(195, 36);

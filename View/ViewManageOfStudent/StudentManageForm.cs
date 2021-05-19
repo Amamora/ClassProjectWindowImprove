@@ -49,7 +49,8 @@ namespace WindowClassProject.View.ViewManageOfStudent
             loadDatalist(listGroupIDCheck);
             loadDatalist(selectGroupID);
             loadDatalist(selectSearchBox);
-            loadDatalist(selectGroupIDAddCom);
+            loadDatalist(groupIDChart);
+         
 
         }
 
@@ -122,7 +123,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
 
                 var src = from SCORE sc in db.SCOREs
                           join GROUPSUBJECT gr in db.GROUPSUBJECTs on sc.groupID equals gr.groupID
-                          where  sc != null
+                          where  sc.studentID==studentIDtxt.Text && sc.groupID==gr.groupID
                           select sc;
                 if (src.Count() > 0)
                 {
@@ -174,10 +175,10 @@ namespace WindowClassProject.View.ViewManageOfStudent
             {
                 //show student follow select group ID =>
 
-               /* var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
-
-                              join STUDENT stu in db.STUDENTs on groupSub.studentID equals stu.studentID
-                              where groupSub.groupID == selectGroupID.Text
+                var scource = from GROUPSUBJECT groupSub in db.GROUPSUBJECTs
+                              join SCORE score in db.SCOREs on groupSub.groupID equals score.groupID
+                              join STUDENT stu in db.STUDENTs on score.studentID equals stu.studentID
+                              where groupSub.groupID == selectSearchBox.Text
                               select new
                               {
                                   GroupID = groupSub.groupID,
@@ -192,7 +193,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
                     return;
                 }
                 dataSubScoreView.DataSource = scource;
-               */
+
 
             }
         }
@@ -214,6 +215,69 @@ namespace WindowClassProject.View.ViewManageOfStudent
             }
             ScoreDAO sco = new ScoreDAO();
             dataSubScoreView.DataSource = sco.connectData(selectSearchBox.Text);
+        }
+
+        private void btnLoadChart_Click(object sender, EventArgs e)
+        {
+            chartShow.Series.Clear();
+            LoadDataChart(groupIDChart.Text);
+        }
+        Color pass;
+        Color fail;
+
+        private void LoadDataChart(string groupID)
+        {
+
+            chartShow.Series.Add("s1");
+            chartShow.Titles.Add("The rate");
+            chartShow.Series["s1"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+         Color   pass = System.Drawing.Color.CornflowerBlue;
+          Color fail = System.Drawing.Color.Pink;
+
+            double totalPass= 0;
+            double totalFail = 0;
+            double totalStudent = 0;
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                var countPass = from SCORE ss in db.SCOREs
+                                where ss.score1>5 && ss.groupID==groupID
+                                select ss;
+
+                var totalCount = from SCORE ss in db.SCOREs
+                                 where ss.groupID==groupID
+                                 select ss;
+                totalPass = countPass.Count();
+                totalStudent = totalCount.Count();
+               totalFail = totalCount.Count() - totalPass;
+
+                GROUPSUBJECT groupName = db.GROUPSUBJECTs.Single(p => p.groupID == groupID);
+
+                groupNameLbl.Text = "GROUP NAME : " + groupName.groupName;
+            }
+            double maleStudentsPercentage = (totalPass * (100 / totalStudent));
+            double femaleStudentsPercentage = (totalFail* (100 / totalStudent));
+
+            totalPassLbl.Text = ("  Pass : " + (maleStudentsPercentage.ToString("0.00") + "%"));
+           totalFailLbl.Text = ("Fail : " + (femaleStudentsPercentage.ToString("0.00") + "%"));
+            totalStudentLbl.Text = "Total Student : " + totalStudent.ToString();
+
+            if (femaleStudentsPercentage == 0)
+            {
+                chartShow.Series["s1"].Points.AddXY("Pass", "" + maleStudentsPercentage);
+
+            }
+            else if (maleStudentsPercentage == 0)
+            {
+                chartShow.Series["s1"].Points.AddXY(" ", "" + maleStudentsPercentage);
+                chartShow.Series["s1"].Points.AddXY("Fail", "" + femaleStudentsPercentage);
+            }
+            else
+            {
+                chartShow.Series["s1"].Points.AddXY("Pass", "" + maleStudentsPercentage);
+                chartShow.Series["s1"].Points.AddXY("Fail", "" + femaleStudentsPercentage);
+
+            }
+
         }
     }
 }

@@ -11,6 +11,7 @@ using WindowClassProject.DAO;
 using WindowClassProject.Model;
 using WindowClassProject.View.OtherForm;
 using WindowClassProject.View.ViewCourse;
+using WindowClassProject.View.ViewMangeAll;
 using WindowClassProject.View.ViewScore;
 using WindowClassProject.View.ViewStudent;
 using WindowClassProject.View.ViewTeacher;
@@ -46,11 +47,12 @@ namespace WindowClassProject.View.ViewManageStudent
         private void ManageForm_Load(object sender, EventArgs e)
         {
             UserAccountDAO us = new UserAccountDAO();
+            openChildFormInPanel(new DashBoardForm());
 
             if (us.loadImageForUserAccount(nowUser))
             {
                 
-                pictureBoxAccount.Image = us.ByteArrayToImage(nowUser.imageAccount);
+                picAccount.Image = us.ByteArrayToImage(nowUser.imageAccount);
             }
             random = new Random();
             hideSubMenu();
@@ -164,6 +166,7 @@ namespace WindowClassProject.View.ViewManageStudent
         private void openDashBtn_Click(object sender, EventArgs e)
         {
             activeBtn(sender);
+            openChildFormInPanel(new DashBoardForm());
         }
 
         private void openChartPanel_Click(object sender, EventArgs e)

@@ -24,6 +24,7 @@ namespace WindowClassProject.View.OtherForm
 
         public void  renderPie()
         {
+           
 
 
         }

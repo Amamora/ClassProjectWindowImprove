@@ -35,20 +35,40 @@ namespace WindowClassProject.DAO
 
         //selectcoure
         //
+        public bool checkExistGroupID(string groupID)
+        {
+            using (MyLinQDataContext db = new MyLinQDataContext())
+            {
+                var co = from GROUPSUBJECT gr in db.GROUPSUBJECTs
+                         where gr.groupID == groupID
+                         select gr;
+                if (co.Count() == 0)
+                {
+                    MessageBox.Show("Group ID not exist!");
+                    return false;
+                }
+            }
+            return true;
+        }
         public DataTable connectData(string groupID)
         {
-            mydata.openConnection();
             DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            SqlCommand command = new SqlCommand("SELECT stu.studentID,stu.studentFname,stu.studentLName, gr.groupID,gr.groupName,score.score from [WINDOWCLASS].[dbo].[SCORE] score join [WINDOWCLASS].[dbo].[STUDENT] stu on score.studentID=stu.studentID join [WINDOWCLASS].[dbo].[GROUPSUBJECT] gr on gr.groupID=score.groupID where gr.groupID= @groupID", mydata.getConnection);
-            command.Parameters.Add("@groupID", SqlDbType.NVarChar).Value = groupID;
-            
-            adapter.SelectCommand = command;
-            adapter.Fill(table);
-            
-            mydata.closeConnection();
-            return table;
+            if (checkExistGroupID(groupID))
+            {
 
+                mydata.openConnection();
+               
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                SqlCommand command = new SqlCommand("SELECT stu.studentID,stu.studentFname,stu.studentLName, gr.groupID,gr.groupName,score.score from [WINDOWCLASS].[dbo].[SCORE] score join [WINDOWCLASS].[dbo].[STUDENT] stu on score.studentID=stu.studentID join [WINDOWCLASS].[dbo].[GROUPSUBJECT] gr on gr.groupID=score.groupID where gr.groupID= @groupID", mydata.getConnection);
+                command.Parameters.Add("@groupID", SqlDbType.NVarChar).Value = groupID;
+
+                adapter.SelectCommand = command;
+                adapter.Fill(table);
+
+                mydata.closeConnection();
+                return table;
+            }
+            return table;
         }
 
         public DataTable searchByCourseID(string courseID)
@@ -56,6 +76,10 @@ namespace WindowClassProject.DAO
 
             mydata.openConnection();
             DataTable table = new DataTable();
+            using(MyLinQDataContext db=new MyLinQDataContext())
+            {
+
+            }
             SqlDataAdapter adapter = new SqlDataAdapter();
             SqlCommand command = new SqlCommand("SELECT stu.studentID,stu.studentFname,stu.studentLName, gr.groupID,gr.groupName,score.score from [WINDOWCLASS].[dbo].[SCORE] score join [WINDOWCLASS].[dbo].[STUDENT] stu on score.studentID=stu.studentID join [WINDOWCLASS].[dbo].[GROUPSUBJECT] gr on gr.groupID=score.groupID where gr.courseID= @groupID", mydata.getConnection);
             command.Parameters.Add("@groupID", SqlDbType.NVarChar).Value = courseID;

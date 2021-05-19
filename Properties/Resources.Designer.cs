@@ -133,6 +133,16 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_crown_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_crown_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_csv_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_csv_30px", resourceCulture);
@@ -293,6 +303,16 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_megaphone_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_megaphone_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_20px_1 {
             get {
                 object obj = ResourceManager.GetObject("icons8_menu_20px_1", resourceCulture);
@@ -316,6 +336,16 @@ namespace WindowClassProject.Properties {
         internal static System.Drawing.Bitmap icons8_microsoft_word_30px {
             get {
                 object obj = ResourceManager.GetObject("icons8_microsoft_word_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_money_pound_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_money_pound_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -356,6 +386,16 @@ namespace WindowClassProject.Properties {
         internal static System.Drawing.Bitmap icons8_phone_40px {
             get {
                 object obj = ResourceManager.GetObject("icons8_phone_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pin_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_pin_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +493,49 @@ namespace WindowClassProject.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_spam_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_spam_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_star_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_star_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_student_male_20px {
             get {
                 object obj = ResourceManager.GetObject("icons8_student_male_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_student_registration_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_student_registration_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_study_50px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_study_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,6 +556,26 @@ namespace WindowClassProject.Properties {
         internal static System.Drawing.Bitmap icons8_timetable_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_timetable_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_trash_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_trash_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_40px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

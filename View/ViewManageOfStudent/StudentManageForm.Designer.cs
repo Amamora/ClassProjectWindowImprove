@@ -30,7 +30,10 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentManageForm));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.checkAllStudentBtn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -40,12 +43,6 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.logoutLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureAccountBox = new Bunifu.UI.WinForms.BunifuPictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.addStudentGroupBtn = new System.Windows.Forms.Button();
-            this.selectGroupIDAddCom = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.editScoreBtn = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -65,14 +62,24 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.removeBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.groupNameLbl = new System.Windows.Forms.Label();
+            this.btnLoadChart = new System.Windows.Forms.Button();
+            this.groupIDChart = new System.Windows.Forms.ComboBox();
+            this.totalFailLbl = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.totalPassLbl = new System.Windows.Forms.Label();
+            this.totalStudentLbl = new System.Windows.Forms.Label();
+            this.chartShow = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccountBox)).BeginInit();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).BeginInit();
+            this.bunifuPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartShow)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -115,11 +122,11 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.checkAllStudentBtn.ColorContrastOnClick = 45;
             this.checkAllStudentBtn.ColorContrastOnHover = 45;
             this.checkAllStudentBtn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.checkAllStudentBtn.CustomizableEdges = borderEdges1;
+            borderEdges2.BottomLeft = true;
+            borderEdges2.BottomRight = true;
+            borderEdges2.TopLeft = true;
+            borderEdges2.TopRight = true;
+            this.checkAllStudentBtn.CustomizableEdges = borderEdges2;
             this.checkAllStudentBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.checkAllStudentBtn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.checkAllStudentBtn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -260,67 +267,6 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.pictureAccountBox.TabStop = false;
             this.pictureAccountBox.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.addStudentGroupBtn);
-            this.panel3.Controls.Add(this.selectGroupIDAddCom);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(613, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(769, 220);
-            this.panel3.TabIndex = 1;
-            // 
-            // addStudentGroupBtn
-            // 
-            this.addStudentGroupBtn.Location = new System.Drawing.Point(298, 145);
-            this.addStudentGroupBtn.Name = "addStudentGroupBtn";
-            this.addStudentGroupBtn.Size = new System.Drawing.Size(271, 42);
-            this.addStudentGroupBtn.TabIndex = 40;
-            this.addStudentGroupBtn.Text = "Add Student ";
-            this.addStudentGroupBtn.UseVisualStyleBackColor = true;
-            this.addStudentGroupBtn.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // selectGroupIDAddCom
-            // 
-            this.selectGroupIDAddCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectGroupIDAddCom.FormattingEnabled = true;
-            this.selectGroupIDAddCom.Location = new System.Drawing.Point(298, 85);
-            this.selectGroupIDAddCom.Name = "selectGroupIDAddCom";
-            this.selectGroupIDAddCom.Size = new System.Drawing.Size(389, 37);
-            this.selectGroupIDAddCom.TabIndex = 39;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(106, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 25);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Select GroupID";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(297, 17);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(390, 33);
-            this.textBox1.TabIndex = 37;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(106, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 25);
-            this.label9.TabIndex = 36;
-            this.label9.Text = "Student ID";
-            // 
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -337,10 +283,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel4.Controls.Add(this.removeBtn);
             this.panel4.Controls.Add(this.addBtn);
             this.panel4.Controls.Add(this.label6);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 365);
+            this.panel4.Location = new System.Drawing.Point(0, 385);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1382, 522);
+            this.panel4.Size = new System.Drawing.Size(1382, 502);
             this.panel4.TabIndex = 2;
             // 
             // editScoreBtn
@@ -360,10 +305,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.panel5.Controls.Add(this.label5);
             this.panel5.Controls.Add(this.showStudentDataBtn);
             this.panel5.Controls.Add(this.dataSubScoreView);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel5.Location = new System.Drawing.Point(689, 0);
+            this.panel5.Location = new System.Drawing.Point(689, -1);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(691, 520);
+            this.panel5.Size = new System.Drawing.Size(691, 521);
             this.panel5.TabIndex = 36;
             // 
             // selectSearchBox
@@ -379,7 +323,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             this.showScoreDataBtn.Location = new System.Drawing.Point(353, 18);
             this.showScoreDataBtn.Name = "showScoreDataBtn";
-            this.showScoreDataBtn.Size = new System.Drawing.Size(225, 50);
+            this.showScoreDataBtn.Size = new System.Drawing.Size(185, 50);
             this.showScoreDataBtn.TabIndex = 2;
             this.showScoreDataBtn.Text = "Show Score";
             this.showScoreDataBtn.UseVisualStyleBackColor = true;
@@ -397,9 +341,9 @@ namespace WindowClassProject.View.ViewManageOfStudent
             // 
             // showStudentDataBtn
             // 
-            this.showStudentDataBtn.Location = new System.Drawing.Point(71, 18);
+            this.showStudentDataBtn.Location = new System.Drawing.Point(93, 21);
             this.showStudentDataBtn.Name = "showStudentDataBtn";
-            this.showStudentDataBtn.Size = new System.Drawing.Size(219, 50);
+            this.showStudentDataBtn.Size = new System.Drawing.Size(187, 40);
             this.showStudentDataBtn.TabIndex = 1;
             this.showStudentDataBtn.Text = "ShowStudent";
             this.showStudentDataBtn.UseVisualStyleBackColor = true;
@@ -412,7 +356,7 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.dataSubScoreView.BackgroundColor = System.Drawing.Color.White;
             this.dataSubScoreView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataSubScoreView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataSubScoreView.Location = new System.Drawing.Point(0, 141);
+            this.dataSubScoreView.Location = new System.Drawing.Point(0, 142);
             this.dataSubScoreView.Name = "dataSubScoreView";
             this.dataSubScoreView.RowHeadersWidth = 51;
             this.dataSubScoreView.RowTemplate.Height = 24;
@@ -524,13 +468,131 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.label6.TabIndex = 32;
             this.label6.Text = "Evaluate";
             // 
+            // bunifuPanel2
+            // 
+            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
+            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuPanel2.BorderColor = System.Drawing.Color.Transparent;
+            this.bunifuPanel2.BorderRadius = 3;
+            this.bunifuPanel2.BorderThickness = 1;
+            this.bunifuPanel2.Controls.Add(this.groupNameLbl);
+            this.bunifuPanel2.Controls.Add(this.btnLoadChart);
+            this.bunifuPanel2.Controls.Add(this.groupIDChart);
+            this.bunifuPanel2.Controls.Add(this.totalFailLbl);
+            this.bunifuPanel2.Controls.Add(this.label9);
+            this.bunifuPanel2.Controls.Add(this.totalPassLbl);
+            this.bunifuPanel2.Controls.Add(this.totalStudentLbl);
+            this.bunifuPanel2.Controls.Add(this.chartShow);
+            this.bunifuPanel2.Location = new System.Drawing.Point(666, 0);
+            this.bunifuPanel2.Name = "bunifuPanel2";
+            this.bunifuPanel2.ShowBorders = true;
+            this.bunifuPanel2.Size = new System.Drawing.Size(723, 359);
+            this.bunifuPanel2.TabIndex = 3;
+            // 
+            // groupNameLbl
+            // 
+            this.groupNameLbl.AutoSize = true;
+            this.groupNameLbl.BackColor = System.Drawing.Color.Transparent;
+            this.groupNameLbl.Font = new System.Drawing.Font("Californian FB", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupNameLbl.ForeColor = System.Drawing.Color.Olive;
+            this.groupNameLbl.Location = new System.Drawing.Point(345, 224);
+            this.groupNameLbl.Name = "groupNameLbl";
+            this.groupNameLbl.Size = new System.Drawing.Size(114, 22);
+            this.groupNameLbl.TabIndex = 31;
+            this.groupNameLbl.Text = "Group Name:";
+            // 
+            // btnLoadChart
+            // 
+            this.btnLoadChart.Location = new System.Drawing.Point(491, 291);
+            this.btnLoadChart.Name = "btnLoadChart";
+            this.btnLoadChart.Size = new System.Drawing.Size(167, 39);
+            this.btnLoadChart.TabIndex = 29;
+            this.btnLoadChart.Text = "Load Chart";
+            this.btnLoadChart.UseVisualStyleBackColor = true;
+            this.btnLoadChart.Click += new System.EventHandler(this.btnLoadChart_Click);
+            // 
+            // groupIDChart
+            // 
+            this.groupIDChart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupIDChart.FormattingEnabled = true;
+            this.groupIDChart.Location = new System.Drawing.Point(185, 291);
+            this.groupIDChart.Name = "groupIDChart";
+            this.groupIDChart.Size = new System.Drawing.Size(272, 37);
+            this.groupIDChart.TabIndex = 30;
+            // 
+            // totalFailLbl
+            // 
+            this.totalFailLbl.AutoSize = true;
+            this.totalFailLbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalFailLbl.Font = new System.Drawing.Font("Californian FB", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalFailLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.totalFailLbl.Location = new System.Drawing.Point(403, 145);
+            this.totalFailLbl.Name = "totalFailLbl";
+            this.totalFailLbl.Size = new System.Drawing.Size(104, 27);
+            this.totalFailLbl.TabIndex = 11;
+            this.totalFailLbl.Text = "Total Fail";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(30, 297);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(145, 25);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Select GroupID";
+            // 
+            // totalPassLbl
+            // 
+            this.totalPassLbl.AutoSize = true;
+            this.totalPassLbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalPassLbl.Font = new System.Drawing.Font("Californian FB", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalPassLbl.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.totalPassLbl.Location = new System.Drawing.Point(420, 87);
+            this.totalPassLbl.Name = "totalPassLbl";
+            this.totalPassLbl.Size = new System.Drawing.Size(111, 27);
+            this.totalPassLbl.TabIndex = 10;
+            this.totalPassLbl.Text = "Total Pass";
+            // 
+            // totalStudentLbl
+            // 
+            this.totalStudentLbl.AutoSize = true;
+            this.totalStudentLbl.BackColor = System.Drawing.Color.Transparent;
+            this.totalStudentLbl.Font = new System.Drawing.Font("Californian FB", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalStudentLbl.ForeColor = System.Drawing.Color.BlueViolet;
+            this.totalStudentLbl.Location = new System.Drawing.Point(420, 24);
+            this.totalStudentLbl.Name = "totalStudentLbl";
+            this.totalStudentLbl.Size = new System.Drawing.Size(144, 27);
+            this.totalStudentLbl.TabIndex = 9;
+            this.totalStudentLbl.Text = "Total Student";
+            // 
+            // chartShow
+            // 
+            this.chartShow.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.Name = "ChartArea1";
+            this.chartShow.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartShow.Legends.Add(legend2);
+            this.chartShow.Location = new System.Drawing.Point(24, 3);
+            this.chartShow.Name = "chartShow";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.LabelForeColor = System.Drawing.SystemColors.MenuHighlight;
+            series2.Legend = "Legend1";
+            series2.Name = "s1";
+            this.chartShow.Series.Add(series2);
+            this.chartShow.Size = new System.Drawing.Size(352, 259);
+            this.chartShow.TabIndex = 0;
+            this.chartShow.Text = "chartResult";
+            // 
             // StudentManageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1382, 887);
+            this.Controls.Add(this.bunifuPanel2);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.MaximumSize = new System.Drawing.Size(1400, 934);
             this.MinimizeBox = false;
@@ -544,13 +606,14 @@ namespace WindowClassProject.View.ViewManageOfStudent
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureAccountBox)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSubScoreView)).EndInit();
+            this.bunifuPanel2.ResumeLayout(false);
+            this.bunifuPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartShow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,12 +629,6 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private Bunifu.UI.WinForms.BunifuPictureBox pictureAccountBox;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton checkAllStudentBtn;
         private System.Windows.Forms.Label chooseGroupLbl;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button addStudentGroupBtn;
-        private System.Windows.Forms.ComboBox selectGroupIDAddCom;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button editScoreBtn;
         private System.Windows.Forms.Panel panel5;
@@ -591,5 +648,14 @@ namespace WindowClassProject.View.ViewManageOfStudent
         private System.Windows.Forms.Button removeBtn;
         private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.Label label6;
+        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartShow;
+        private System.Windows.Forms.Button btnLoadChart;
+        private System.Windows.Forms.ComboBox groupIDChart;
+        private System.Windows.Forms.Label totalFailLbl;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label totalPassLbl;
+        private System.Windows.Forms.Label totalStudentLbl;
+        private System.Windows.Forms.Label groupNameLbl;
     }
 }

@@ -181,6 +181,7 @@ namespace WindowClassProject.View.ViewCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(759, 621);
             this.Controls.Add(this.departmentCombox);
             this.Controls.Add(this.label1);
@@ -196,6 +197,7 @@ namespace WindowClassProject.View.ViewCourse
             this.Controls.Add(this.idCourseTxt);
             this.Controls.Add(this.idCourseLbl);
             this.Name = "AddCoursePanelForm";
+            this.Opacity = 0.9D;
             this.Text = "AddCoursePanelForm";
             this.Load += new System.EventHandler(this.AddCoursePanelForm_Load);
             this.ResumeLayout(false);

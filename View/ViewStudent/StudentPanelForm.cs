@@ -580,5 +580,10 @@ namespace WindowClassProject.View.ViewStudent
                 db.SubmitChanges();
             }
         }
+
+        private void searchBox_OnIconRightClick(object sender, EventArgs e)
+        {
+            searchBox.Text = "";
+        }
     }
 }

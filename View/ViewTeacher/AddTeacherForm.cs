@@ -20,7 +20,7 @@ namespace WindowClassProject.View.ViewTeacher
             birthDatePicker.Format = DateTimePickerFormat.Custom;
             birthDatePicker.CustomFormat = "dd/MM/yyyy";
         }
-        int genderValue = 0;
+       int genderValue=0;
         private void FeMaleRadio_CheckedChanged(object sender, EventArgs e)
         {
             genderValue = 1;
@@ -32,6 +32,8 @@ namespace WindowClassProject.View.ViewTeacher
             {
                 using (MyLinQDataContext db = new MyLinQDataContext())
                 {
+
+
                     TEACHER insert = new TEACHER();
                     insert.teacherID = IDTxt.Text;
                     insert.teacherFName = fNameTxt.Text;
@@ -39,6 +41,8 @@ namespace WindowClassProject.View.ViewTeacher
                     insert.teacherPhone = phoneTxt.Text;
                     insert.teacherEmail = emailTxt.Text;
                     insert.teacherBDate = birthDatePicker.Value;
+                    bool gender = genderValue==0 ? true : false;
+                    insert.teacherGender = gender;
 
                     byte[] images = null;
                     FileStream stream = new FileStream(imagesLocation, FileMode.Open, FileAccess.Read);

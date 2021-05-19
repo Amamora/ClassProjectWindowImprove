@@ -72,7 +72,7 @@ namespace WindowClassProject.DAO
 
             DataTable table = new DataTable();
 
-            SqlCommand cmd = new SqlCommand("SELECT stu.picture FROM [WINDOWCLASS].[dbo].[USERACCOUNT] us JOIN [WINDOWCLASS].[dbo].[STUDENT] stu ON stu.userAccountID=us.userAccountID WHERE us.userAccount = @User", myData.getConnection);
+            SqlCommand cmd = new SqlCommand("SELECT stu.picture FROM [WINDOWCLASS].[dbo].[USERACCOUNT] us JOIN [WINDOWCLASS].[dbo].[TEACHER] stu ON stu.userAccountID=us.userAccountID WHERE us.userAccount = @User", myData.getConnection);
 
             cmd.Parameters.Add("@User", SqlDbType.VarChar).Value = user.userAccount;
             adapter.SelectCommand = cmd;
